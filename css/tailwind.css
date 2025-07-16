@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1B365D; /* Deep navy - Enterprise trust with athletic team depth */
+  --color-primary-50: #F0F4F8; /* Very light navy tint */
+  --color-primary-100: #D6E3F0; /* Light navy tint */
+  --color-primary-200: #B8CCE0; /* Medium light navy */
+  --color-primary-300: #9BB5D0; /* Medium navy */
+  --color-primary-400: #7D9EC0; /* Medium dark navy */
+  --color-primary-500: #5F87B0; /* Base navy variant */
+  --color-primary-600: #4A6B8A; /* Darker navy */
+  --color-primary-700: #354F64; /* Deep navy variant */
+  --color-primary-800: #1B365D; /* Primary navy */
+  --color-primary-900: #0F1E2E; /* Darkest navy */
+
+  /* Secondary Colors */
+  --color-secondary: #FF6B35; /* Appetite appeal and confident action */
+  --color-secondary-50: #FFF4F0; /* Very light orange tint */
+  --color-secondary-100: #FFE4D6; /* Light orange tint */
+  --color-secondary-200: #FFCFB8; /* Medium light orange */
+  --color-secondary-300: #FFB99A; /* Medium orange */
+  --color-secondary-400: #FFA47C; /* Medium dark orange */
+  --color-secondary-500: #FF8F5E; /* Base orange variant */
+  --color-secondary-600: #FF6B35; /* Primary orange */
+  --color-secondary-700: #E55A2B; /* Darker orange */
+  --color-secondary-800: #CC4921; /* Deep orange */
+  --color-secondary-900: #B33817; /* Darkest orange */
+
+  /* Accent Colors */
+  --color-accent: #2ECC71; /* Success states and positive outcomes - emerald-500 */
+  --color-accent-50: #ECFDF5; /* Very light green tint - emerald-50 */
+  --color-accent-100: #D1FAE5; /* Light green tint - emerald-100 */
+  --color-accent-200: #A7F3D0; /* Medium light green - emerald-200 */
+  --color-accent-300: #6EE7B7; /* Medium green - emerald-300 */
+  --color-accent-400: #34D399; /* Medium dark green - emerald-400 */
+  --color-accent-500: #2ECC71; /* Primary accent green */
+  --color-accent-600: #059669; /* Darker green - emerald-600 */
+  --color-accent-700: #047857; /* Deep green - emerald-700 */
+  --color-accent-800: #065F46; /* Very deep green - emerald-800 */
+  --color-accent-900: #064E3B; /* Darkest green - emerald-900 */
+
+  /* Background Colors */
+  --color-background: #FAFBFC; /* Clean canvas for complex information - slate-50 */
+  --color-surface: #F8F9FA; /* Subtle card depth without distraction - gray-50 */
+
+  /* Text Colors */
+  --color-text-primary: #2C3E50; /* Extended reading comfort and professionalism - slate-700 */
+  --color-text-secondary: #6C757D; /* Clear hierarchy without harsh contrast - gray-500 */
+
+  /* Status Colors */
+  --color-success: #27AE60; /* Positive reinforcement and completion states - green-600 */
+  --color-warning: #F39C12; /* Attention without alarm for important notices - amber-500 */
+  --color-error: #E74C3C; /* Clear problem indication with helpful tone - red-500 */
+
+  /* Border Colors */
+  --color-border: #E5E7EB; /* Minimal borders for structure - gray-200 */
+  --color-border-light: #F3F4F6; /* Very light borders - gray-100 */
+
+  /* Shadow Colors */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 ease-out hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 ease-out hover:bg-secondary-700 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-surface rounded-lg p-6 border border-border-light;
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-lg p-6 border border-border-light;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 ease-out;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 300ms ease-out;
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
