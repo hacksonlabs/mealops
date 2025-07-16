@@ -536,15 +536,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary{
   border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(27 54 93 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: white;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
@@ -552,18 +550,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(53 79 100 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary-700);
 }
 
-.btn-primary:focus{
+  
+.btn-primary:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(95 135 176 / var(--tw-ring-opacity, 1));
+  --tw-ring-color: var(--color-primary-500);
   --tw-ring-offset-width: 2px;
 }
 
@@ -955,8 +953,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .border-primary{
-  --tw-border-opacity: 1;
-  border-color: rgb(27 54 93 / var(--tw-border-opacity, 1));
+  border-color: var(--color-primary);
 }
 
 .border-primary-800{
@@ -1000,8 +997,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary{
-  --tw-bg-opacity: 1;
-  background-color: rgb(27 54 93 / var(--tw-bg-opacity, 1));
+  background-color: var(--color-primary);
 }
 
 .bg-primary-100{
@@ -1225,8 +1221,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-primary{
-  --tw-text-opacity: 1;
-  color: rgb(27 54 93 / var(--tw-text-opacity, 1));
+  color: var(--color-primary);
 }
 
 .text-primary-100{
@@ -1298,176 +1293,157 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
-  /* Primary Colors */
-  --color-primary: #1B365D;
-  /* Deep navy - Enterprise trust with athletic team depth */
-  --color-primary-50: #F0F4F8;
-  /* Very light navy tint */
-  --color-primary-100: #D6E3F0;
-  /* Light navy tint */
-  --color-primary-200: #B8CCE0;
-  /* Medium light navy */
-  --color-primary-300: #9BB5D0;
-  /* Medium navy */
-  --color-primary-400: #7D9EC0;
-  /* Medium dark navy */
-  --color-primary-500: #5F87B0;
-  /* Base navy variant */
-  --color-primary-600: #4A6B8A;
-  /* Darker navy */
-  --color-primary-700: #354F64;
-  /* Deep navy variant */
-  --color-primary-800: #1B365D;
-  /* Primary navy */
-  --color-primary-900: #0F1E2E;
-  /* Darkest navy */
-  /* Secondary Colors */
-  --color-secondary: #FF6B35;
-  /* Appetite appeal and confident action */
-  --color-secondary-50: #FFF4F0;
-  /* Very light orange tint */
-  --color-secondary-100: #FFE4D6;
-  /* Light orange tint */
-  --color-secondary-200: #FFCFB8;
-  /* Medium light orange */
-  --color-secondary-300: #FFB99A;
-  /* Medium orange */
-  --color-secondary-400: #FFA47C;
-  /* Medium dark orange */
-  --color-secondary-500: #FF8F5E;
-  /* Base orange variant */
-  --color-secondary-600: #FF6B35;
-  /* Primary orange */
-  --color-secondary-700: #E55A2B;
-  /* Darker orange */
-  --color-secondary-800: #CC4921;
-  /* Deep orange */
-  --color-secondary-900: #B33817;
-  /* Darkest orange */
-  /* Accent Colors */
-  --color-accent: #2ECC71;
-  /* Success states and positive outcomes - emerald-500 */
-  --color-accent-50: #ECFDF5;
-  /* Very light green tint - emerald-50 */
-  --color-accent-100: #D1FAE5;
-  /* Light green tint - emerald-100 */
-  --color-accent-200: #A7F3D0;
-  /* Medium light green - emerald-200 */
-  --color-accent-300: #6EE7B7;
-  /* Medium green - emerald-300 */
-  --color-accent-400: #34D399;
-  /* Medium dark green - emerald-400 */
-  --color-accent-500: #2ECC71;
-  /* Primary accent green */
-  --color-accent-600: #059669;
-  /* Darker green - emerald-600 */
-  --color-accent-700: #047857;
-  /* Deep green - emerald-700 */
-  --color-accent-800: #065F46;
-  /* Very deep green - emerald-800 */
-  --color-accent-900: #064E3B;
-  /* Darkest green - emerald-900 */
+  /* Primary Colors (Logo Green) */
+  --color-primary: #2BAE66;
+  /* Vibrant green from your logo */
+  --color-primary-50: #E9F9F0;
+  --color-primary-100: #C7F1D9;
+  --color-primary-200: #A3E8C0;
+  --color-primary-300: #7FDEAA;
+  --color-primary-400: #5BD491;
+  --color-primary-500: #2BAE66;
+  /* Base green */
+  --color-primary-600: #229A58;
+  --color-primary-700: #1A864A;
+  --color-primary-800: #136D3B;
+  --color-primary-900: #0D532C;
+
+  /* Secondary Colors (Fresh citrus) */
+  --color-secondary: #FFB347;
+  /* Soft orange-yellow */
+  --color-secondary-50: #FFF7EC;
+  --color-secondary-100: #FFEED4;
+  --color-secondary-200: #FFE1B2;
+  --color-secondary-300: #FFD38F;
+  --color-secondary-400: #FFC66D;
+  --color-secondary-500: #FFB347;
+  /* Base */
+  --color-secondary-600: #E29E3F;
+  --color-secondary-700: #C58A36;
+  --color-secondary-800: #A8742D;
+  --color-secondary-900: #8B5F25;
+
+  /* Accent Colors (Deep green contrast) */
+  --color-accent: #137547;
+  --color-accent-50: #E6F4EC;
+  --color-accent-100: #CCE9DA;
+  --color-accent-200: #99D4B4;
+  --color-accent-300: #66BF8E;
+  --color-accent-400: #33AA68;
+  --color-accent-500: #137547;
+  /* Base accent */
+  --color-accent-600: #0F5E39;
+  --color-accent-700: #0B472B;
+  --color-accent-800: #07301D;
+  --color-accent-900: #041A10;
+
   /* Background Colors */
-  --color-background: #FAFBFC;
-  /* Clean canvas for complex information - slate-50 */
-  --color-surface: #F8F9FA;
-  /* Subtle card depth without distraction - gray-50 */
+  --color-background: #F5FCF8;
+  /* Gentle green-tinted white */
+  --color-surface: #FFFFFF;
+
   /* Text Colors */
-  --color-text-primary: #2C3E50;
-  /* Extended reading comfort and professionalism - slate-700 */
-  --color-text-secondary: #6C757D;
-  /* Clear hierarchy without harsh contrast - gray-500 */
+  --color-text-primary: #1F3B2C;
+  /* Forest green */
+  --color-text-secondary: #5A7D6C;
+
   /* Status Colors */
-  --color-success: #27AE60;
-  /* Positive reinforcement and completion states - green-600 */
-  --color-warning: #F39C12;
-  /* Attention without alarm for important notices - amber-500 */
-  --color-error: #E74C3C;
-  /* Clear problem indication with helpful tone - red-500 */
+  --color-success: #28A745;
+  --color-warning: #FFC107;
+  --color-error: #DC3545;
+
   /* Border Colors */
-  --color-border: #E5E7EB;
-  /* Minimal borders for structure - gray-200 */
-  --color-border-light: #F3F4F6;
-  /* Very light borders - gray-100 */
-  /* Shadow Colors */
-  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --color-border: #DCE7E2;
+  --color-border-light: #EEF5F2;
+
+  /* Shadows */
+  --shadow-subtle: 0 4px 6px -1px rgba(43, 174, 102, 0.1), 0 2px 4px -1px rgba(43, 174, 102, 0.06);
+  --shadow-elevated: 0 10px 15px -3px rgba(43, 174, 102, 0.1), 0 4px 6px -2px rgba(43, 174, 102, 0.05);
 }
 
-.hover\:bg-accent-100:hover{
+.hover\:bg-accent-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(209 250 229 / var(--tw-bg-opacity, 1));
+  background-color: rgb(204 233 218 / var(--tw-bg-opacity, 1));
+  /* #CCE9DA */
 }
 
-.hover\:bg-primary:hover{
+.hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(27 54 93 / var(--tw-bg-opacity, 1));
+  background-color: rgb(43 174 102 / var(--tw-bg-opacity, 1));
+  /* #2BAE66 */
 }
 
-.hover\:bg-primary-100:hover{
+.hover\:bg-primary-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(214 227 240 / var(--tw-bg-opacity, 1));
+  background-color: rgb(199 241 217 / var(--tw-bg-opacity, 1));
+  /* #C7F1D9 */
 }
 
-.hover\:bg-primary-50:hover{
+.hover\:bg-primary-50:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(240 244 248 / var(--tw-bg-opacity, 1));
+  background-color: rgb(233 249 240 / var(--tw-bg-opacity, 1));
+  /* #E9F9F0 */
 }
 
-.hover\:bg-secondary:hover{
+.hover\:bg-secondary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 107 53 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 179 71 / var(--tw-bg-opacity, 1));
+  /* #FFB347 */
 }
 
-.hover\:bg-secondary-100:hover{
+.hover\:bg-secondary-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 228 214 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 238 212 / var(--tw-bg-opacity, 1));
+  /* #FFEED4 */
 }
 
-.hover\:bg-white:hover{
+.hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:text-primary:hover{
+.hover\:text-primary:hover {
   --tw-text-opacity: 1;
-  color: rgb(27 54 93 / var(--tw-text-opacity, 1));
+  color: rgb(43 174 102 / var(--tw-text-opacity, 1));
+  /* #2BAE66 */
 }
 
-.hover\:text-white:hover{
+.hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.hover\:shadow-elevated:hover{
-  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.hover\:shadow-elevated:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(43, 174, 102, 0.1), 0 4px 6px -2px rgba(43, 174, 102, 0.05);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000),
+    var(--tw-shadow);
 }
 
-.hover\:grayscale-0:hover{
+.hover\:grayscale-0:hover {
   --tw-grayscale: grayscale(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.hover\:shadow-elevated:hover {
-  box-shadow: var(--shadow-elevated);
+.group:hover .group-hover\:bg-accent-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(153 212 180 / var(--tw-bg-opacity, 1));
+  /* #99D4B4 */
 }
 
-.group:hover .group-hover\:bg-accent-200{
+.group:hover .group-hover\:bg-primary-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(167 243 208 / var(--tw-bg-opacity, 1));
+  background-color: rgb(163 232 192 / var(--tw-bg-opacity, 1));
+  /* #A3E8C0 */
 }
 
-.group:hover .group-hover\:bg-primary-200{
+.group:hover .group-hover\:bg-secondary-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(184 204 224 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 225 178 / var(--tw-bg-opacity, 1));
+  /* #FFE1B2 */
 }
 
-.group:hover .group-hover\:bg-secondary-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 207 184 / var(--tw-bg-opacity, 1));
-}
 
 @media (min-width: 640px){
   .sm\:w-auto{
