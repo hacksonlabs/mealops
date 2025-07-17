@@ -1292,6 +1292,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-elevated);
 }
 
+.text-shadow-strong {
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.75);
+}
+
 :root {
   /* Primary Colors (Logo Green) */
   --color-primary: #2BAE66;
