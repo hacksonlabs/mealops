@@ -1381,6 +1381,9 @@ html {
 .dropdown-wrapper:hover .dropdown-content {
   display: block;
 }
+.navigation-container {
+  display: none;
+}
 :root {
   /* Primary Colors (Logo Green) */
   --color-primary: #2BAE66;
@@ -1550,6 +1553,9 @@ html {
 }
 
 @media (min-width: 768px){
+  .navigation-container {
+    display: inline-flex;
+  }
   .md\:col-span-2{
     grid-column: span 2 / span 2;
   }
