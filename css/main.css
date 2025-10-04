@@ -1378,10 +1378,10 @@ html {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 0.85rem;
-  background: rgba(27, 54, 93, 0.08);
+  /* background: rgba(27, 54, 93, 0.08); */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: top;
+  justify-content: top;
   font-size: 1.4rem;
 }
 
