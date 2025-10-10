@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MealOps — SMS Opt-In Proof</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #1f2933;
+            line-height: 1.6;
+        }
+
+        main {
+            padding: clamp(1.5rem, 2vw + 1rem, 3rem);
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 720px;
+            background-color: #ffffff;
+            padding: clamp(1.75rem, 3vw + 1.25rem, 3.25rem);
+            border-radius: 18px;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 0.75rem;
+            font-size: clamp(1.85rem, 4vw, 2.45rem);
+            text-align: center;
+            color: #0f172a;
+        }
+
+        p {
+            margin: 0 0 1rem;
+        }
+
+        .chat-transcript {
+            margin: 2rem 0;
+        }
+
+        .chat-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .bubble {
+            padding: 1rem 1.25rem;
+            border-radius: 14px;
+            background-color: #f1f5f9;
+            border: 1px solid #d6dee6;
+        }
+
+        .bubble--sent {
+            background-color: #0ea5e9;
+            color: #ffffff;
+            border: 1px solid #0c8acc;
+        }
+
+        .bubble strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        dl {
+            display: grid;
+            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin: 0;
+        }
+
+        dt {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        dd {
+            margin: 0;
+            color: #334155;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        a {
+            color: #0f766e;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 1.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            }
+
+            .bubble {
+                padding: 0.9rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="content">
+            <h1>Proof of Consent: Reply YES Flow</h1>
+            <p>This transcript demonstrates the opt-in confirmation flow for the MealOps SMS program.</p>
+
+            <section class="chat-transcript" aria-label="SMS conversation transcript">
+                <ul class="chat-list" role="list">
+                    <li class="bubble">
+                        <strong>From MealOps (Toll-Free +1-888-555-1234)</strong>
+                        <span>[Team Name] uses MealOps for meal updates &amp; ordering links. Reply YES to get texts. Reply STOP to opt out. Msg&amp;data rates may apply.</span>
+                    </li>
+                    <li class="bubble bubble--sent">
+                        <strong>From User</strong>
+                        <span>YES</span>
+                    </li>
+                    <li class="bubble">
+                        <strong>From MealOps</strong>
+                        <span>You’re in for [Team Name] meal updates via MealOps. You’ll get ordering links &amp; reminders. Reply STOP to opt out, HELP for help. Msg&amp;data rates may apply.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section aria-labelledby="program-details-heading">
+                <h2 id="program-details-heading" style="margin: 0 0 1rem; font-size: 1.15rem; color: #0f172a;">Program Snapshot</h2>
+                <dl>
+                    <div>
+                        <dt>Sender Type</dt>
+                        <dd>Toll-Free US/CA</dd>
+                    </div>
+                    <div>
+                        <dt>Opt-In Method</dt>
+                        <dd>Reply YES</dd>
+                    </div>
+                    <div>
+                        <dt>Opt-Out</dt>
+                        <dd>STOP/START/HELP</dd>
+                    </div>
+                    <div>
+                        <dt>Program</dt>
+                        <dd>Transactional team meals</dd>
+                    </div>
+                    <div>
+                        <dt>Frequency</dt>
+                        <dd>0–8 msgs/week in season</dd>
+                    </div>
+                    <div>
+                        <dt>Support</dt>
+                        <dd>Email <a href="mailto:support@coachimhungry.com">support@coachimhungry.com</a>, privacy at <a href="https://mealops.info/privacy">https://mealops.info/privacy</a></dd>
+                    </div>
+                </dl>
+            </section>
+
+            <footer>
+                Last updated: October 10, 2025
+            </footer>
+        </div>
+    </main>
+</body>
+</html>

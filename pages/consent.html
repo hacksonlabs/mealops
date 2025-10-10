@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MealOps — SMS Consent & Program Details</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5f6f8;
+            color: #1f2933;
+            line-height: 1.6;
+        }
+
+        main {
+            padding: clamp(1.5rem, 2vw + 1rem, 3rem);
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 720px;
+            background-color: #ffffff;
+            padding: clamp(1.75rem, 3vw + 1.25rem, 3.25rem);
+            border-radius: 18px;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            font-size: clamp(1.85rem, 4vw, 2.5rem);
+            text-align: center;
+            color: #0f172a;
+        }
+
+        section {
+            margin-top: 1.75rem;
+        }
+
+        section:first-of-type {
+            margin-top: 0.75rem;
+        }
+
+        h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.15rem;
+            color: #0f172a;
+        }
+
+        p {
+            margin: 0 0 0.85rem;
+        }
+
+        .message-block {
+            margin: 0.5rem 0 1.25rem;
+            padding: 1rem 1.25rem;
+            background-color: #eef2f7;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 12px;
+        }
+
+        .message-block p {
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        a {
+            color: #0f766e;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 1.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            }
+
+            .message-block {
+                padding: 0.85rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="content">
+            <h1>MealOps SMS Consent</h1>
+
+            <section aria-labelledby="opt-in-flow-heading">
+                <h2 id="opt-in-flow-heading">Opt-in Flow</h2>
+                <p>Initial invite:</p>
+                <div class="message-block" role="status" aria-live="polite">
+                    <p>[Team Name] uses MealOps for meal updates &amp; ordering links. Reply YES to get texts. Reply STOP to opt out. Msg&amp;data rates may apply.</p>
+                </div>
+                <p>Confirmation after YES:</p>
+                <div class="message-block" role="status" aria-live="polite">
+                    <p>You’re in for [Team Name] meal updates via MealOps. You’ll get ordering links &amp; reminders. Reply STOP to opt out, HELP for help. Msg&amp;data rates may apply.</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="opt-out-help-heading">
+                <h2 id="opt-out-help-heading">Opt-out &amp; Help</h2>
+                <p>Reply STOP at any time to opt out. Reply START to resume messages. Reply HELP for assistance, or email <a href="mailto:support@coachimhungry.com">support@coachimhungry.com</a> for additional support.</p>
+            </section>
+
+            <section aria-labelledby="frequency-heading">
+                <h2 id="frequency-heading">Frequency</h2>
+                <p>Expect 0–8 messages per week during the active season, including meal ordering reminders and key updates.</p>
+            </section>
+
+            <section aria-labelledby="audience-heading">
+                <h2 id="audience-heading">Audience</h2>
+                <p>Program designed for [Team Name] team members, staff, and approved meal coordinators.</p>
+            </section>
+
+            <section aria-labelledby="privacy-contact-heading">
+                <h2 id="privacy-contact-heading">Privacy &amp; Contact</h2>
+                <p>Review program privacy details at <a href="https://mealops.info/privacy">https://mealops.info/privacy</a>. For questions about SMS consent or data handling, contact <a href="mailto:support@coachimhungry.com">support@coachimhungry.com</a>.</p>
+            </section>
+
+            <footer>
+                Last updated: October 10, 2025
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
