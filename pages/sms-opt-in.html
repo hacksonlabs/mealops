@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MealOps — SMS Opt-In</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #1f2933;
+            line-height: 1.6;
+        }
+
+        main {
+            padding: clamp(1.5rem, 2vw + 1rem, 3rem);
+            display: flex;
+            justify-content: center;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 720px;
+            background-color: #ffffff;
+            padding: clamp(1.75rem, 3vw + 1.25rem, 3.25rem);
+            border-radius: 18px;
+            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 1.25rem;
+            font-size: clamp(1.9rem, 4vw, 2.6rem);
+            text-align: center;
+            color: #0f172a;
+        }
+
+        p {
+            margin: 0 0 1rem;
+        }
+
+        form {
+            margin-top: 1.5rem;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.35rem;
+        }
+
+        .field-note {
+            margin: 0.35rem 0 0;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            border: 1px solid #d6dee6;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
+            border-color: #0ea5e9;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
+            outline: none;
+        }
+
+        .checkbox-control {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            background-color: #f8fafc;
+            padding: 1rem 1.1rem;
+            border: 1px solid #d6dee6;
+            border-radius: 12px;
+        }
+
+        .checkbox-control input[type="checkbox"] {
+            margin-top: 0.2rem;
+        }
+
+        .checkbox-control label {
+            margin: 0;
+            font-weight: 500;
+            color: #1f2933;
+        }
+
+        button[type="submit"] {
+            padding: 0.95rem 1.5rem;
+            background-color: #0ea5e9;
+            color: #ffffff;
+            border: none;
+            border-radius: 999px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button[type="submit"]:hover,
+        button[type="submit"]:focus {
+            background-color: #0c8acc;
+            box-shadow: 0 12px 24px rgba(14, 165, 233, 0.25);
+            outline: none;
+        }
+
+        .form-success {
+            margin-top: 1.25rem;
+            padding: 1rem 1.25rem;
+            background-color: #ecfdf5;
+            border: 1px solid #047857;
+            border-radius: 12px;
+            color: #065f46;
+            font-weight: 600;
+        }
+
+        .disclosure {
+            margin-top: 1rem;
+            padding: 1rem 1.25rem;
+            background-color: #eef2f7;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 12px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .disclosure strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: #0f172a;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        a {
+            color: #0f766e;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 1.5rem;
+                border-radius: 16px;
+                box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+            }
+
+            .checkbox-control {
+                flex-direction: column;
+            }
+
+            .checkbox-control input[type="checkbox"] {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="content">
+            <h1>Opt In to MealOps SMS Updates</h1>
+            <p>Complete the form below to receive MealOps ordering reminders and meal updates by text message.</p>
+
+            <form id="sms-opt-in-form" action="#" method="post" aria-describedby="sms-disclosure">
+                <div>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="fullName" autocomplete="name" required />
+                </div>
+
+                <div>
+                    <label for="phone-number">Mobile Phone Number</label>
+                    <input type="tel" id="phone-number" name="phoneNumber" inputmode="tel" autocomplete="tel" pattern="\(?\d{3}\)?(?: |-|\.)?\d{3}(?: |-|\.)?\d{4}" placeholder="e.g., (555) 123-4567" required />
+                    <p class="field-note">U.S. mobile numbers only.</p>
+                </div>
+
+                <div class="checkbox-control">
+                    <input type="checkbox" id="sms-consent" name="smsConsent" value="yes" />
+                    <label for="sms-consent">I agree to receive MealOps SMS reminders and updates at the provided number.</label>
+                </div>
+
+                <button type="submit">Submit Consent</button>
+            </form>
+
+            <div class="form-success" id="form-success" role="status" aria-live="polite" hidden tabindex="-1">
+                Consent received! Redirecting to the homepage…
+            </div>
+
+            <div class="disclosure" id="sms-disclosure">
+                <strong>Program Disclosures</strong>
+                <p>By submitting, you authorize MealOps to send transactional text messages related to team meal ordering and updates. Message frequency varies; expect 0–8 messages per week in season. Program currently supports U.S. mobile numbers only.</p>
+                <p>Reply STOP to opt out, START to resume, and HELP for assistance. Message and data rates may apply. Support is available at <a href="mailto:support@coachimhungry.com">support@coachimhungry.com</a>.</p>
+            </div>
+
+            <footer>
+                Last updated: October 10, 2025
+            </footer>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('sms-opt-in-form');
+            const successMessage = document.getElementById('form-success');
+
+            if (!form || !successMessage) {
+                return;
+            }
+
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                form.querySelectorAll('input, button').forEach(function (element) {
+                    element.disabled = true;
+                });
+
+                successMessage.hidden = false;
+                successMessage.focus();
+
+                setTimeout(function () {
+                    window.location.href = '../index.html';
+                }, 2500);
+            });
+        });
+    </script>
+</body>
+</html>
