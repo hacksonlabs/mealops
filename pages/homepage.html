@@ -3,376 +3,529 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MealOps - Taking Meal Logistics Off Your Plate</title>
+    <title>Mealops</title>
+    <meta
+        name="description"
+        content="Mealops builds CoachImHungry and Phantom, connecting meal demand to restaurant ordering infrastructure."
+    />
     <link rel="stylesheet" href="../css/main.css" />
-    <meta name="description" content="B2B SaaS marketplace platform that transforms chaotic group ordering into streamlined operations while creating new revenue opportunities for delivery services." />
-<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fmealopspl2367back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.5"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --brand-green: #2BAE66;
+            --brand-green-dark: #137547;
+            --brand-green-soft: #E9F9F0;
+            --brand-ink: #153426;
+            --brand-muted: #627d70;
+            --brand-line: rgba(19, 117, 71, 0.14);
+            --brand-surface: rgba(255, 255, 255, 0.92);
+            --brand-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--brand-ink);
+            background:
+                radial-gradient(circle at top left, rgba(43, 174, 102, 0.16), transparent 26%),
+                radial-gradient(circle at 90% 10%, rgba(19, 117, 71, 0.10), transparent 24%),
+                radial-gradient(circle at 50% 58%, rgba(19, 117, 71, 0.06), transparent 34%),
+                linear-gradient(180deg, #f9fefa 0%, #f2faf5 54%, #eef8f2 100%);
+        }
+
+        h1, h2, h3, p {
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(19, 117, 71, 0.08);
+        }
+
+        .shell {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        .nav-row,
+        .hero-grid,
+        .story-grid,
+        .system-grid,
+        .footer-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .nav-row {
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            justify-self: end;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .nav-link {
+            padding: 0.6rem 0.95rem;
+            border-radius: 999px;
+            color: var(--brand-green-dark);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            background: var(--brand-green-soft);
+        }
+
+        .section {
+            padding: 4.75rem 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .hero-grid {
+            align-items: end;
+        }
+
+        .hero-copy {
+            padding: 0;
+            max-width: 44rem;
+        }
+
+        .hero-title,
+        .section-title {
+            letter-spacing: -0.05em;
+            line-height: 0.96;
+            font-weight: 800;
+        }
+
+        .hero-title {
+            max-width: 9ch;
+            margin-top: 1rem;
+            font-size: clamp(3.3rem, 7vw, 5.8rem);
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+        }
+
+        .lead {
+            max-width: 34rem;
+            margin-top: 1.15rem;
+            color: var(--brand-muted);
+            font-size: 1rem;
+            line-height: 1.72;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        .button-primary,
+        .button-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.95rem 1.35rem;
+            border-radius: 999px;
+            font-weight: 800;
+        }
+
+        .button-primary {
+            background: var(--brand-green);
+            color: white;
+            box-shadow: 0 18px 38px rgba(43, 174, 102, 0.18);
+        }
+
+        .button-secondary {
+            background: white;
+            color: var(--brand-green-dark);
+            border: 1px solid var(--brand-line);
+        }
+
+        .hero-stack {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .hero-card,
+        .story-card,
+        .system-panel,
+        .cta-panel {
+            border: 1px solid var(--brand-line);
+            border-radius: 1.75rem;
+            background: var(--brand-surface);
+            box-shadow: var(--brand-shadow);
+        }
+
+        .hero-card,
+        .story-card,
+        .system-panel,
+        .cta-panel {
+            padding: 1.5rem;
+        }
+
+        .hero-card-dark {
+            background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%);
+            color: white;
+        }
+
+        .hero-metric {
+            font-size: 3.2rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .kicker {
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .story-grid {
+            margin-top: 2rem;
+        }
+
+        .story-card h3,
+        .system-panel h3 {
+            font-size: 1.35rem;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+        }
+
+        .muted {
+            color: var(--brand-muted);
+            line-height: 1.75;
+        }
+
+        .story-accent {
+            height: 4px;
+            width: 3.5rem;
+            margin-bottom: 1.1rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, var(--brand-green), #7ed9a3);
+        }
+
+        .system-grid {
+            align-items: stretch;
+        }
+
+        .system-panel-main {
+            background: linear-gradient(145deg, #103a27 0%, #137547 100%);
+            color: white;
+        }
+
+        .system-panel-main .muted {
+            color: rgba(255, 255, 255, 0.76);
+        }
+
+        .system-panel-main .section-title {
+            color: white;
+        }
+
+        .step-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .step {
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .step strong {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 1rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            gap: 0.8rem;
+            margin: 1rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .benefit-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            color: var(--brand-muted);
+            line-height: 1.7;
+        }
+
+        .benefit-list li::before {
+            content: "";
+            position: absolute;
+            top: 0.7rem;
+            left: 0;
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: var(--brand-green);
+        }
+
+        .cta-panel {
+            display: grid;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cta-title {
+            font-size: clamp(1.9rem, 3vw, 3rem);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 819px) {
+            .cta-title {
+                white-space: normal;
+            }
+        }
+
+        .footer {
+            background: var(--brand-green-dark);
+            color: rgba(255, 255, 255, 0.84);
+            padding: 3rem 0;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 0.9rem;
+        }
+
+        .footer-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.64);
+        }
+
+        @media (min-width: 820px) {
+            .hero-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+
+            .story-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .system-grid {
+                grid-template-columns: 1.05fr 0.95fr;
+            }
+
+            .cta-panel {
+                grid-template-columns: 1fr auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1.2fr 0.8fr 0.8fr;
+            }
+        }
+    </style>
 </head>
-<body class="bg-background text-text-primary">
-    <nav class="bg-white border-b border-border sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="homepage.html" class="flex items-center space-x-2">
-                        <img src="../images/meal.png" alt="MealOps Logo" class="h-12 max-h-16 w-auto object-contain"
-                            href="homepage.html" />
-                    </a>
+<body>
+    <nav class="site-nav">
+        <div class="shell">
+            <div class="nav-row">
+                <a href="./homepage.html">
+                    <img src="../images/meal.png" alt="Mealops logo" class="h-12 w-auto object-contain" />
+                </a>
+                <div class="nav-links">
+                    <a href="./homepage.html" class="nav-link active">Company</a>
+                    <a href="./athleticPrograms.html" class="nav-link">CoachImHungry</a>
+                    <a href="./companies.html" class="nav-link">Phantom</a>
+                    <a href="./contactUs.html" class="nav-link">Contact</a>
                 </div>
-    
-                <!-- Desktop Navigation -->
-                <div class="navigation-container md:inline-flex">
-                    <div class="dropdown-wrapper">
-                        <a href="./athleticPrograms.html" class="nav-item">Athletic Programs</a>
-                        <div class="dropdown-content">
-                            <a href="./athleticPrograms.html#why-mealops" class="dropdown-scroll-link">Why MealOps?</a>
-                            <a href="./athleticPrograms.html#connect-with-us" class="dropdown-scroll-link">Connect With Us</a>
-                        </div>
-                    </div>
-    
-                    <div class="dropdown-wrapper">
-                        <a href="./companies.html" class="nav-item">Third-Party Companies</a>
-                        <div class="dropdown-content">
-                            <a href="./companies.html#partner-overview" class="dropdown-scroll-link" >Partner Overview</a>
-                            <a href="./companies.html#integrate-with-us" class="dropdown-scroll-link" >Integrate With Us</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Mobile Menu Button -->
-                <!-- <div class="md:hidden">
-                            <button class="text-text-primary hover:text-primary">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                                </svg>
-                            </button>
-                        </div> -->
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Role Detection -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-white overflow-hidden">
-        <!-- Background Video Container -->
-        <div class="absolute inset-0 z-0">
-            <img src="../images/food.png" class="w-full h-full object-cover absolute"/>
-            <div class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
-        </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-32">
-            <div class="text-center">
-                <!-- Main Hero Content -->
-                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
-                    Taking Meal Logistics <br><span class="text-gradient">Off Your Plate</span>
-                </h1>
-                <br>
-                <p class="font-bold text-white text-xl mb-8 max-w-3xl mx-auto leading-relaxed .text-shadow-strong">
-                    MealOps makes team meals easy. We take the chaos out of group orders so your staff can focus on what matters—while
-                    keeping our food partners busy with steady, high-volume orders.
-                </p>
-
-                <!-- CTA with form -->
-                <br>
-                <!-- <p class="font-bold text-white text-sm mb-4 .text-shadow-strong">
-                    Which best describes you? Tell us who you are — we'll take it from there.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 w-full max-w-2xl mx-auto">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuNzlp4TNYDcRXYE61g2YIAqkIJpVBh5pxN5coUSAt69IlRw/viewform?usp=sharing&ouid=100340340297824841757" target="_blank" rel="noopener noreferrer"
-                        class="flex-1 bg-primary-50-color border-2 border-primary text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary hover:text-white transition-smooth text-center">
-                        <span class="flex items-center justify-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 17h6M9 13h6M5 7h14M9 3h6a2 2 0 012 2v1H7V5a2 2 0 012-2zM5 7v12a2 2 0 002 2h10a2 2 0 002-2V7H5z" />
-                            </svg>
-                            Team Meal Coordinator
-                        </span>
-                    </a>
-
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOqAyHzEWbpmitdq_lWI3TP97cARMi7V7P0d_HNBV_c-lagw/viewform?usp=sharing&ouid=100340340297824841757" target="_blank" rel="noopener noreferrer"
-                        class="flex-1 bg-secondary-50-color border-2 border-secondary text-secondary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary hover:text-white transition-smooth text-center">
-                        <span class="flex items-center justify-center">
-                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
-                            Third-Party Company
-                        </span>
-                    </a> -->
-                </div>
-
-
-                <!-- Metrics Bar -->
-                <!-- <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-elevated max-w-4xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                        <div>
-                            <div class="text-3xl font-bold text-primary mb-2">500K+</div>
-                            <div class="text-text-secondary">Meals Coordinated</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-secondary mb-2">200+</div>
-                            <div class="text-text-secondary">Teams Served</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold text-accent mb-2">50+</div>
-                            <div class="text-text-secondary">Delivery Partners</div>
+    <main>
+        <section class="section">
+            <div class="shell">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <h1 class="hero-title">Food ordering infrastructure, built end to end.</h1>
+                        <p class="lead">
+                            Powering the shift to agent-driven ordering—turning emerging demand into real, executable orders.
+                        </p>
+                        <div class="actions">
+                            <a href="./contactUs.html" class="button-primary">Talk to Mealops</a>
+                            <a href="./companies.html" class="button-secondary">Explore Phantom</a>
                         </div>
                     </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
-                    Built by People Who’ve Lived the Chaos
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    The playbook that turns meal chaos into repeatable wins
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Game Plan -->
-                <div class="card-elevated text-center group hover:shadow-elevated transition-smooth">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-200 transition-smooth">
-                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Game Plan</h3>
-                    <p class="text-text-secondary leading-relaxed">
-                        Set once, repeat easily — no more messy spreadsheets or group chat overload.
-                    </p>
-                </div>
-
-                <!-- Execution -->
-                <div class="card-elevated text-center group hover:shadow-elevated transition-smooth">
-                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary-200 transition-smooth">
-                        <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Execution</h3>
-                    <p class="text-text-secondary leading-relaxed">
-                        From kickoff to delivery, meals run like clockwork — orders placed, partners synced, updates flowing.
-                    </p>
-                </div>
-
-                <!-- Victory -->
-                <div class="card-elevated text-center group hover:shadow-elevated transition-smooth">
-                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent-200 transition-smooth">
-                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Victory</h3>
-                    <p class="text-text-secondary leading-relaxed">
-                        Victory tastes better with wins you can measure — time saved, costs cut, and teams fed happy.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Innovation Vision Section -->
-    <section class="py-20 bg-surface future-vision">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 future-vision__wrap">
-            <header class="future-header text-center">
-                <span class="future-tag">Vision 2026</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-primary">One Agent, Running the Whole Playbook</h2>
-                <p class="text-xl text-text-secondary">MO is an adaptive agent, shifting roles to draft, schedule, and resolve every meal touchpoint.</p>
-            </header>
-
-            <div class="future-agentlist">
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">🧾</span>
-                    <div>
-                        <h3>Template Agent</h3>
-                        <p>Turns saved meals into placed orders in under a minute.</p>
-                    </div>
-                </article>
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">🛫</span>
-                    <div>
-                        <h3>Travel Agent</h3>
-                        <p>Builds meal itineraries that match travel days, venues, and arrival windows.</p>
-                    </div>
-                </article>
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">🔁</span>
-                    <div>
-                        <h3>Scheduler Agent</h3>
-                        <p>Auto-launches recurring meals, removing the hassle of repeat scheduling.</p>
-                    </div>
-                </article>
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">🤖</span>
-                    <div>
-                        <h3>Scout Agent</h3>
-                        <p>Finds the right restaurants with AI search tuned to cuisine, nutrition, and timing.</p>
-                    </div>
-                </article>
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">⚖️</span>
-                    <div>
-                        <h3>Resolver Agent</h3>
-                        <p>Handles schedule collisions by shifting venues, couriers, or time slots automatically.</p>
-                    </div>
-                </article>
-                <article class="future-agentlist__item">
-                    <span class="future-agentlist__icon">🛰️</span>
-                    <div>
-                        <h3>Tracker Agent</h3>
-                        <p>Monitors live orders, courier progress, and delivery windows - alerting staff when edits are needed.</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="future-voice">
-                <div class="future-voice__bubble">
-                    <span class="future-voice__icon">🎙️</span>
-                    <p>Hey MO, place the Olive Garden template for Friday at 6pm, and add it to the Vegas itinerary.”</p>
-                </div>
-            </div>
-
-            <div class="future-cta text-center">
-                <a class="future-cta__button" href="https://docs.google.com/forms/d/e/1FAIpQLSfuNzlp4TNYDcRXYE61g2YIAqkIJpVBh5pxN5coUSAt69IlRw/viewform?usp=sharing&ouid=100340340297824841757" target="_blank" rel="noopener noreferrer">Join the early build crew</a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Social Proof Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Partner Logos -->
-            <div class="text-center mb-16">
-                <h2 class="text-2xl font-semibold text-text-secondary mb-8">
-                    Trusted by Leading Athletic Programs
-                </h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-2 items-center">
-                    <div class="flex items-center justify-center">
-                        <img src="../images/school_logos/ucsb2.png" alt="UCSB University Logo" class="h-18 w-auto hover:grayscale transition-smooth" />
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <img src="../images/school_logos/ucsd2.png" alt="UCSD University Logo" class="h-18 w-auto hover:grayscale transition-smooth" />
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <img src="../images/school_logos/USD2.png" alt="USD University Logo" class="h-18 w-auto hover:grayscale transition-smooth" />
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rotating Testimonial -->
-            <div class="max-w-4xl mx-auto">
-                <div class="card-elevated text-center">
-                    <div class="mb-6">
-                        <svg class="w-12 h-12 text-primary mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
-                        </svg>
-                    </div>
-                    <blockquote class="text-xl text-text-primary mb-6 leading-relaxed">
-                        "Before MealOps, coordinating meals for our 20+ person team was chaotic and incredibly stressful. The
-                        idea of having a platform built specifically for team meal logistics is a game-changer. I haven't seen a tool built specifically for meal coordination in sports—until now. 
-                        I’m excited there's finally a platform designed to meet our real needs. It has the potential to save hours of my time and significantly cut costs."
-                    </blockquote>
-                    <div class="flex items-center justify-center space-x-4">
-                        <a href="https://ucsdtritons.com/sports/womens-basketball/roster/coaches/miranda-seto-15/1923" target="_blank"
-                            rel="noopener noreferrer">
-                            <img src="../images/mir.png" class="h-12 w-auto rounded" />
-                        </a>
-                        <div class="text-left">
-                            <div class="font-semibold text-primary">Miranda Seto</div>
-                            <div class="text-sm text-text-secondary">Director of Operations, UC San Diego WBB</div>
+                    <div class="hero-stack">
+                        <div class="hero-card hero-card-dark">
+                            <div class="kicker">Demand layer</div>
+                            <div class="hero-metric">01</div>
+                            <p>CoachImHungry brings in recurring meal demand from athletic teams and coordinators.</p>
+                        </div>
+                        <div class="hero-card">
+                            <div class="kicker" style="color: var(--brand-green-dark);">Execution layer</div>
+                            <div class="hero-metric" style="color: var(--brand-green-dark);">02</div>
+                            <p class="muted">Phantom connects that demand to restaurant systems through AI-native ordering infrastructure.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Final CTA Section -->
-    <!-- <section class="py-20 bg-gradient-to-r from-primary to-primary-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Transform Your Team Meal Operations?
-            </h2>
-            <p class="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-                Join hundreds of teams who've already streamlined their meal logistics with MealOps
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-smooth">
-                    Start Free Trial
-                </button>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-smooth">
-                    Schedule Demo
-                </button>
+        <section class="section" style="padding-top: 1rem;">
+            <div class="shell">
+                <span class="eyebrow">Products</span>
+                <h2 class="section-title">Two products, one clearer system.</h2>
+                <div class="story-grid">
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>CoachImHungry</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">A simpler ordering workflow for athletic teams, coordinators, and repeat meal logistics.</p>
+                    </article>
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>Phantom</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">The infrastructure layer for discovery, coordination, and POS-connected execution.</p>
+                    </article>
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>Why it works</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">Mealops owns both agentic order volume and the system that fulfills it.</p>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section> -->
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <img src="../images/logo_white.png" alt="MealOps Logo" class="h-12 max-h-16 w-auto object-contain" href="homepage.html" />
+        <section class="section">
+            <div class="shell">
+                <div class="system-grid">
+                    <div class="system-panel system-panel-main">
+                        <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">How it connects</span>
+                        <h2 class="section-title" style="margin-top: 1rem;">Demand in.<br><span style="display: inline-block; padding-left: 3rem;">Orders out.</span></h2>
+                        <div class="step-list">
+                            <div class="step">
+                                <strong>CoachImHungry creates order intent.</strong>
+                                <p class="muted">Structured demand starts with real users and recurring meal needs.</p>
+                            </div>
+                            <div class="step">
+                                <strong>Phantom coordinates the workflow.</strong>
+                                <p class="muted">Agents, restaurants, and constraints align before placement.</p>
+                            </div>
+                            <div class="step">
+                                <strong>Restaurant systems receive the order.</strong>
+                                <p class="muted">Orders flow into restaurant operations through existing POS systems.</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class=" mb-6 max-w-md">
-                        MealOps makes team meals easy. We take the chaos out of group orders so your staff can focus on what matters—while
-                        keeping our food partners busy with steady, high-volume orders.
+                    <div class="system-panel">
+                        <span class="eyebrow">Why restaurants care</span>
+                        <h3 style="margin-top: 1rem;">A cleaner path to higher-volume ordering.</h3>
+                        <ul class="benefit-list">
+                            <li>Predictable, incremental revenue from recurring group orders</li>
+                            <li>Access to high-value demand in collegiate athletics</li>
+                            <li>Active participation in agent-driven commerce</li>
+                            <li>Full control — only approved agents can place orders</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="./contactUs.html" class="button-primary">Start a conversation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="shell">
+                <div class="cta-panel">
+                    <div>
+                        <span class="eyebrow">Next step</span>
+                        <h2 class="section-title cta-title" style="margin-top: 1rem;">Need demand, infrastructure, or both?</h2>
+                    </div>
+                    <a href="./contactUs.html" class="button-primary">Contact Mealops</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div>
+                    <img src="../images/logo_white.png" alt="Mealops logo" class="h-11 w-auto object-contain" />
+                    <p style="margin-top: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7;">
+                        MealOps is redefining meal ordering logistics—from CoachImHungry&apos;s team workflows to Phantom&apos;s agentic ordering infrastructure.
                     </p>
-                    <div class="flex space-x-4">
-                        <!-- <a href="javascript:void(0)" class="hover:text-white transition-smooth">
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer" aria-label="Mealops LinkedIn">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a> -->
-                        <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-white transition-smooth">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
                 <div>
-                    <h3 class="font-semibold mb-4">Solutions</h3>
-                    <ul class="space-y-2">
-                        <li><a href="./athleticPrograms.html" class="hover:text-white transition-smooth">Athletic Programs</a></li>
-                        <li><a href="./companies.html" class="hover:text-white transition-smooth">Delivery Partners</a></li>
-                        <!-- <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">API Integration</a></li> -->
-                    </ul>
+                    <div class="footer-title">Products</div>
+                    <div class="footer-list">
+                        <a href="./athleticPrograms.html">CoachImHungry</a>
+                        <a href="./companies.html">Phantom</a>
+                    </div>
                 </div>
-
-                <!-- Support -->
                 <div>
-                    <h3 class="font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2">
-                        <!-- <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Help Center</a></li>
-                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Documentation</a></li>
-                        <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Community</a></li> -->
-                        <li><a href="./contactUs.html" class="hover:text-white transition-smooth">Contact Us</a></li>
-                        <li><a href="./PrivacyPolicy.html" class="hover:text-white transition-smooth">Privacy Policy</a></li>
-                        <li><a href="./TermsAndConditions.html" class="hover:text-white transition-smooth">Terms & Conditions</a></li>
-                        <!-- <li><a href="./ClientTermsAndConditions.html" class="hover:text-white transition-smooth">Client Terms & Conditions</a></li> -->
-                    </ul>
+                    <div class="footer-title">Company</div>
+                    <div class="footer-list">
+                        <a href="./PrivacyPolicy.html">Privacy Policy</a>
+                        <a href="./contactUs.html">Contact</a>
+                    </div>
                 </div>
             </div>
-
-            <div class="border-t border-primary-800 mt-12 pt-8 text-center">
-                <p>&copy; 2025 MealOps. All Rights Reserved.</p>
-            </div>
+            <div class="footer-note">&copy; 2026 Mealops. All rights reserved.</div>
         </div>
     </footer>
-<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
 </body>
 </html>

@@ -1,177 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Mealops</title>
+    <meta
+        name="description"
+        content="Contact Mealops about CoachImHungry, Phantom, restaurant integrations, or partnerships."
+    />
     <link rel="stylesheet" href="../css/main.css" />
-    <title>Athletic Programs – MealOps</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --brand-green: #2BAE66;
+            --brand-green-dark: #137547;
+            --brand-green-soft: #E9F9F0;
+            --brand-ink: #153426;
+            --brand-muted: #627d70;
+            --brand-line: rgba(19, 117, 71, 0.14);
+            --brand-surface: rgba(255, 255, 255, 0.92);
+            --brand-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--brand-ink);
+            background:
+                radial-gradient(circle at top left, rgba(43, 174, 102, 0.16), transparent 24%),
+                radial-gradient(circle at 88% 14%, rgba(19, 117, 71, 0.08), transparent 24%),
+                radial-gradient(circle at 50% 62%, rgba(19, 117, 71, 0.06), transparent 34%),
+                linear-gradient(180deg, #f9fefa 0%, #f2faf5 54%, #eef8f2 100%);
+        }
+        h1, h2, p { margin: 0; }
+        a { color: inherit; text-decoration: none; }
+        .site-nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(19,117,71,0.08);
+        }
+        .shell { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+        .nav-row, .split-grid, .footer-grid {
+            display: grid; gap: 1.25rem;
+        }
+        .nav-row { grid-template-columns: auto 1fr; align-items: center; padding: 1rem 0; }
+        .nav-links { justify-self: end; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .nav-link {
+            padding: 0.6rem 0.95rem; border-radius: 999px; color: var(--brand-green-dark);
+            font-size: 0.95rem; font-weight: 700;
+        }
+        .nav-link.active, .nav-link:hover { background: var(--brand-green-soft); }
+        .section { padding: 4.75rem 0; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 0.45rem;
+            padding: 0.45rem 0.8rem; border-radius: 999px; background: var(--brand-green-soft);
+            color: var(--brand-green-dark); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+        }
+        .section-title {
+            margin-top: 1rem; font-size: clamp(3rem, 6vw, 5rem); letter-spacing: -0.05em; line-height: 0.96; font-weight: 800;
+        }
+        .lead, .muted { color: var(--brand-muted); line-height: 1.8; }
+        .lead { margin-top: 1.25rem; font-size: 1.06rem; max-width: 34rem; }
+        .panel {
+            border: 1px solid var(--brand-line); border-radius: 1.75rem; background: var(--brand-surface); box-shadow: var(--brand-shadow);
+            padding: 1.5rem;
+        }
+        .field {
+            width: 100%; padding: 0.95rem 1rem; border-radius: 1rem; border: 1px solid var(--brand-line);
+            background: white; font: inherit; color: var(--brand-ink);
+        }
+        .form-grid { display: grid; gap: 1rem; }
+        .button-primary {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.95rem 1.35rem; border-radius: 999px; border: 0; background: var(--brand-green);
+            color: white; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 18px 38px rgba(43,174,102,0.18);
+        }
+        .footer {
+            background: var(--brand-green-dark); color: rgba(255,255,255,0.84); padding: 3rem 0;
+        }
+        .footer-title { color: white; font-size: 1rem; font-weight: 800; margin-bottom: 0.9rem; }
+        .footer-list { display: grid; gap: 0.75rem; }
+        .footer-note {
+            margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.92rem; color: rgba(255,255,255,0.64);
+        }
+
+        @media (min-width: 820px) {
+            .split-grid { grid-template-columns: 0.88fr 1.12fr; align-items: start; }
+            .name-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+            .footer-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
+        }
+    </style>
 </head>
-
-<body class="font-sans bg-white text-gray-800">
-    <nav class="bg-white border-b border-border sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="homepage.html" class="flex items-center space-x-2">
-                        <img src="../images/meal.png" alt="MealOps Logo" class="h-12 max-h-16 w-auto object-contain"
-                            href="homepage.html" />
-                    </a>
+<body>
+    <nav class="site-nav">
+        <div class="shell">
+            <div class="nav-row">
+                <a href="./homepage.html">
+                    <img src="../images/meal.png" alt="Mealops logo" class="h-12 w-auto object-contain" />
+                </a>
+                <div class="nav-links">
+                    <a href="./homepage.html" class="nav-link">Company</a>
+                    <a href="./athleticPrograms.html" class="nav-link">CoachImHungry</a>
+                    <a href="./companies.html" class="nav-link">Phantom</a>
+                    <a href="./contactUs.html" class="nav-link active">Contact</a>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <div class="navigation-container md:inline-flex hidden">
-                    <div class="dropdown-wrapper">
-                        <a href="./athleticPrograms.html" class="nav-item">Athletic Programs</a>
-                        <div class="dropdown-content">
-                            <a href="./athleticPrograms.html#why-mealops" class="dropdown-scroll-link">Why MealOps?</a>
-                            <a href="./athleticPrograms.html#connect-with-us" class="dropdown-scroll-link">Connect With Us</a>
-                        </div>
-                    </div>
-
-                    <div class="dropdown-wrapper">
-                        <a href="./companies.html" class="nav-item">Third-Party Companies</a>
-                        <div class="dropdown-content">
-                            <a href="./companies.html#partner-overview" class="dropdown-scroll-link">Partner Overview</a>
-                            <a href="./companies.html#integrate-with-us" class="dropdown-scroll-link">Integrate With Us</a>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!-- Mobile Menu Button -->
-                <!-- <div class="md:hidden">
-                        <button class="text-text-primary hover:text-primary">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                            </svg>
-                        </button>
-                    </div> -->
             </div>
         </div>
     </nav>
-    <main class="py-16 px-4 sm:px-6 lg:px-8 bg-primary-50-color">
-        <div class="max-w-3xl mx-auto bg-white p-8 sm:p-10 rounded-lg shadow-lg">
-            <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-6 text-gray-900">Get In Touch</h1>
-            <p class="text-lg text-center text-gray-600 mb-10">
-                Have questions, feedback, or just want to chat? We'd love to hear from you. <br>Fill out the form below and
-                we'll get back to you as soon as possible.
-            </p>
-`       
-            <form action="https://formsubmit.co/a0e415cc263004ea9d164090f8ec5174" method="POST" class="space-y-6">
-                <input type="text" name="_honey" style="display:none">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://www.mealops.info/pages/thankYou.html">
-                <!-- <input type="hidden" name="_next" value="http://localhost:8000/pages/thankYou.html"> -->
-            
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" required
-                            class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
-                            placeholder="John">
-                    </div>
-                    <div>
-                        <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" required
-                            class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
-                            placeholder="Doe">
-                    </div>
-                </div>
-            
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required
-                        class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
-                        placeholder="you@example.com">
-                </div>
-            
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                    <textarea id="message" name="message" rows="5" required
-                        class="block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary sm:text-sm placeholder-gray-400"
-                        placeholder="Tell us about your inquiry..."></textarea>
-                </div>
-            
-                <div class="text-center">
-                    <button type="submit"
-                        class="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-200">
-                        Send Message
-                    </button>
-                </div>
-            </form>
+
+    <main class="section">
+        <div class="shell">
+            <div class="split-grid">
+                <section class="panel">
+                    <span class="eyebrow">Contact</span>
+                    <h1 class="section-title">Let’s build from here.</h1>
+                    <p class="lead">
+                        CoachImHungry, Phantom, integrations, partnerships.<br>Specify the product and your use case.
+                    </p>
+                </section>
+
+                <section class="panel">
+                    <form action="https://formsubmit.co/a0e415cc263004ea9d164090f8ec5174" method="POST" class="form-grid">
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://www.mealops.info/pages/thankYou.html">
+
+                        <div class="name-grid">
+                            <div>
+                                <label for="first-name" class="block text-sm font-semibold text-primary mb-2">First name</label>
+                                <input id="first-name" name="first-name" type="text" autocomplete="given-name" required class="field" />
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-semibold text-primary mb-2">Last name</label>
+                                <input id="last-name" name="last-name" type="text" autocomplete="family-name" required class="field" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-primary mb-2">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required class="field" />
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-primary mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="field" placeholder="Tell us what you're interested in."></textarea>
+                        </div>
+
+                        <button type="submit" class="button-primary">Send message</button>
+                    </form>
+                </section>
+            </div>
         </div>
     </main>
-    
-    <!-- Footer -->
-    <footer class="bg-primary text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <img src="../images/logo_white.png" alt="MealOps Logo" class="h-12 max-h-16 w-auto object-contain"
-                            href="homepage.html" />
-                    </div>
-                    <p class=" mb-6 max-w-md">
-                        MealOps makes team meals easy. We take the chaos out of group orders so your staff can focus on what
-                        matters—while
-                        keeping our food partners busy with steady, high-volume orders.
+
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div>
+                    <img src="../images/logo_white.png" alt="Mealops logo" class="h-11 w-auto object-contain" />
+                    <p style="margin-top: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7;">
+                        MealOps is redefining meal ordering logistics—from CoachImHungry&apos;s team workflows to Phantom&apos;s agentic ordering infrastructure.
                     </p>
-                    <div class="flex space-x-4">
-                        <!-- <a href="javascript:void(0)" class="hover:text-white transition-smooth">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                                </svg>
-                            </a> -->
-                        <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer"
-                            class="hover:text-white transition-smooth">
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer" aria-label="Mealops LinkedIn">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
-    
-                <!-- Quick Links -->
                 <div>
-                    <h3 class="font-semibold mb-4">Solutions</h3>
-                    <ul class="space-y-2">
-                        <li><a href="./athleticPrograms.html" class="hover:text-white transition-smooth">Athletic
-                                Programs</a></li>
-                        <li><a href="./companies.html" class="hover:text-white transition-smooth">Delivery Partners</a></li>
-                        <!-- <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">API Integration</a></li> -->
-                    </ul>
+                    <div class="footer-title">Products</div>
+                    <div class="footer-list">
+                        <a href="./athleticPrograms.html">CoachImHungry</a>
+                        <a href="./companies.html">Phantom</a>
+                    </div>
                 </div>
-    
-                <!-- Support -->
                 <div>
-                    <h3 class="font-semibold mb-4">Support</h3>
-                    <ul class="space-y-2">
-                        <!-- <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Help Center</a></li>
-                            <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Documentation</a></li>
-                            <li><a href="javascript:void(0)" class="hover:text-white transition-smooth">Community</a></li> -->
-                        <li><a href="./contactUs.html" class="hover:text-white transition-smooth">Contact Us</a></li>
-                        <li><a href="./PrivacyPolicy.html" class="hover:text-white transition-smooth">Privacy Policy</a></li>
-                        <li><a href="./TermsAndConditions.html" class="hover:text-white transition-smooth">Terms &
-                                Conditions</a></li>
-                        <!-- <li><a href="./ClientTermsAndConditions.html" class="hover:text-white transition-smooth">Client Terms
-                                & Conditions</a></li> -->
-                    </ul>
+                    <div class="footer-title">Company</div>
+                    <div class="footer-list">
+                        <a href="./PrivacyPolicy.html">Privacy Policy</a>
+                        <a href="./contactUs.html">Contact</a>
+                    </div>
                 </div>
             </div>
-    
-            <div class="border-t border-primary-800 mt-12 pt-8 text-center">
-                <p>&copy; 2025 MealOps. All Rights Reserved.</p>
-            </div>
+            <div class="footer-note">&copy; 2026 Mealops. All rights reserved.</div>
         </div>
     </footer>
-    
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
-    
-    </body>
-
+</body>
+</html>
