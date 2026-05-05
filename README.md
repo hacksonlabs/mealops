@@ -24,12 +24,21 @@ npm install
 yarn install
 ```
 
-2. Start the development server:
+2. Start Tailwind in watch mode:
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+
+3. Preview the website with clean URLs:
+```bash
+npm run preview
+```
+
+Then open `http://localhost:4173/`.
+
+Important: folder-based URLs like `/phantom/` and `/coachimhungry/` require a local web server. If you open the repo directly from the filesystem, your browser may show a directory index instead of loading `index.html` automatically.
 
 ## 📁 Project Structure
 
@@ -38,8 +47,14 @@ html_app/
 ├── css/
 │   ├── tailwind.css   # Tailwind source file with custom utilities
 │   └── main.css       # Compiled CSS (generated)
-├── pages/             # HTML pages
-├── index.html         # Main entry point
+├── coachimhungry/     # CoachImHungry route
+├── phantom/           # Phantom route
+├── contact/           # Contact route
+├── privacy-policy/    # Privacy Policy route
+├── terms/             # Terms route
+├── client-terms/      # Client Terms route
+├── thank-you/         # Thank-you route
+├── index.html         # Homepage route
 ├── package.json       # Project dependencies and scripts
 └── tailwind.config.js # Tailwind CSS configuration
 ```

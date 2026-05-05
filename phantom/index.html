@@ -80,6 +80,24 @@
         .panel-dark { background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%); color: white; }
         .panel-dark .muted { color: rgba(255,255,255,0.78); }
         .feature-grid, .split-grid { margin-top: 2rem; }
+        .diagram-shell {
+            max-width: 58rem;
+            margin: 0 auto;
+        }
+        .diagram-frame {
+            padding: 1.25rem;
+            border: 1px solid rgba(19, 117, 71, 0.12);
+            border-radius: 1.75rem;
+            background: rgba(255, 255, 255, 0.76);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+        .diagram-image {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 1.1rem;
+        }
         .feature-intro {
             max-width: 40rem;
         }
@@ -155,14 +173,14 @@
     <nav class="site-nav">
         <div class="shell">
             <div class="nav-row">
-                <a href="./homepage.html">
+                <a href="../">
                     <img src="../images/meal.png" alt="Mealops logo" class="h-12 w-auto object-contain" />
                 </a>
                 <div class="nav-links">
-                    <a href="./homepage.html" class="nav-link">Company</a>
-                    <a href="./athleticPrograms.html" class="nav-link">CoachImHungry</a>
-                    <a href="./companies.html" class="nav-link active">Phantom</a>
-                    <a href="./contactUs.html" class="nav-link">Contact</a>
+                    <a href="../" class="nav-link">Company</a>
+                    <a href="../coachimhungry/" class="nav-link">CoachImHungry</a>
+                    <a href="../phantom/" class="nav-link active">Phantom</a>
+                    <a href="../contact/" class="nav-link">Contact</a>
                 </div>
             </div>
         </div>
@@ -179,7 +197,7 @@
                             Phantom helps agents discover restaurants, coordinate orders, and execute through integrated restaurant systems.
                         </p>
                         <div class="actions">
-                            <a href="./contactUs.html" class="button-primary">Talk about integration</a>
+                            <a href="../contact/" class="button-primary">Talk about integration</a>
                         </div>
                     </div>
                     <div class="panel panel-dark">
@@ -222,6 +240,17 @@
             </div>
         </section>
 
+        <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+            <div class="shell">
+                <div class="diagram-shell">
+                    <span class="eyebrow">Phantom diagram</span>
+                    <div class="diagram-frame" style="margin-top: 1rem;">
+                        <img src="../images/phantom_diagram.png" alt="Phantom infrastructure diagram" class="diagram-image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="shell">
                 <div class="split-grid">
@@ -246,7 +275,7 @@
                         <span class="eyebrow">Next step</span>
                         <h2 class="section-title cta-title" style="margin-top: 1rem;">Need POS integration or restaurant connectivity?</h2>
                     </div>
-                    <a href="./contactUs.html" class="button-primary cta-button">Contact Mealops</a>
+                    <a href="../contact/" class="button-primary cta-button">Contact Mealops</a>
                 </div>
             </div>
         </section>
@@ -271,15 +300,15 @@
                 <div>
                     <div class="footer-title">Products</div>
                     <div class="footer-list">
-                        <a href="./athleticPrograms.html">CoachImHungry</a>
-                        <a href="./companies.html">Phantom</a>
+                        <a href="../coachimhungry/">CoachImHungry</a>
+                        <a href="../phantom/">Phantom</a>
                     </div>
                 </div>
                 <div>
                     <div class="footer-title">Company</div>
                     <div class="footer-list">
-                        <a href="./PrivacyPolicy.html">Privacy Policy</a>
-                        <a href="./contactUs.html">Contact</a>
+                        <a href="../privacy-policy/">Privacy Policy</a>
+                        <a href="../contact/">Contact</a>
                     </div>
                 </div>
             </div>
