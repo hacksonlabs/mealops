@@ -53,7 +53,6 @@ html_app/
 ├── privacy-policy/    # Privacy Policy route
 ├── terms/             # Terms route
 ├── client-terms/      # Client Terms route
-├── thank-you/         # Thank-you route
 ├── index.html         # Homepage route
 ├── package.json       # Project dependencies and scripts
 └── tailwind.config.js # Tailwind CSS configuration

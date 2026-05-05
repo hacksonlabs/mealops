@@ -68,6 +68,31 @@
             border: 1px solid var(--brand-line); border-radius: 1.75rem; background: var(--brand-surface); box-shadow: var(--brand-shadow);
             padding: 1.5rem;
         }
+        .success-panel {
+            display: none;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(43, 174, 102, 0.18);
+            border-radius: 1.25rem;
+            background: rgba(233, 249, 240, 0.9);
+            color: var(--brand-green-dark);
+            padding: 1rem 1.1rem;
+        }
+        .success-panel strong {
+            display: block;
+            font-size: 0.98rem;
+            font-weight: 800;
+        }
+        .success-panel p {
+            margin-top: 0.35rem;
+            color: var(--brand-green-dark);
+            line-height: 1.65;
+        }
+        body.form-submitted .success-panel {
+            display: block;
+        }
+        body.form-submitted .contact-form {
+            display: none;
+        }
         .field {
             width: 100%; padding: 0.95rem 1rem; border-radius: 1rem; border: 1px solid var(--brand-line);
             background: white; font: inherit; color: var(--brand-ink);
@@ -77,6 +102,10 @@
             display: inline-flex; align-items: center; justify-content: center;
             padding: 0.95rem 1.35rem; border-radius: 999px; border: 0; background: var(--brand-green);
             color: white; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 18px 38px rgba(43,174,102,0.18);
+        }
+        .button-primary[disabled] {
+            opacity: 0.8;
+            cursor: wait;
         }
         .footer {
             background: var(--brand-green-dark); color: rgba(255,255,255,0.84); padding: 3rem 0;
@@ -112,7 +141,7 @@
         </div>
     </nav>
 
-    <main class="section">
+    <main class="section" style="padding-bottom: 7rem;">
         <div class="shell">
             <div class="split-grid">
                 <section class="panel">
@@ -124,10 +153,14 @@
                 </section>
 
                 <section class="panel">
-                    <form action="https://formsubmit.co/a0e415cc263004ea9d164090f8ec5174" method="POST" class="form-grid">
+                    <div class="success-panel" id="contact-success">
+                        <strong>Message sent.</strong>
+                        <p>Thanks for reaching out. We&apos;ll follow up with you shortly.</p>
+                    </div>
+                    <form id="contact-form" action="https://formsubmit.co/a0e415cc263004ea9d164090f8ec5174" method="POST" class="form-grid contact-form">
                         <input type="text" name="_honey" style="display:none">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://www.mealops.info/thank-you/">
+                        <input type="hidden" name="_next" value="https://www.mealops.ai/contact/?submitted=1">
 
                         <div class="name-grid">
                             <div>
@@ -150,7 +183,7 @@
                             <textarea id="message" name="message" rows="6" required class="field" placeholder="Tell us what you're interested in."></textarea>
                         </div>
 
-                        <button type="submit" class="button-primary">Send message</button>
+                        <button type="submit" class="button-primary" id="contact-submit">Send message</button>
                     </form>
                 </section>
             </div>
@@ -192,5 +225,28 @@
         </div>
     </footer>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script>
+        const submittedFromUrl = new URLSearchParams(window.location.search).get('submitted') === '1';
+        const submittedFromStorage = window.sessionStorage.getItem('contact_form_submitted') === '1';
+        const contactForm = document.getElementById('contact-form');
+        const submitButton = document.getElementById('contact-submit');
+
+        if (contactForm && submitButton) {
+            contactForm.addEventListener('submit', function () {
+                window.sessionStorage.setItem('contact_form_submitted', '1');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            });
+        }
+
+        if (submittedFromUrl || submittedFromStorage) {
+            document.body.classList.add('form-submitted');
+            const successPanel = document.getElementById('contact-success');
+            if (successPanel) {
+                successPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            window.sessionStorage.removeItem('contact_form_submitted');
+        }
+    </script>
 </body>
 </html>
