@@ -7,8 +7,73 @@
     <link rel="stylesheet" href="../css/main.css" />
     <title>Client Terms and Conditions – MealOps</title>
     <style>
+        :root {
+            --brand-green-dark: #137547;
+            --brand-green-soft: #E9F9F0;
+            --brand-line: rgba(19, 117, 71, 0.14);
+        }
+
         html {
             scroll-behavior: smooth;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: relative;
+        }
+
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.9rem;
+            height: 2.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--brand-line);
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--brand-green-dark);
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .mobile-toggle::-webkit-details-marker {
+            display: none;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 0.75rem);
+            min-width: 14rem;
+            padding: 0.75rem;
+            border: 1px solid var(--brand-line);
+            border-radius: 1.1rem;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .mobile-menu a {
+            padding: 0.8rem 0.9rem;
+            border-radius: 0.9rem;
+            color: var(--brand-green-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--brand-green-soft);
+        }
+
+        @media (max-width: 767px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -23,7 +88,7 @@
                     </a>
                 </div>
 
-                <div class="navigation-container md:inline-flex hidden">
+                <div class="navigation-container desktop-nav md:inline-flex hidden">
                     <div class="dropdown-wrapper">
                         <a href="../coachimhungry/" class="nav-item">CoachImHungry</a>
                         <div class="dropdown-content">
@@ -40,6 +105,19 @@
                         </div>
                     </div>
                 </div>
+                <details class="mobile-nav">
+                    <summary class="mobile-toggle" aria-label="Open navigation menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </summary>
+                    <div class="mobile-menu">
+                        <a href="../">Company</a>
+                        <a href="../coachimhungry/">CoachImHungry</a>
+                        <a href="../phantom/">Phantom</a>
+                        <a href="../contact/">Contact</a>
+                    </div>
+                </details>
 
             </div>
         </div>
