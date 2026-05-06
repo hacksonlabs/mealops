@@ -294,6 +294,247 @@
             background: linear-gradient(90deg, var(--brand-green), #7ed9a3);
         }
 
+        @keyframes explainer-fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes explainer-pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
+        @keyframes explainer-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes explainer-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 rgba(43, 174, 102, 0.18);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(43, 174, 102, 0.2);
+            }
+        }
+
+        .explainer-shell {
+            overflow: hidden;
+            border: 1px solid rgba(19, 117, 71, 0.12);
+            border-radius: 2.5rem;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+
+        .explainer-top {
+            display: grid;
+            gap: 1rem;
+            padding: 2rem;
+            color: white;
+            background: linear-gradient(135deg, #22985b 0%, #137547 100%);
+        }
+
+        .explainer-title {
+            font-size: clamp(2.2rem, 4vw, 3.3rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+            font-weight: 800;
+        }
+
+        .explainer-subtitle {
+            margin-top: 0.45rem;
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .explainer-badge {
+            align-self: start;
+            padding: 1rem 1.15rem;
+            border-radius: 1.25rem;
+            background: rgba(255, 255, 255, 0.14);
+            color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+        }
+
+        .explainer-badge strong {
+            display: block;
+            margin-top: 0.2rem;
+            color: white;
+            font-size: 1.05rem;
+        }
+
+        .explainer-stage {
+            padding: 1.5rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(242, 250, 245, 0.95) 100%);
+        }
+
+        .explainer-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .explainer-card {
+            position: relative;
+            min-height: 22rem;
+            padding: 1.4rem 1.2rem 1.5rem;
+            border: 1px solid rgba(19, 117, 71, 0.1);
+            border-radius: 1.75rem;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 18px 44px rgba(19, 117, 71, 0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            animation: explainer-fade-in 0.9s ease forwards;
+        }
+
+        .explainer-card-primary {
+            background: linear-gradient(145deg, #dff5e8 0%, #bfe8cf 100%);
+        }
+
+        .explainer-card-dark {
+            color: white;
+            background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%);
+        }
+
+        .explainer-step {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 2.3rem;
+            height: 2.3rem;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .explainer-step-green {
+            background: var(--brand-green);
+        }
+
+        .explainer-step-deep {
+            background: var(--brand-green-dark);
+        }
+
+        .explainer-step-light {
+            color: var(--brand-green-dark);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .explainer-icon {
+            margin-top: 1.4rem;
+            font-size: 4.6rem;
+            line-height: 1;
+            animation: explainer-float 3s ease-in-out infinite;
+        }
+
+        .explainer-copy {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .explainer-card h3 {
+            font-size: 1.45rem;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .explainer-card p {
+            margin-top: 0.55rem;
+            line-height: 1.65;
+            color: var(--brand-muted);
+            max-width: 15ch;
+            flex: 1;
+        }
+
+        .explainer-card-dark p,
+        .explainer-card-dark .explainer-chip {
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .explainer-chip {
+            display: inline-flex;
+            margin-top: 1.35rem;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            background: rgba(43, 174, 102, 0.12);
+            color: var(--brand-green-dark);
+            font-weight: 700;
+            animation: explainer-pulse 2s ease-in-out infinite;
+        }
+
+        .explainer-card-dark .explainer-chip {
+            background: rgba(255, 255, 255, 0.16);
+        }
+
+        .explainer-rail {
+            height: 0.8rem;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #2BAE66 0%, #22985b 35%, #137547 70%, #63c98b 100%);
+        }
+
+        .explainer-labels {
+            display: grid;
+            gap: 0.75rem;
+            margin-top: 1.2rem;
+            color: var(--brand-muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .explainer-summary {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .explainer-summary-card {
+            padding: 1.35rem;
+            border-radius: 1.4rem;
+            border: 1px solid rgba(19, 117, 71, 0.08);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .explainer-summary-card h4 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .explainer-summary-card p {
+            margin-top: 0.55rem;
+            color: var(--brand-muted);
+            line-height: 1.65;
+        }
+
         .system-grid {
             align-items: stretch;
         }
@@ -417,6 +658,23 @@
             .footer-grid {
                 grid-template-columns: 1.2fr 0.8fr 0.8fr;
             }
+
+            .explainer-top {
+                grid-template-columns: 1fr auto;
+                align-items: end;
+            }
+
+            .explainer-grid {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            .explainer-labels {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            .explainer-summary {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 819px) {
@@ -515,6 +773,103 @@
                         <h3>Why it works</h3>
                         <p class="muted" style="margin-top: 0.8rem;">Together, they create a direct agent-to-agent workflow for restaurants.</p>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="shell">
+                <div class="explainer-shell">
+                    <div class="explainer-top">
+                        <div>
+                            <span class="eyebrow" style="background: rgba(255,255,255,0.14); color: white;">Explainer</span>
+                            <h2 class="explainer-title" style="margin-top: 1rem;">MealOps</h2>
+                            <p class="explainer-subtitle">Agent-to-Agent Restaurant Ordering</p>
+                        </div>
+                        <div class="explainer-badge">
+                            <div style="font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;">MealOps Flow</div>
+                            <strong>Agent → Phantom → POS → Restaurant</strong>
+                        </div>
+                    </div>
+
+                    <div class="explainer-stage">
+                        <div class="explainer-grid">
+                            <article class="explainer-card">
+                                <div class="explainer-step explainer-step-green">1</div>
+                                <div class="explainer-icon">🧑</div>
+                                <div class="explainer-copy">
+                                    <h3>John</h3>
+                                    <p>"I want food!"</p>
+                                    <div class="explainer-chip">Requests order 🍔</div>
+                                </div>
+                            </article>
+
+                            <article class="explainer-card explainer-card-primary">
+                                <div class="explainer-step explainer-step-deep">2</div>
+                                <div class="explainer-icon">🤖</div>
+                                <div class="explainer-copy">
+                                    <h3>MO</h3>
+                                    <p>MealOps AI Agent</p>
+                                    <div class="explainer-chip">Builds Request 💬</div>
+                                </div>
+                            </article>
+
+                            <article class="explainer-card explainer-card-dark">
+                                <div class="explainer-step explainer-step-light">3</div>
+                                <div class="explainer-icon">👻</div>
+                                <div class="explainer-copy">
+                                    <h3>Phantom</h3>
+                                    <p>Agent Infrastructure</p>
+                                    <div class="explainer-chip">Validation + Routing ✅</div>
+                                </div>
+                            </article>
+
+                            <article class="explainer-card">
+                                <div class="explainer-step explainer-step-deep">4</div>
+                                <div class="explainer-icon">🖥️</div>
+                                <div class="explainer-copy">
+                                    <h3>POS Systems</h3>
+                                    <p>Restaurant Connections</p>
+                                    <div class="explainer-chip">Menu Sync + Orders ⚡</div>
+                                </div>
+                            </article>
+
+                            <article class="explainer-card">
+                                <div class="explainer-step" style="background: #63c98b;">5</div>
+                                <div class="explainer-icon">👨‍🍳</div>
+                                <div class="explainer-copy">
+                                    <h3>Restaurant</h3>
+                                    <p>Order Prepared!</p>
+                                    <div class="explainer-chip">John Gets Food 🎉</div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="explainer-rail" style="margin-top: 1.25rem;"></div>
+
+                        <div class="explainer-labels">
+                            <div>Human request</div>
+                            <div>Demand-side agent</div>
+                            <div>Phantom infrastructure</div>
+                            <div>POS integration</div>
+                            <div>Restaurant fulfillment</div>
+                        </div>
+
+                        <div class="explainer-summary">
+                            <article class="explainer-summary-card">
+                                <h4 style="color: var(--brand-green-dark);">MO</h4>
+                                <p>The MealOps AI agent that interacts directly with users and structures requests.</p>
+                            </article>
+                            <article class="explainer-summary-card">
+                                <h4 style="color: var(--brand-green-dark);">Phantom</h4>
+                                <p>Infrastructure layer handling validation, routing, policies, and agent-to-agent communication.</p>
+                            </article>
+                            <article class="explainer-summary-card">
+                                <h4 style="color: var(--brand-green-dark);">POS Systems</h4>
+                                <p>Existing restaurant systems connected for menus, ordering, syncing, and fulfillment.</p>
+                            </article>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
