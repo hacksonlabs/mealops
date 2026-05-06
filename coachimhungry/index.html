@@ -117,7 +117,7 @@
             border: 1px solid var(--brand-line); border-radius: 1.75rem; background: var(--brand-surface); box-shadow: var(--brand-shadow);
         }
         .panel, .feature-card, .quote-card, .cta-panel { padding: 1.5rem; }
-        .panel-dark { background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%); color: white; }
+        .panel-dark { background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%); color: white; }
         .panel-dark .muted { color: rgba(255,255,255,0.78); }
         .hero-copy {
             padding: 0;
@@ -175,6 +175,218 @@
             margin-top: 1rem;
             color: var(--brand-muted);
             line-height: 1.75;
+        }
+        .coach-explainer {
+            overflow: hidden;
+            border: 1px solid rgba(19, 117, 71, 0.12);
+            border-radius: 2.5rem;
+            background: rgba(255,255,255,0.94);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+        .coach-explainer-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 1.25rem 2rem 1.4rem;
+            color: white;
+            background: linear-gradient(145deg, #103a27 0%, #137547 65%, #22985b 100%);
+        }
+        .coach-explainer-hero::after {
+            content: "";
+            position: absolute;
+            top: -8rem;
+            right: -8rem;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            filter: blur(8px);
+        }
+        .coach-explainer-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 52rem;
+        }
+        .coach-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.5rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.1);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        .coach-badge-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 999px;
+            background: #9be6ba;
+        }
+        .coach-explainer-title {
+            margin-top: 0.75rem;
+            font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+            line-height: 0.92;
+            letter-spacing: -0.06em;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 2px 18px rgba(0, 0, 0, 0.18);
+        }
+        .coach-explainer-copy {
+            margin-top: 0.8rem;
+            max-width: 40rem;
+            color: rgba(255,255,255,0.82);
+            font-size: clamp(0.92rem, 1.5vw, 1.08rem);
+            line-height: 1.6;
+        }
+        .coach-explainer-stage {
+            padding: 2rem;
+            background: linear-gradient(180deg, #f9fcf9 0%, #f3faf5 100%);
+        }
+        .coach-explainer-grid {
+            display: grid;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .coach-explainer-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--brand-green-dark);
+        }
+        .coach-explainer-heading {
+            margin-top: 1rem;
+            font-size: clamp(2.1rem, 4vw, 3.8rem);
+            line-height: 1.02;
+            letter-spacing: -0.05em;
+            font-weight: 800;
+            color: #152d21;
+        }
+        .coach-explainer-lead {
+            margin-top: 1.3rem;
+            max-width: 34rem;
+            color: var(--brand-muted);
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+        .coach-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.6rem;
+        }
+        .coach-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.05rem;
+            border-radius: 999px;
+            font-weight: 700;
+            color: var(--brand-green-dark);
+            background: #dff5e8;
+        }
+        .coach-pill-muted {
+            color: #3b4f44;
+            background: rgba(21, 52, 38, 0.06);
+        }
+        .coach-dashboard {
+            overflow: hidden;
+            border: 1px solid rgba(19, 117, 71, 0.08);
+            border-radius: 2rem;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+        }
+        .coach-dashboard-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.5rem 1.6rem;
+            border-bottom: 1px solid rgba(19, 117, 71, 0.08);
+        }
+        .coach-dashboard-kicker {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #91a499;
+        }
+        .coach-dashboard-team {
+            margin-top: 0.4rem;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #152d21;
+        }
+        .coach-dashboard-status {
+            width: 0.95rem;
+            height: 0.95rem;
+            border-radius: 999px;
+            background: var(--brand-green);
+        }
+        .coach-dashboard-body {
+            display: grid;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #fbfcfa;
+        }
+        .coach-order-card {
+            padding: 1.15rem 1.2rem;
+            border: 1px solid rgba(19, 117, 71, 0.08);
+            border-radius: 1.25rem;
+            background: white;
+        }
+        .coach-order-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .coach-order-title {
+            font-weight: 800;
+            color: #152d21;
+        }
+        .coach-order-subtitle {
+            margin-top: 0.35rem;
+            color: var(--brand-muted);
+            font-size: 0.92rem;
+        }
+        .coach-status-pill {
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+        .coach-status-green {
+            color: var(--brand-green-dark);
+            background: #dff5e8;
+        }
+        .coach-status-blue {
+            color: #245d8f;
+            background: #e1efff;
+        }
+        .coach-stat-grid {
+            display: grid;
+            gap: 1rem;
+        }
+        .coach-stat-card {
+            padding: 1.15rem 1.2rem;
+            border: 1px solid rgba(19, 117, 71, 0.08);
+            border-radius: 1.25rem;
+            background: white;
+        }
+        .coach-stat-value {
+            font-size: 2.3rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #152d21;
+        }
+        .coach-stat-label {
+            margin-top: 0.55rem;
+            color: var(--brand-muted);
+            font-size: 0.92rem;
         }
         .future-section {
             position: relative;
@@ -371,6 +583,8 @@
             .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; }
             .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .playbook-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .coach-explainer-grid { grid-template-columns: 0.95fr 1.05fr; }
+            .coach-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .future-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .cta-panel { grid-template-columns: 1fr auto; }
             .footer-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
@@ -451,7 +665,7 @@
                         <!-- <span class="eyebrow">CoachImHungry</span> -->
                         <h1 class="hero-title">One agent for team meal ordering.</h1>
                         <p class="lead">
-                            CoachImHungry gives staff one place to run recurring team meals, then uses Phantom to place orders directly into restaurant systems.
+                            CoachImHungry gives staff a centralized platform to manage team meals, powered by Phantom’s agent ordering infrastructure.
                         </p>
                         <div class="actions">
                             <a href="../contact/" class="button-primary">Talk to Mealops</a>
@@ -459,8 +673,79 @@
                     </div>
                     <div class="panel panel-dark">
                         <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">Why it works</span>
-                        <h2 style="margin-top: 1rem; font-size: 2rem; letter-spacing: -0.04em; line-height: 1.05;">The staff workflow on top of agent ordering.</h2>
-                        <p class="muted" style="margin-top: 1rem;">Staff stay in one repeatable workflow while CoachImHungry handles ordering through Phantom underneath.</p>
+                        <h2 style="margin-top: 1rem; font-size: 2rem; letter-spacing: -0.04em; line-height: 1.05;">Built for repeatability.</h2>
+                        <p class="muted" style="margin-top: 1rem;">Keep the same workflow for every team meal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0;">
+            <div class="shell">
+                <div class="coach-explainer">
+                    <div class="coach-explainer-hero">
+                        <div class="coach-explainer-inner">
+                            <h2 class="coach-explainer-title">CoachImHungry</h2>
+                        </div>
+                    </div>
+
+                    <div class="coach-explainer-stage">
+                        <div class="coach-explainer-grid">
+                            <div>
+                                <div class="coach-explainer-label">Team meals</div>
+                                <h3 class="coach-explainer-heading">Built for athletic operations staff.</h3>
+                                <p class="coach-explainer-lead">Plan meals, keep the team aligned, and place orders from one workflow.</p>
+
+                                <div class="coach-pill-row">
+                                    <div class="coach-pill">Meal Planning</div>
+                                    <div class="coach-pill coach-pill-muted">Coordination</div>
+                                    <div class="coach-pill coach-pill-muted">Ordering</div>
+                                </div>
+                            </div>
+
+                            <div class="coach-dashboard">
+                                <div class="coach-dashboard-head">
+                                    <div>
+                                        <div class="coach-dashboard-kicker">Dashboard</div>
+                                        <div class="coach-dashboard-team">Women&apos;s Basketball</div>
+                                    </div>
+                                    <div class="coach-dashboard-status" aria-hidden="true"></div>
+                                </div>
+
+                                <div class="coach-dashboard-body">
+                                    <div class="coach-order-card">
+                                        <div class="coach-order-row">
+                                            <div>
+                                                <div class="coach-order-title">Pre-game Dinner</div>
+                                                <div class="coach-order-subtitle">Tonight / 6:00 PM</div>
+                                            </div>
+                                            <div class="coach-status-pill coach-status-blue">In Progress</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="coach-order-card">
+                                        <div class="coach-order-row">
+                                            <div>
+                                                <div class="coach-order-title">Travel Lunch</div>
+                                                <div class="coach-order-subtitle">Tomorrow / 1:00 PM</div>
+                                            </div>
+                                            <div class="coach-status-pill coach-status-green">Scheduled</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="coach-stat-grid">
+                                        <div class="coach-stat-card">
+                                            <div class="coach-stat-value">18</div>
+                                            <div class="coach-stat-label">Players</div>
+                                        </div>
+                                        <div class="coach-stat-card">
+                                            <div class="coach-stat-value">42</div>
+                                            <div class="coach-stat-label">Meals</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
