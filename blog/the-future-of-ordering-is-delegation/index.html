@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Future of Ordering Is Delegation | MealOps Blog</title>
+    <meta
+        name="description"
+        content="Why the future of ordering is not more interfaces, but delegated commerce powered by AI assistants and restaurant-ready infrastructure."
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --brand-green: #2BAE66;
+            --brand-green-dark: #137547;
+            --brand-green-soft: #E9F9F0;
+            --brand-ink: #153426;
+            --brand-muted: #627d70;
+            --brand-line: rgba(19, 117, 71, 0.14);
+            --brand-surface: rgba(255, 255, 255, 0.94);
+            --brand-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--brand-ink);
+            background:
+                radial-gradient(circle at top left, rgba(43, 174, 102, 0.16), transparent 26%),
+                radial-gradient(circle at 88% 12%, rgba(19, 117, 71, 0.1), transparent 24%),
+                radial-gradient(circle at 50% 58%, rgba(19, 117, 71, 0.06), transparent 34%),
+                linear-gradient(180deg, #f9fefa 0%, #f2faf5 54%, #eef8f2 100%);
+        }
+        h1, h2, h3, p { margin: 0; }
+        a { color: inherit; text-decoration: none; }
+
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(19, 117, 71, 0.08);
+        }
+        .shell {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+        .nav-row, .footer-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+        .nav-row {
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .nav-links {
+            justify-self: end;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .nav-link {
+            padding: 0.6rem 0.95rem;
+            border-radius: 999px;
+            color: var(--brand-green-dark);
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+        .nav-link.active,
+        .nav-link:hover {
+            background: var(--brand-green-soft);
+        }
+        .mobile-nav {
+            display: none;
+            justify-self: end;
+            position: relative;
+        }
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.9rem;
+            height: 2.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--brand-line);
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--brand-green-dark);
+            cursor: pointer;
+            list-style: none;
+        }
+        .mobile-toggle::-webkit-details-marker { display: none; }
+        .mobile-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 0.75rem);
+            min-width: 14rem;
+            padding: 0.75rem;
+            border: 1px solid var(--brand-line);
+            border-radius: 1.1rem;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--brand-shadow);
+            display: grid;
+            gap: 0.35rem;
+        }
+        .mobile-menu a {
+            padding: 0.8rem 0.9rem;
+            border-radius: 0.9rem;
+            color: var(--brand-green-dark);
+            font-weight: 700;
+        }
+        .mobile-menu a.active,
+        .mobile-menu a:hover {
+            background: var(--brand-green-soft);
+        }
+
+        .section { padding: 4.5rem 0; }
+        .article-layout {
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+        .article-shell {
+            max-width: 52rem;
+        }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--brand-green-dark);
+            font-weight: 800;
+        }
+        .article-title {
+            margin-top: 1rem;
+            font-size: clamp(2.8rem, 6vw, 4.6rem);
+            line-height: 0.97;
+            letter-spacing: -0.05em;
+            font-weight: 800;
+        }
+        .article-deck {
+            margin-top: 1.2rem;
+            color: var(--brand-muted);
+            font-size: 1.08rem;
+            line-height: 1.78;
+        }
+        .article-body {
+            margin-top: 2.25rem;
+        }
+        .article-body h2 {
+            margin-top: 2.25rem;
+            font-size: 1.55rem;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+            color: var(--brand-ink);
+        }
+        .article-body h2:first-child {
+            margin-top: 0;
+        }
+        .article-body p {
+            color: var(--brand-ink);
+            font-size: 1.08rem;
+            line-height: 1.95;
+        }
+        .article-body p + p {
+            margin-top: 1.15rem;
+        }
+        .article-body h2 + p,
+        .article-body h2 + ul {
+            margin-top: 0.95rem;
+        }
+        .article-body blockquote {
+            margin: 1.4rem 0 0;
+            padding: 1rem 1.1rem 1rem 1.2rem;
+            border-left: 4px solid var(--brand-green);
+            background: rgba(43, 174, 102, 0.06);
+            border-radius: 0.75rem;
+            color: var(--brand-green-dark);
+            font-size: 1.08rem;
+            line-height: 1.8;
+            font-weight: 700;
+        }
+        .article-body ul {
+            margin: 1.1rem 0 0;
+            padding-left: 1.25rem;
+            color: var(--brand-ink);
+        }
+        .article-prompt-list {
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 1.15rem;
+            max-width: 31rem;
+        }
+        .article-prompt-item {
+            color: var(--brand-green-dark);
+            font-size: 1.03rem;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        .article-list-panel {
+            margin-top: 1.15rem;
+            padding: 1rem 1.15rem;
+            max-width: 31rem;
+            border: 1px solid rgba(19, 117, 71, 0.12);
+            border-radius: 0.9rem;
+            background: rgba(237, 248, 241, 0.82);
+        }
+        .article-list-panel ul {
+            margin: 0;
+            width: fit-content;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            list-style: none;
+        }
+        .article-list-panel li {
+            position: relative;
+            padding-left: 1.15rem;
+            text-align: left;
+        }
+        .article-list-panel li::before {
+            content: "-";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--brand-green-dark);
+            font-weight: 800;
+        }
+        .article-body li {
+            line-height: 1.95;
+            font-size: 1.08rem;
+        }
+        .article-body li + li {
+            margin-top: 0.25rem;
+        }
+
+        .footer {
+            background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%);
+            color: rgba(255,255,255,0.84);
+            padding: 3rem 0;
+        }
+        .footer-title {
+            color: white;
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 0.9rem;
+        }
+        .footer-list {
+            display: grid;
+            gap: 0.75rem;
+        }
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.64);
+        }
+
+        @media (min-width: 820px) {
+            .article-layout {
+                display: grid;
+                grid-template-columns: 12.5rem minmax(0, 52rem);
+                gap: 2.75rem;
+                align-items: start;
+            }
+            .back-link {
+                position: sticky;
+                top: 6.5rem;
+            }
+            .footer-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
+        }
+
+        @media (max-width: 819px) {
+            .nav-row { grid-template-columns: auto auto; }
+            .nav-links { display: none; }
+            .mobile-nav { display: block; }
+            .back-link { margin-bottom: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="shell">
+            <div class="nav-row">
+                <a href="../../">
+                    <img src="../../images/meal.png" alt="MealOps logo" class="h-12 w-auto object-contain" />
+                </a>
+                <div class="nav-links">
+                    <a href="../../" class="nav-link">Company</a>
+                    <a href="../../coachimhungry/" class="nav-link">CoachImHungry</a>
+                    <a href="../../phantom/" class="nav-link">Phantom</a>
+                    <a href="../../blog/" class="nav-link active">Blog</a>
+                    <a href="../../contact/" class="nav-link">Contact</a>
+                </div>
+                <details class="mobile-nav">
+                    <summary class="mobile-toggle" aria-label="Open navigation menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </summary>
+                    <div class="mobile-menu">
+                        <a href="../../">Company</a>
+                        <a href="../../coachimhungry/">CoachImHungry</a>
+                        <a href="../../phantom/">Phantom</a>
+                        <a href="../../blog/" class="active">Blog</a>
+                        <a href="../../contact/">Contact</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="shell">
+                <div class="article-layout">
+                    <a href="../../blog/" class="back-link">← Back to Blog</a>
+                <div class="article-shell">
+                    <span class="eyebrow">Agent Ordering</span>
+                    <h1 class="article-title">The Future of Ordering Is Delegation</h1>
+                    <p class="article-deck">
+                        The next shift in food ordering is not more interfaces. It is fewer decisions, less friction, and a move from navigation to delegation.
+                    </p>
+
+                    <div class="article-body">
+                        <h2>People want less friction</h2>
+                        <p>Most technology shifts happen for the same reason: people want less friction.</p>
+                        <p>Not because they love new interfaces. Not because they care about technical innovation. Because they want fewer things to think about.</p>
+                        <p>Food ordering is a perfect example.</p>
+
+                        <h2>The repetition is the problem</h2>
+                        <p>Think about how often people repeat the exact same decisions:</p>
+                        <div class="article-list-panel">
+                            <ul>
+                                <li>The same coffee every morning</li>
+                                <li>The same lunch during workdays</li>
+                                <li>The same family dinner rotation</li>
+                                <li>The same postgame team meals</li>
+                                <li>The same late-night takeout orders</li>
+                            </ul>
+                        </div>
+                        <p>Yet every time, consumers are asked to repeat the process manually: open an app, search, scroll, customize, and check out. Again. And again. And again.</p>
+                        <p>That friction adds up.</p>
+
+                        <h2>From navigation to delegation</h2>
+                        <p>The future of ordering is not about creating more apps or more buttons. It is about removing the need for consumers to interact with ordering interfaces at all.</p>
+                        <blockquote>Instead of asking, “What app should I open?” the experience becomes, “Handle this for me.”</blockquote>
+                        <p>That is the real shift AI enables.</p>
+
+                        <h2>Consumers want outcomes, not interfaces</h2>
+                        <p>Consumers increasingly want outcomes, not interfaces. They do not necessarily care which app processes the payment, which platform routes the order, or which system communicates with the restaurant. They simply want the result:</p>
+                        <div class="article-list-panel" style="padding: 0; max-width: 25rem; border: 0; border-radius: 0; background: transparent;">
+                            <ul>
+                                <li>Food arrives on time</li>
+                                <li>Preferences are remembered</li>
+                                <li>Dietary needs are handled</li>
+                                <li>Reordering becomes effortless</li>
+                            </ul>
+                        </div>
+
+                        <h2>Why AI assistants change the experience</h2>
+                        <p>AI assistants are uniquely positioned to make this possible because they can learn behavior over time.</p>
+                        <p>They can remember favorite meals. Understand routines. Coordinate group orders. Optimize timing. Apply preferences automatically.</p>
+                        <p>In many cases, consumers will not even need to specify the restaurant anymore. They may simply describe the outcome they want:</p>
+                        <div class="article-prompt-list">
+                            <div class="article-prompt-item">“Feed the team after tonight’s game.”</div>
+                            <div class="article-prompt-item">“Order my usual healthy lunch.”</div>
+                            <div class="article-prompt-item">“Get dinner for the family.”</div>
+                        </div><br>
+                        <p>The assistant figures out the rest.</p>
+
+                        <h2>Why restaurant infrastructure starts to matter more</h2>
+                        <p>And when ordering becomes delegation instead of navigation, the infrastructure behind restaurants starts to matter much more.</p>
+                        <p>Restaurants will not just compete for human attention inside apps. They will increasingly compete to become easy for agents to transact with.</p>
+                        <p>That is why agent-ready infrastructure matters.</p>
+
+                        <h2>The real shift</h2>
+                        <p>The future of ordering is not just digital ordering. It is delegated commerce.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="shell">
+            <div class="footer-grid">
+                <div>
+                    <img src="../../images/logo_green.png" alt="Mealops logo" class="h-12 w-auto object-contain" />
+                    <p style="margin-top: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7;">
+                        MealOps is redefining meal ordering logistics—from CoachImHungry&apos;s team workflows to Phantom&apos;s agentic ordering infrastructure.
+                    </p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer" aria-label="Mealops LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div style="padding-left: 1.5rem;">
+                    <div class="footer-title">Products</div>
+                    <div class="footer-list">
+                        <a href="../../coachimhungry/">CoachImHungry</a>
+                        <a href="../../phantom/">Phantom</a>
+                    </div>
+                </div>
+                <div style="padding-left: 1.5rem;">
+                    <div class="footer-title">Company</div>
+                    <div class="footer-list">
+                        <a href="../../privacy-policy/">Privacy Policy</a>
+                        <a href="../../contact/">Contact</a>
+                        <a href="../../blog/">Blog</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-note">&copy; 2026 Mealops. All rights reserved.</div>
+        </div>
+    </footer>
+    <script id="dhws-dataInjector" src="../../public/dhws-data-injector.js"></script>
+</body>
+</html>
