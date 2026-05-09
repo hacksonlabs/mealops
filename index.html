@@ -455,6 +455,12 @@
             animation: explainer-float 3s ease-in-out infinite;
         }
 
+        .explainer-icon img {
+            width: 4.3rem;
+            height: auto;
+            display: block;
+        }
+
         .explainer-copy {
             display: flex;
             flex: 1;
@@ -742,30 +748,6 @@
             </div>
         </section>
 
-        <section class="section" style="padding-top: 1rem;">
-            <div class="shell">
-                <span class="eyebrow">Products</span>
-                <h2 class="section-title">Two products, one system.</h2>
-                <div class="story-grid">
-                    <article class="story-card">
-                        <div class="story-accent"></div>
-                        <h3>CoachImHungry</h3>
-                        <p class="muted" style="margin-top: 0.8rem;">A staff-facing agent for recurring team meal ordering.</p>
-                    </article>
-                    <article class="story-card">
-                        <div class="story-accent"></div>
-                        <h3>Phantom</h3>
-                        <p class="muted" style="margin-top: 0.8rem;">The POS-connected infrastructure layer that enables agent ordering.</p>
-                    </article>
-                    <article class="story-card">
-                        <div class="story-accent"></div>
-                        <h3>Why it works</h3>
-                        <p class="muted" style="margin-top: 0.8rem;">Together, they create a direct agent-to-agent workflow for restaurants.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section class="section" style="padding-top: 0;">
             <div class="shell">
                 <div class="explainer-shell">
@@ -777,7 +759,7 @@
                         </div>
                         <div class="explainer-badge">
                             <div style="font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;">MealOps Flow</div>
-                            <strong>Agent → Phantom → POS → Restaurant</strong>
+                            <strong>Agent → MO → POS → Restaurant</strong>
                         </div>
                     </div>
 
@@ -797,18 +779,18 @@
                                 <div class="explainer-step explainer-step-deep">2</div>
                                 <div class="explainer-icon">🤖</div>
                                 <div class="explainer-copy">
-                                    <h3>MO</h3>
-                                    <p>MealOps AI Agent</p>
+                                    <h3>John&apos;s Agent</h3>
+                                    <p>AI Agent</p>
                                     <div class="explainer-chip">Builds Request 💬</div>
                                 </div>
                             </article>
 
                             <article class="explainer-card explainer-card-dark">
                                 <div class="explainer-step explainer-step-light">3</div>
-                                <div class="explainer-icon">👻</div>
+                                <div class="explainer-icon"><img src="./images/logo_only_white.png" alt="MealOps logo" /></div>
                                 <div class="explainer-copy">
-                                    <h3>Phantom</h3>
-                                    <p>Agent Infrastructure</p>
+                                    <h3>MO</h3>
+                                    <p>MealOps AI Agent</p>
                                     <div class="explainer-chip">Validation +<br>Routing ✅</div>
                                 </div>
                             </article>
@@ -839,19 +821,19 @@
                         <div class="explainer-labels">
                             <div>Human request</div>
                             <div>Demand-side agent</div>
-                            <div>Phantom infrastructure</div>
+                            <div>MO</div>
                             <div>POS integration</div>
                             <div>Restaurant fulfillment</div>
                         </div>
 
                         <div class="explainer-summary">
                             <article class="explainer-summary-card">
-                                <h4 style="color: var(--brand-green-dark);">MO</h4>
-                                <p>The MealOps AI agent that interacts directly with users and structures requests.</p>
+                                <h4 style="color: var(--brand-green-dark);">John&apos;s Agent</h4>
+                                <p>The AI agent that interacts directly with users and structures the request.</p>
                             </article>
                             <article class="explainer-summary-card">
-                                <h4 style="color: var(--brand-green-dark);">Phantom</h4>
-                                <p>Infrastructure layer handling validation, routing, policies, and agent-to-agent communication.</p>
+                                <h4 style="color: var(--brand-green-dark);">MO</h4>
+                                <p>The MealOps AI agent layer handling validation, routing, and agent-to-agent communication.</p>
                             </article>
                             <article class="explainer-summary-card">
                                 <h4 style="color: var(--brand-green-dark);">POS Systems</h4>
@@ -859,6 +841,30 @@
                             </article>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 1rem;">
+            <div class="shell">
+                <span class="eyebrow">Products</span>
+                <h2 class="section-title">Two products, one system.</h2>
+                <div class="story-grid">
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>CoachImHungry</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">A staff-facing agent for recurring team meal ordering.</p>
+                    </article>
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>Phantom</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">The POS-connected infrastructure layer that enables agent ordering.</p>
+                    </article>
+                    <article class="story-card">
+                        <div class="story-accent"></div>
+                        <h3>Why it works</h3>
+                        <p class="muted" style="margin-top: 0.8rem;">Together, they create a direct agent-to-agent workflow for restaurants.</p>
+                    </article>
                 </div>
             </div>
         </section>
