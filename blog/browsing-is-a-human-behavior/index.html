@@ -274,6 +274,36 @@
             line-height: 1.6;
             font-weight: 700;
         }
+        .article-matrix {
+            margin-top: 1.2rem;
+            max-width: 42rem;
+            border: 1px solid rgba(19, 117, 71, 0.12);
+            border-radius: 1rem;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.82);
+        }
+        .article-matrix-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .article-matrix-row + .article-matrix-row {
+            border-top: 1px solid rgba(19, 117, 71, 0.1);
+        }
+        .article-matrix-cell {
+            padding: 0.95rem 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .article-matrix-head {
+            background: rgba(237, 248, 241, 0.82);
+            color: var(--brand-green-dark);
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+        .article-matrix-label {
+            color: var(--brand-ink);
+            font-weight: 700;
+        }
 
         .footer {
             background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%);
@@ -366,76 +396,59 @@
                     <span class="eyebrow">Agent Ordering</span>
                     <h1 class="article-title">Browsing Is a Human Behavior</h1>
                     <p class="article-deck">
-                        Food ordering platforms were built for visual discovery, but AI agents do not browse the way humans do. They optimize through structured data.
+                        The digital food economy was built for human browsing. The next era belongs to systems that can fulfill intent without relying on visual storefronts.
                     </p>
 
                     <div class="article-body">
-                        <h2>Ordering platforms assume humans want to browse</h2>
-                        <p>Modern food ordering platforms are built around one core assumption: humans like to browse.</p>
-                        <p>That is why restaurant apps are filled with:</p>
-                        <div class="article-browse-grid">
-                            <div class="article-browse-card">Photos</div>
-                            <div class="article-browse-card">Categories</div>
-                            <div class="article-browse-card">Featured items</div>
-                            <div class="article-browse-card">Recommendations</div>
-                            <div class="article-browse-card">Search bars</div>
-                            <div class="article-browse-card">“People also ordered” sections</div>
-                            <div class="article-browse-card">Endless scrolling menus</div>
-                        </div><br>
-                        <p>And to be fair, it works.</p>
+                        <p>For the last decade, the digital food economy has been built on a single psychological pillar: the human need for control through browsing.</p>
+                        <p>When we moved commerce to marketplaces, we didn&apos;t just digitize menus; we created a visual theater designed to solve the paradox of choice. Because we suddenly had every restaurant in the city at our fingertips, we became paralyzed by the options. To fix this, platforms developed the Infinite Scroll: a digital storefront filled with high-resolution photography, sponsored placements, and psychological triggers.</p>
+                        <p>We built these interfaces because humans are visual navigators. We don&apos;t just want calories; we want to be inspired. We browse because we like to compare, we like to feel the weight of our options, and we use our eyes to negotiate our own indecision.</p>
+                        <p>In this era, the interface is the product. But we are crossing a threshold where the &quot;user&quot; is no longer a human with eyes and cravings.</p>
 
-                        <h2>Humans browse for more than one reason</h2>
-                        <p>Humans enjoy discovery. Sometimes ordering food is practical, but other times it is entertainment.</p>
-                        <p>People browse because they are curious, indecisive, hungry, bored, or simply looking for inspiration.</p>
+                        <h2>The Shift from Picker to Fulfiller</h2>
+                        <p>We are moving from an era of manual navigation to an era of autonomous delegation.</p>
+                        <p>When a human opens an app, they are entering a discovery funnel. They are looking for something that catches their eye. But when that same human tells an AI agent to &quot;handle dinner,&quot; the psychology of the transaction flips.</p>
+                        <blockquote>An agent is not a browser. It is a fulfiller.</blockquote><br>
+                        <p>It doesn&apos;t have an ego, it doesn&apos;t get bored, and it certainly doesn&apos;t get tempted by a hero image of a burger. While humans use discovery to manage their indecision, agents use logic to manage their constraints.</p>
 
-                        <h2>Agents do not behave that way</h2>
-                        <p>But AI agents do not behave that way.</p>
-                        <p>An AI assistant does not care what the menu looks like. It does not care about flashy UI. It does not get tempted by banner ads or mouthwatering photos.</p>
-                        <div class="article-compare-grid">
-                            <div class="article-compare-card">
-                                <div class="article-compare-label">Humans</div>
-                                <ul>
-                                    <li>Browse</li>
-                                    <li>Discover</li>
-                                    <li>Get inspired</li>
-                                    <li>React to presentation</li>
-                                </ul>
+                        <div class="article-matrix">
+                            <div class="article-matrix-row">
+                                <div class="article-matrix-cell article-matrix-head">The Human &quot;Browser&quot;</div>
+                                <div class="article-matrix-cell article-matrix-head">The Agent &quot;Fulfiller&quot;</div>
                             </div>
-                            <div class="article-compare-card">
-                                <div class="article-compare-label">Agents</div>
-                                <ul>
-                                    <li>Optimize around constraints</li>
-                                    <li>Apply preferences</li>
-                                    <li>Evaluate timing and cost</li>
-                                    <li>Prioritize execution</li>
-                                </ul>
+                            <div class="article-matrix-row">
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Input:</span> Visual triggers &amp; aesthetics</div>
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Input:</span> Rules &amp; parameters</div>
+                            </div>
+                            <div class="article-matrix-row">
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Logic:</span> Emotional &amp; comparative</div>
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Logic:</span> Binary &amp; operational</div>
+                            </div>
+                            <div class="article-matrix-row">
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Success:</span> Finding an inspiring choice</div>
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Success:</span> Finding a valid path</div>
+                            </div>
+                            <div class="article-matrix-row">
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Requirement:</span> A beautiful interface</div>
+                                <div class="article-matrix-cell"><span class="article-matrix-label">Requirement:</span> A reliable protocol</div>
                             </div>
                         </div>
-                        <blockquote>Humans browse. Agents optimize.</blockquote>
 
-                        <h2>That changes what restaurant systems need to provide</h2>
-                        <p>Today’s ordering platforms are primarily designed for visual interaction. Information is often structured around what looks good on a screen for a person.</p>
-                        <p>But machines need something different: data that is organized, reliable, and easy to interpret programmatically.</p>
-
-                        <h2>Agents ask structured questions</h2>
-                        <p>An AI agent needs to understand things like:</p>
+                        <h2>Why Visual Design is a Machine Bottleneck</h2>
+                        <p>The reason our current infrastructure is hitting a wall is that it was designed to help humans manage their own manual search. It treats information as something to be displayed, not something to be utilized.</p>
+                        <p>To a human, a mouthwatering photo is a reason to click. To an agent, that same photo is noise. It’s unstructured data that provides zero utility for fulfillment. When we force an agent to interact with a visual marketplace, we are asking it to navigate a world built for a different species.</p>
+                        <p>An agent doesn&apos;t ask, &quot;Does this look tasty?&quot; It asks:</p>
                         <div class="article-question-grid">
-                            <div class="article-question-card">Is this item gluten free?</div>
-                            <div class="article-question-card">How quickly can this order be prepared?</div>
-                            <div class="article-question-card">Can this restaurant handle a large group order?</div>
-                            <div class="article-question-card">Are substitutions allowed?</div>
-                            <div class="article-question-card">Is this menu currently available?</div>
-                            <div class="article-question-card">What are the delivery constraints?</div>
-                        </div><br>
-                        <p>Those are not visual questions. They are structured data questions.</p>
+                            <div class="article-question-card">Is this specific modifier logically compatible with the user&apos;s history?</div>
+                            <div class="article-question-card">Is the kitchen’s live capacity a verifiable fact?</div>
+                            <div class="article-question-card">Is the fulfillment timing a mathematical certainty or a marketing estimate?</div>
+                        </div>
 
-                        <h2>Machine readability becomes a competitive advantage</h2>
-                        <p>As agent-driven ordering grows, restaurants will discover that machine readability becomes just as important as visual presentation.</p>
-                        <p>In many ways, this mirrors the evolution of the internet itself. Early websites were designed mainly for humans to read. Over time, businesses learned they also needed to structure information for search engines, recommendation systems, and algorithms.</p>
-
-                        <h2>Restaurant ordering is entering a similar transition</h2>
-                        <p>The systems built over the last decade optimized for human browsing. The next generation will optimize for machine interaction.</p>
-                        <p>And the restaurants prepared for that shift will be significantly easier for AI assistants to recommend, select, and order from.</p>
+                        <h2>The End of the Storefront</h2>
+                        <p>In the era of human browsing, restaurants won by being seen. They optimized for the scroll because that was the only way to capture human attention.</p>
+                        <p>But in the era of delegation, discovery is changing. It is no longer about who has the best food photographer; it is about who has the most reliable operational definition.</p>
+                        <p>We are moving away from a world where we search through a gallery of choices to a world where we express intent and expect a result. The theater of the storefront was built for our eyes, but the future of commerce belongs to the engine.</p>
+                        <p>As the act of browsing fades, the visual interface begins to disappear, leaving behind something much more powerful.</p>
                     </div>
                 </div>
                 </div>
