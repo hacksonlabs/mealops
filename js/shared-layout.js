@@ -72,6 +72,8 @@
         const phantomHref = buildLink(root, "phantom/");
         const coachHref = buildLink(root, "coachimhungry/");
         const privacyHref = buildLink(root, "privacy-policy/");
+        const termsHref = buildLink(root, "terms/");
+        const restaurantTermsHref = buildLink(root, "restaurant-terms/");
         const contactHref = buildLink(root, "contact/");
         const blogHref = buildLink(root, "blog/");
 
@@ -103,6 +105,8 @@
                             <div class="footer-title">Company</div>
                             <div class="footer-list">
                                 <a href="${escapeAttr(privacyHref)}">Privacy Policy</a>
+                                <a href="${escapeAttr(termsHref)}">Terms &amp; Conditions</a>
+                                <a href="${escapeAttr(restaurantTermsHref)}">Restaurant Terms</a>
                                 <a href="${escapeAttr(contactHref)}">Contact</a>
                                 <a href="${escapeAttr(blogHref)}">Blog</a>
                             </div>

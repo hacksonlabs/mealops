@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/shared-layout.css" />
+    <title>Restaurant Terms and Conditions – MealOps</title>
+    <style>
+        :root {
+            --brand-green-dark: #137547;
+            --brand-green-soft: #E9F9F0;
+            --brand-line: rgba(19, 117, 71, 0.14);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: relative;
+        }
+
+        .mobile-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.9rem;
+            height: 2.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--brand-line);
+            background: rgba(255, 255, 255, 0.94);
+            color: var(--brand-green-dark);
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .mobile-toggle::-webkit-details-marker {
+            display: none;
+        }
+
+        .mobile-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 0.75rem);
+            min-width: 14rem;
+            padding: 0.75rem;
+            border: 1px solid var(--brand-line);
+            border-radius: 1.1rem;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
+            display: grid;
+            gap: 0.35rem;
+        }
+
+        .mobile-menu a {
+            padding: 0.8rem 0.9rem;
+            border-radius: 0.9rem;
+            color: var(--brand-green-dark);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .mobile-menu a:hover {
+            background: var(--brand-green-soft);
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.4rem;
+        }
+
+        .toc a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 767px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-primary-50-color text-gray-800 pt-0">
+    <div data-shared-nav data-root=".." data-active=""></div>
+
+    <main class="container mx-auto px-4 max-w-4xl py-12">
+        <header class="mb-10">
+            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">Terms &amp; Conditions</p>
+            <h1 class="mt-2 text-4xl font-extrabold text-gray-900">MealOps Restaurant Terms</h1>
+            <p class="mt-2 text-xl font-semibold text-gray-700">Restaurants, Merchants, and Phantom Console Users</p>
+            <p class="mt-4 text-sm text-gray-500">Effective date: July 24, 2026</p>
+        </header>
+
+        <p class="mb-4 text-base text-gray-700 leading-relaxed">
+            PLEASE READ THESE TERMS CAREFULLY. These Restaurant Terms and Conditions (these &ldquo;<strong>Restaurant
+                Terms</strong>&rdquo;) are a legal agreement between the restaurant, food-service business, or other
+            merchant entity that creates a MealOps account (&ldquo;<strong>Restaurant</strong>,&rdquo;
+            &ldquo;<strong>you</strong>,&rdquo; or &ldquo;<strong>your</strong>&rdquo;) and MealOps, Inc., a Delaware
+            corporation, and its affiliates (collectively, &ldquo;<strong>MealOps</strong>,&rdquo;
+            &ldquo;<strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>our</strong>&rdquo;).
+        </p>
+
+        <p class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md text-yellow-800 text-sm leading-relaxed">
+            <strong class="font-bold">TWO SECTIONS DESERVE YOUR PARTICULAR ATTENTION. SECTION 4 EXPLAINS THAT ORDERS
+                SENT TO YOU THROUGH THE SERVICES MAY BE CREATED AND SUBMITTED BY AUTOMATED SOFTWARE AGENTS ACTING ON
+                BEHALF OF A CUSTOMER, RATHER THAN BY A HUMAN TYPING AN ORDER, AND SETS OUT HOW SUCH ORDERS ARE TREATED.
+                SECTION 22 CONTAINS AN ARBITRATION AGREEMENT AND A CLASS ACTION WAIVER THAT, UNLESS YOU OPT OUT WITHIN 30
+                DAYS AS DESCRIBED IN SECTION 22(f), REQUIRE DISPUTES BETWEEN US TO BE RESOLVED BY BINDING INDIVIDUAL
+                ARBITRATION AND WAIVE YOUR RIGHT TO A JURY TRIAL AND TO PARTICIPATE IN CLASS OR REPRESENTATIVE
+                PROCEEDINGS.</strong>
+        </p>
+
+        <nav class="toc mb-12 p-6 rounded-lg border border-gray-200 bg-gray-50">
+            <p class="font-semibold text-gray-900 mb-3">Contents</p>
+            <ul class="text-sm">
+                <li><a href="#acceptance">1. Acceptance and Authority</a></li>
+                <li><a href="#services">2. The Services and the Phantom Console</a></li>
+                <li><a href="#relationship">3. Relationship of the Parties</a></li>
+                <li><a href="#agent-orders">4. Automated and Agent-Originated Orders</a></li>
+                <li><a href="#menus">5. Menus, Pricing, Hours, and Availability</a></li>
+                <li><a href="#order-handling">6. Order Acceptance, Preparation, and Fulfillment</a></li>
+                <li><a href="#food-safety">7. Food Safety, Allergens, and Labeling</a></li>
+                <li><a href="#integrations">8. POS and Delivery Platform Integrations</a></li>
+                <li><a href="#delivery">9. Delivery and Pickup</a></li>
+                <li><a href="#fees-payouts">10. Fees, Payments, and Payouts</a></li>
+                <li><a href="#refunds">11. Refunds, Cancellations, Errors, and Chargebacks</a></li>
+                <li><a href="#taxes">12. Taxes</a></li>
+                <li><a href="#restaurant-content">13. Restaurant Content and Marks</a></li>
+                <li><a href="#mealops-ip">14. MealOps Intellectual Property</a></li>
+                <li><a href="#accounts">15. Accounts, Roles, Credentials, and API Keys</a></li>
+                <li><a href="#data">16. Data Protection and Privacy</a></li>
+                <li><a href="#confidentiality">17. Confidentiality</a></li>
+                <li><a href="#compliance">18. Compliance, Licensing, and Insurance</a></li>
+                <li><a href="#warranties">19. Representations, Warranties, and Disclaimers</a></li>
+                <li><a href="#indemnification">20. Indemnification</a></li>
+                <li><a href="#liability">21. Limitation of Liability</a></li>
+                <li><a href="#dispute-resolution">22. Dispute Resolution and Arbitration</a></li>
+                <li><a href="#term">23. Term, Suspension, and Termination</a></li>
+                <li><a href="#changes">24. Changes to These Restaurant Terms</a></li>
+                <li><a href="#general">25. General Provisions</a></li>
+                <li><a href="#contact">26. Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="acceptance">1. Acceptance and Authority</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You accept these Restaurant Terms when you do any of the following: set a password and create a MealOps
+                or Phantom account; accept an invitation to join a Restaurant account; connect a point-of-sale or
+                delivery platform to MealOps; accept an order through the Services; or continue to use the Services
+                after an updated version of these Restaurant Terms takes effect. If you do not agree, do not use the
+                Services.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                The individual who accepts these Restaurant Terms represents that they are at least 18 years old and
+                authorized to bind the Restaurant. If you accept on behalf of an entity, &ldquo;you&rdquo; means that
+                entity, and the entity is responsible for the acts and omissions of everyone who accesses the Services
+                through its account.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                If you and MealOps have signed a separate written agreement covering the same subject matter, that
+                agreement controls to the extent of any conflict.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="services">2. The Services and the Phantom Console</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                MealOps operates software that routes meal orders from customers &mdash; including athletic programs,
+                campus operations, businesses, and individual consumers &mdash; to restaurants, and that lets
+                restaurants manage those orders. &ldquo;<strong>Services</strong>&rdquo; means the MealOps platform, the
+                Phantom restaurant console, our APIs and agent interfaces, our websites, and related support and
+                communications.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Through the Phantom console you can, depending on your configuration: publish and maintain menu content;
+                receive, accept, modify, and reject orders; set preparation times and availability; connect your
+                point-of-sale and delivery providers; view order history and payouts; and invite staff members with
+                different levels of access.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                We may add, change, or discontinue features. If we make a material change that adversely affects your
+                use of the Services in a meaningful way, we will give you reasonable advance notice where practical.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="relationship">3. Relationship of the Parties</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You are an independent business. Nothing in these Restaurant Terms creates a partnership, joint venture,
+                franchise, agency, or employment relationship between you and MealOps. You retain sole control over your
+                premises, your personnel, your recipes and preparation methods, your pricing, and your decision whether
+                to accept any particular order.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You are the merchant of record and the seller of the food and beverages you prepare. MealOps is a
+                technology provider that facilitates the transmission of orders and, where applicable, the collection
+                and remittance of payment. MealOps does not prepare, handle, or sell food.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="agent-orders">4. Automated and Agent-Originated Orders</h2>
+            <p class="mb-2 p-4 bg-blue-50 border border-blue-200 rounded-md text-blue-900 text-sm leading-relaxed">
+                <strong>Plain-language summary:</strong> some orders you receive through MealOps are assembled and
+                submitted by software acting for a customer, not typed by that customer at the moment of ordering. Those
+                orders are real, authorized orders. You handle them exactly as you would any other order, and you are
+                paid for them the same way.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                An &ldquo;<strong>Agent</strong>&rdquo; means any automated system, software agent, scheduled process,
+                or artificial-intelligence assistant that is authorized by a MealOps customer, or by MealOps on a
+                customer&rsquo;s behalf and at that customer&rsquo;s direction, to browse menus, build carts, submit
+                orders, modify orders, or communicate about orders through the Services. An
+                &ldquo;<strong>Agent-Originated Order</strong>&rdquo; is an order created or submitted by an Agent.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Agent-Originated Orders are authorized orders.</strong> By accepting these Restaurant Terms
+                    you agree to receive and, subject to Section 6, fulfill Agent-Originated Orders on the same basis as
+                    orders submitted directly by a human. An Agent-Originated Order transmitted to you through the
+                    Services is an order placed by the customer on whose behalf the Agent acted, and that customer is
+                    responsible for it.</li>
+                <li><strong>Authentication and authority.</strong> MealOps is responsible for authenticating Agents that
+                    transact through the Services, for binding each Agent to the customer that authorized it, and for
+                    maintaining records sufficient to identify the responsible customer for each Agent-Originated Order.
+                    You may rely on an order surfaced in the Phantom console as having been authenticated by us.</li>
+                <li><strong>Identification.</strong> Where a platform, integration, or applicable law requires it, and
+                    where our integration with your systems supports it, we will identify Agent-Originated Orders as
+                    such in the order record we transmit to you.</li>
+                <li><strong>Your right to decline.</strong> Nothing in this Section obligates you to accept any
+                    particular order. You may reject an Agent-Originated Order for the same reasons you may reject any
+                    other order under Section 6, including capacity, ingredient availability, closing time, or a
+                    good-faith concern about the order&rsquo;s legitimacy.</li>
+                <li><strong>Agent error.</strong> If an Agent submits an order that does not reflect what the customer
+                    actually wanted &mdash; for example the wrong item, quantity, location, or time &mdash; and you
+                    prepared the order in good faith and in accordance with the order record you received, you will be
+                    paid for that order in accordance with Section 10 and will not bear the cost of the error. Section
+                    11 governs how such errors are resolved as between MealOps and the customer.</li>
+                <li><strong>Agent conduct.</strong> Agents transacting through the Services must operate within the
+                    rate limits, ordering windows, and other constraints we publish. We will use commercially reasonable
+                    efforts to prevent Agents from submitting orders you cannot fulfill, from placing duplicate orders,
+                    and from placing orders outside your published hours.</li>
+                <li><strong>No third-party automation.</strong> You may not permit any third party to use automated
+                    means to access, scrape, or transact against the Services on your behalf except through interfaces
+                    we provide for that purpose. This does not restrict your own use of the Phantom console, our
+                    documented APIs, or an integration we have approved.</li>
+                <li><strong>Your own automation.</strong> If you configure automatic acceptance of orders, or connect
+                    your own software to auto-confirm orders, you remain responsible for the orders your configuration
+                    accepts. We recommend keeping capacity and hours current in the console so automatic acceptance
+                    reflects your real ability to fulfill.</li>
+            </ul>
+            <p class="text-base text-gray-700 leading-relaxed">
+                No Agent has authority to modify these Restaurant Terms, to negotiate pricing or fees with you, or to
+                make commitments on behalf of MealOps. Statements generated by an Agent or by an
+                artificial-intelligence feature within the Services are informational and do not amend any agreement
+                between us.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="menus">5. Menus, Pricing, Hours, and Availability</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>You are solely responsible for the accuracy and completeness of your menu content, including item
+                    names, descriptions, modifiers, nested options, portion sizes, images, prices, taxes and fees you
+                    require, hours of operation, and item availability.</li>
+                <li>You will keep menu content current. If your menu is synchronized from a point-of-sale or delivery
+                    platform under Section 8, the content in that source system governs, and you are responsible for
+                    its accuracy there.</li>
+                <li>You set your own prices. Unless a separate written agreement says otherwise, you will not price
+                    items offered through the Services higher than the price for the same item at your physical location
+                    for the same order type, except to the extent you disclose a platform-specific price in the menu
+                    content itself.</li>
+                <li>If a price, item, or modifier shown to a customer through the Services is inaccurate because of
+                    stale content you controlled, you will honor the order as presented to the customer where reasonably
+                    possible, and we will work with you in good faith on the difference where it is not.</li>
+                <li>You are responsible for keeping your hours and closures current, including holiday hours and
+                    unplanned closures. Marking your location unavailable in the console is the fastest way to stop
+                    incoming orders.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="order-handling">6. Order Acceptance, Preparation, and
+                Fulfillment</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>An order becomes binding on you when you accept it through the console, through a connected
+                    point-of-sale system, or through an automatic acceptance setting you enabled.</li>
+                <li>You will confirm or reject orders promptly. You may reject an order in good faith, including for
+                    capacity, ingredient availability, proximity to closing, delivery range, or suspected fraud. Repeated
+                    unexplained rejections or unfulfilled accepted orders may result in suspension under Section 23.</li>
+                <li>You will prepare accepted orders in accordance with the order record, including all selected
+                    modifiers, special instructions, and allergen-related notes, and will have them ready by the quoted
+                    time.</li>
+                <li>You will package orders so that they travel safely, and will seal or otherwise secure orders where
+                    required by applicable law or by the delivery provider.</li>
+                <li>If you cannot fulfill an accepted order in whole or in part, you will notify us through the console
+                    as soon as you know, so the customer can be told and Section 11 applied.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="food-safety">7. Food Safety, Allergens, and Labeling</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You are solely responsible for the safety, quality, preparation, handling, and labeling of all food and
+                beverages you prepare, and for compliance with all applicable food-safety, sanitation, nutrition
+                disclosure, allergen disclosure, and labeling laws and regulations.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>You will provide accurate allergen and ingredient information in your menu content and will honor
+                    allergen-related instructions transmitted with an order, or reject the order if you cannot.</li>
+                <li>MealOps does not verify, and has no ability to verify, the accuracy of your ingredient, allergen, or
+                    nutrition information, or your food-handling practices.</li>
+                <li>Where an order carries a dietary restriction or allergy note, you will treat it as a material term
+                    of the order.</li>
+                <li>You will notify us promptly of any foodborne illness complaint, recall, or health-department action
+                    that relates to orders placed through the Services.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="integrations">8. POS and Delivery Platform Integrations
+            </h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                The Services can connect to third-party point-of-sale, ordering, and delivery platforms, including
+                providers such as Toast, Deliverect, and DeliverThat (each, a &ldquo;<strong>Connected
+                    Platform</strong>&rdquo;).
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Your authorization.</strong> When you connect a Connected Platform, you authorize MealOps to
+                    access that platform on your behalf, using the credentials, tokens, or account linkage you provide
+                    or approve, for the purpose of operating the Services &mdash; including reading menu, location, and
+                    hours data; transmitting orders; reading order status; and reading settlement or payout data
+                    relevant to orders placed through the Services.</li>
+                <li><strong>Scope.</strong> We will access a Connected Platform only as needed to provide the Services
+                    to you, and not for any unrelated purpose. We will stop accessing it when you disconnect it or when
+                    your account terminates.</li>
+                <li><strong>Your authority.</strong> You represent that you have the right to connect each Connected
+                    Platform and to grant this authorization, and that doing so does not breach your agreement with that
+                    provider.</li>
+                <li><strong>Third-party terms.</strong> Your relationship with each Connected Platform is governed by
+                    your agreement with that provider. MealOps is not responsible for a Connected Platform&rsquo;s
+                    availability, accuracy, fees, or acts and omissions, and a Connected Platform&rsquo;s outage may
+                    delay or prevent orders from reaching you.</li>
+                <li><strong>Changes by the provider.</strong> A Connected Platform may change or discontinue its
+                    integration on terms outside our control, which may require us to change or discontinue the
+                    corresponding functionality.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="delivery">9. Delivery and Pickup</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>Orders may be fulfilled by pickup, by your own delivery staff, or by a third-party delivery provider
+                    arranged through the Services, depending on your configuration and the customer&rsquo;s selection.
+                </li>
+                <li>Where a third-party delivery provider is used, that provider is responsible for the order from the
+                    point of pickup. You remain responsible for having the order correct, complete, packaged, and ready
+                    at the quoted time.</li>
+                <li>Where you deliver with your own staff, you are responsible for that delivery, including your
+                    personnel, vehicles, insurance, and compliance with applicable law.</li>
+                <li>Tips designated for a third-party delivery provider belong to that provider and are not part of your
+                    payout. Tips designated for your staff will be passed through to you in accordance with Section 10
+                    and applicable law.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="fees-payouts">10. Fees, Payments, and Payouts</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Commission and fees.</strong> The fees MealOps charges you, if any, are set out in your
+                    onboarding materials, order form, or a separate written agreement. We will give you at least 30
+                    days&rsquo; notice before increasing a recurring fee or commission rate, and you may terminate under
+                    Section 23 if you do not accept the change.</li>
+                <li><strong>Collection.</strong> Where MealOps or its payment processor collects payment from the
+                    customer, we do so as your limited payment collection agent, and the customer&rsquo;s payment to us
+                    discharges the customer&rsquo;s payment obligation to you for that order.</li>
+                <li><strong>Payouts.</strong> We will remit amounts owed to you, net of our fees and any adjustments
+                    permitted under Section 11, on the payout schedule disclosed in the console. Payouts are made to the
+                    bank account or payment method you designate, and you are responsible for keeping that information
+                    accurate.</li>
+                <li><strong>Processors.</strong> Payments are processed by third-party payment processors, and their
+                    terms apply to that processing. You may be required to provide identity or business-verification
+                    information to a processor to receive payouts.</li>
+                <li><strong>Statements and disputes.</strong> Payout statements are available in the console. You must
+                    notify us of a disputed payout amount within 60 days of the statement date, after which the
+                    statement is treated as accepted absent manifest error.</li>
+                <li><strong>Offset.</strong> We may offset amounts you owe us &mdash; including refunds we advanced
+                    under Section 11 and chargebacks attributable to you &mdash; against future payouts, and may invoice
+                    you for any remaining balance.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="refunds">11. Refunds, Cancellations, Errors, and
+                Chargebacks</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Orders sometimes go wrong. This Section allocates the cost according to who caused the problem.
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Restaurant-caused issues.</strong> Where a refund, credit, or remake results from a missing
+                    or incorrect item, an unfulfilled accepted order, food quality, a substantial delay attributable to
+                    you, or inaccurate menu content you controlled, the cost is borne by you and may be offset under
+                    Section 10.</li>
+                <li><strong>Customer-caused issues.</strong> Where a customer cancels after you have begun preparation
+                    for reasons not attributable to you, or is unavailable to receive a completed order, you will be
+                    paid for the order.</li>
+                <li><strong>MealOps- or Agent-caused issues.</strong> Where a refund results from a defect in the
+                    Services, a transmission failure, or an Agent error as described in Section 4, the cost is borne by
+                    MealOps and you will be paid for any order you prepared in good faith in accordance with the order
+                    record you received.</li>
+                <li><strong>Delivery-provider-caused issues.</strong> Where a refund results from an act or omission of
+                    a third-party delivery provider after pickup, the cost is not borne by you.</li>
+                <li><strong>Determination and review.</strong> We will make refund determinations in good faith based on
+                    the order record, console timestamps, customer report, and any evidence you provide. You may contest
+                    a determination within 30 days by contacting support, and we will review it in good faith and
+                    reverse any offset we determine was incorrectly applied.</li>
+                <li><strong>Chargebacks.</strong> A chargeback arising from your acts or omissions is your
+                    responsibility. We will notify you of chargebacks attributable to you and give you a reasonable
+                    opportunity to provide evidence to contest them.</li>
+                <li><strong>Customer-facing policy.</strong> MealOps sets the refund policy presented to customers. That
+                    policy does not enlarge your liability beyond what this Section provides.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="taxes">12. Taxes</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You are responsible for determining, and for the accuracy of, the sales, use, meals, excise, and other
+                taxes applicable to the items you sell, including configuring correct tax rates and taxability for each
+                item and location. Where MealOps or a Connected Platform is required by law to collect and remit a tax
+                on a transaction as a marketplace facilitator, we will do so and will identify those amounts in your
+                payout statements. Except for taxes we are required to collect and remit, you are responsible for
+                reporting and remitting all taxes on your sales. Each party is responsible for its own income and
+                employment taxes.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="restaurant-content">13. Restaurant Content and Marks</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You retain all rights in your menu content, item descriptions, photographs, logos, trade names, and
+                trademarks (&ldquo;<strong>Restaurant Content</strong>&rdquo;). You grant MealOps a non-exclusive,
+                worldwide, royalty-free license, during the term and for a reasonable wind-down period afterward, to
+                host, reproduce, translate, reformat, display, and transmit Restaurant Content in order to operate,
+                market, and support the Services, including displaying your menu and marks to customers and to Agents
+                acting on their behalf.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You represent that you own or are licensed to use all Restaurant Content and that our use as permitted
+                here will not infringe any third party&rsquo;s rights. We may use your name and logo to identify you as
+                a restaurant available through the Services. Any other public use of your name or marks in marketing
+                materials requires your prior consent, which you may withdraw on written notice.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="mealops-ip">14. MealOps Intellectual Property</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                MealOps owns all rights, title, and interest in the Services, including the Phantom console, our
+                software, APIs, agent interfaces, documentation, and branding. Subject to these Restaurant Terms, we
+                grant you a limited, non-exclusive, non-transferable, revocable right to access and use the Services for
+                your internal business purposes during the term. You may not copy, modify, reverse engineer, resell, or
+                create derivative works of the Services, or use them to build a competing product. You may not use
+                MealOps names, logos, or marks without our prior written permission. If you send us feedback or
+                suggestions, we may use them without restriction or obligation to you.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="accounts">15. Accounts, Roles, Credentials, and API Keys
+            </h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>The first account created for a Restaurant is an owner account. Owners may invite additional staff
+                    and viewer accounts and are responsible for granting appropriate access and removing access promptly
+                    when someone leaves.</li>
+                <li>You are responsible for all activity under your account and for safeguarding passwords, session
+                    tokens, API keys, and agent keys issued to you. Credentials are personal to the account holder and
+                    may not be shared.</li>
+                <li>API keys and agent keys issued to you carry the ability to act on your account. Treat them as
+                    secrets. Do not embed them in client-side code or share them with third parties.</li>
+                <li>Notify us immediately at <a class="text-primary"
+                        href="mailto:support@mealops.ai">support@mealops.ai</a> if you suspect unauthorized access or a
+                    compromised credential. We may rotate credentials or suspend access to protect the platform.</li>
+                <li>You will not probe, scan, overload, or attempt to circumvent the security or rate limits of the
+                    Services, or access data belonging to another restaurant.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="data">16. Data Protection and Privacy</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>MealOps handles personal information as described in our <a class="text-primary"
+                        href="../privacy-policy/">Privacy Policy</a>.</li>
+                <li>You will receive personal information about customers &mdash; such as names, contact details,
+                    delivery addresses, order contents, and dietary or allergy notes. You may use that information only
+                    to fulfill and support the specific order, to meet your legal obligations, and to resolve disputes
+                    about that order.</li>
+                <li>You will not use customer personal information obtained through the Services for your own marketing,
+                    will not sell or share it, and will not add customers to your own mailing or messaging lists,
+                    without that customer&rsquo;s separate, informed consent obtained outside the Services.</li>
+                <li>Dietary and allergy information may constitute sensitive or consumer health data under applicable
+                    law. You will treat it accordingly and limit access to personnel who need it to fulfill the order.
+                </li>
+                <li>You will maintain reasonable administrative, technical, and physical safeguards appropriate to the
+                    information you receive, and will notify us without undue delay, and in any event within 72 hours,
+                    after becoming aware of any unauthorized access to or disclosure of customer personal information
+                    obtained through the Services.</li>
+                <li>You will delete or de-identify customer personal information when it is no longer needed for the
+                    purposes above, except where retention is required by law.</li>
+                <li>Each party will comply with applicable privacy and data protection laws. Where required, the parties
+                    will enter into a data processing addendum, which will control over this Section to the extent of
+                    any conflict.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="confidentiality">17. Confidentiality</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Each party may receive confidential information of the other, including pricing, fee structures,
+                business processes, technical materials, order and payout data, and non-public product information.
+                Each party will use the other&rsquo;s confidential information only as needed under these Restaurant
+                Terms, will protect it with at least reasonable care, and will not disclose it except to personnel,
+                affiliates, and advisors bound by comparable obligations. These obligations do not apply to information
+                that is or becomes public through no fault of the receiving party, was already known without
+                restriction, or is independently developed. A party may disclose confidential information when legally
+                compelled, after giving the other party reasonable advance notice where lawful.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="compliance">18. Compliance, Licensing, and Insurance</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>You will hold and maintain all licenses, permits, and registrations required to operate your
+                    business and to prepare and sell the items you offer, including health and food-service permits and,
+                    where applicable, alcohol licenses. You will provide evidence on reasonable request.</li>
+                <li>You will comply with all applicable laws, including food safety, employment, wage and hour,
+                    accessibility, consumer protection, and anti-discrimination laws. You will not discriminate against
+                    customers or delivery personnel.</li>
+                <li>If you offer alcohol or other age-restricted items through the Services, you are solely responsible
+                    for age verification and for compliance with every applicable restriction, and you will only offer
+                    such items where we have enabled that capability for your location.</li>
+                <li>You will maintain commercial general liability insurance, including product liability coverage,
+                    and workers&rsquo; compensation coverage as required by law, in amounts customary for your business
+                    and consistent with applicable law. You will provide a certificate of insurance on reasonable
+                    request.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="warranties">19. Representations, Warranties, and
+                Disclaimers</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You represent and warrant that: you have the authority to enter into these Restaurant Terms; you will
+                perform in accordance with them and with applicable law; your Restaurant Content is accurate and
+                non-infringing; and the food and beverages you prepare are fit for human consumption and prepared in
+                accordance with applicable food-safety requirements.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                EXCEPT AS EXPRESSLY STATED, THE SERVICES ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS
+                AVAILABLE.&rdquo; MEALOPS DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR
+                SECURE, THAT ORDERS WILL BE TRANSMITTED WITHOUT DELAY OR FAILURE, THAT ANY VOLUME OF ORDERS WILL BE
+                GENERATED, OR THAT ANY AGENT WILL BEHAVE WITHOUT ERROR. TO THE FULLEST EXTENT PERMITTED BY LAW, WE
+                DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR
+                PURPOSE, TITLE, AND NON-INFRINGEMENT.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="indemnification">20. Indemnification</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You will defend, indemnify, and hold harmless MealOps and its officers, directors, employees, and agents
+                from third-party claims, damages, liabilities, and reasonable expenses (including reasonable
+                attorneys&rsquo; fees) arising from: the food and beverages you prepare, including foodborne illness,
+                allergen exposure, and product liability claims; your breach of these Restaurant Terms or of applicable
+                law; your Restaurant Content, including infringement claims; your acts or omissions in fulfilling
+                orders; and your handling of customer personal information.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                MealOps will defend, indemnify, and hold you harmless from third-party claims that the Services, as
+                provided by us and used in accordance with these Restaurant Terms, infringe that third party&rsquo;s
+                intellectual property rights, and from third-party claims arising from our breach of Section 16.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                The indemnified party will promptly notify the indemnifying party of the claim, give it sole control of
+                the defense and settlement (except that no settlement imposing a non-monetary obligation on the
+                indemnified party may be made without its consent), and provide reasonable cooperation at the
+                indemnifying party&rsquo;s expense.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="liability">21. Limitation of Liability</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                TO THE EXTENT PERMITTED BY LAW, NEITHER PARTY WILL BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL,
+                SPECIAL, OR EXEMPLARY DAMAGES, OR FOR LOST PROFITS, LOST REVENUE, LOSS OF GOODWILL, OR LOSS OF DATA,
+                EVEN IF ADVISED OF THE POSSIBILITY.
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                EXCEPT FOR THE EXCLUDED CLAIMS BELOW, EACH PARTY&rsquo;S TOTAL LIABILITY ARISING OUT OF OR RELATED TO
+                THESE RESTAURANT TERMS WILL NOT EXCEED THE GREATER OF (A) THE TOTAL FEES MEALOPS RETAINED FROM YOUR
+                ORDERS DURING THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE THOUSAND UNITED
+                STATES DOLLARS ($1,000).
+            </p>
+            <p class="text-base text-gray-700 leading-relaxed">
+                &ldquo;<strong>Excluded Claims</strong>&rdquo; means: amounts owed to you for orders you fulfilled under
+                Section 10; either party&rsquo;s indemnification obligations under Section 20; either party&rsquo;s
+                breach of Section 17; your breach of Section 16; and either party&rsquo;s gross negligence, willful
+                misconduct, or fraud. These limitations do not apply to liability that cannot be limited under
+                applicable law.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="dispute-resolution">22. Dispute Resolution and Arbitration
+            </h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                <strong>PLEASE READ THIS SECTION CAREFULLY. IT REQUIRES BINDING INDIVIDUAL ARBITRATION AND LIMITS HOW
+                    YOU CAN SEEK RELIEF, UNLESS YOU OPT OUT UNDER SECTION 22(f).</strong> This Section 22 is the
+                &ldquo;<strong>Arbitration Agreement</strong>.&rdquo;
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(a) Governing Law</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                These Restaurant Terms are governed by the laws of the State of Delaware, without regard to its conflict
+                of law rules, except that the Federal Arbitration Act governs the interpretation and enforcement of this
+                Arbitration Agreement. The United Nations Convention on Contracts for the International Sale of Goods
+                does not apply.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(b) Informal Resolution First</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Before either party may demand arbitration, the initiating party must send written notice describing the
+                claim and the relief sought, and the parties will meet and confer by telephone or videoconference in
+                good faith within 60 days after that notice. To notify MealOps, email <a class="text-primary"
+                    href="mailto:legal@mealops.ai">legal@mealops.ai</a> with your restaurant name, the email address on
+                your MealOps account, and a description of your claim. Completing this conference is a precondition to
+                arbitration. Limitations periods and filing deadlines are tolled while the parties comply with this
+                subsection.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(c) Scope</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Any dispute, claim, or controversy arising out of or relating to these Restaurant Terms or to your
+                relationship or transactions with MealOps will be resolved by binding individual arbitration rather than
+                in court, except that (1) either party may bring an individual claim in small claims court if it
+                qualifies and remains there, and (2) either party may seek injunctive or other equitable relief in court
+                for infringement or misuse of intellectual property or confidential information.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(d) Rules and Forum</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                The arbitration will be administered by ADR Services, Inc. under its rules then in effect, available at
+                <a class="text-primary" href="https://www.adrservices.com/services/arbitration-rules/"
+                    target="_blank" rel="noopener noreferrer">adrservices.com</a>, before a single arbitrator. If ADR
+                Services, Inc. is unavailable, the parties will mutually select an alternative administrator. The
+                arbitration may proceed on written submissions, by telephone or videoconference, or in person in the
+                county where your primary location is located or another mutually agreed place. The arbitrator may award
+                the same individual relief a court could. Judgment on the award may be entered in any court of competent
+                jurisdiction. Fees are governed by the administrator&rsquo;s fee schedule; where required by law,
+                MealOps will pay the portion of initial filing fees that exceeds the cost of filing in court.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(e) Class Action Waiver</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                <strong>EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A
+                    PLAINTIFF OR CLASS MEMBER IN ANY CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</strong>
+                The arbitrator may not consolidate more than one party&rsquo;s claims or preside over any class or
+                representative proceeding. If this subsection is found unenforceable as to a particular claim, that
+                claim will proceed in court and the remainder of this Arbitration Agreement will remain in effect.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-4">(f) Your Right to Opt Out</h3>
+            <p class="text-base text-gray-700 leading-relaxed">
+                You may opt out of this Arbitration Agreement by emailing <a class="text-primary"
+                    href="mailto:legal@mealops.ai">legal@mealops.ai</a> with the subject line &ldquo;Arbitration Opt
+                Out&rdquo; within 30 days after you first accept these Restaurant Terms. Include your restaurant name
+                and the email address on your account. Opting out affects only this Section 22; the rest of these
+                Restaurant Terms continue to apply, and opting out will not affect your account or your relationship
+                with us in any other way.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="term">23. Term, Suspension, and Termination</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>These Restaurant Terms begin when you first accept them and continue until terminated.</li>
+                <li>Either party may terminate for convenience on 30 days&rsquo; written notice, unless a separate
+                    written agreement says otherwise. You may also stop receiving orders at any time by marking your
+                    locations unavailable in the console.</li>
+                <li>Either party may terminate immediately for the other&rsquo;s material breach that remains uncured 15
+                    days after written notice.</li>
+                <li>We may suspend or limit your access immediately, with notice as soon as reasonably practical, if:
+                    you breach these Restaurant Terms; there is a credible food-safety, fraud, security, or legal risk;
+                    a required license lapses; or we are required to do so by law or by a Connected Platform.</li>
+                <li>On termination, your right to use the Services ends, we will stop routing orders to you, and we will
+                    pay out amounts owed for orders you fulfilled, net of permitted offsets, on the next regular payout
+                    cycle. You may export your data from the console before termination takes effect, or request an
+                    export from us within 30 days afterward.</li>
+                <li>Sections 3, 7, 10 (as to amounts accrued), 11, 12, 13 (as to the wind-down license), 14, 16, 17,
+                    19&ndash;22, and 25 survive termination.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="changes">24. Changes to These Restaurant Terms</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                We may update these Restaurant Terms. If a change is material, we will give you at least 30 days&rsquo;
+                notice by email to your account address or through the console before it takes effect, and will update
+                the effective date above. Material changes apply prospectively only. If you do not accept a material
+                change, your remedy is to terminate under Section 23 before it takes effect; continuing to use the
+                Services after that date means you accept the change. Changes to Section 22 will not apply retroactively
+                to a dispute of which we had notice before the change.
+            </p>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="general">25. General Provisions</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Entire agreement.</strong> These Restaurant Terms, together with the Privacy Policy and any
+                    order form or separate written agreement between us, are the entire agreement on this subject and
+                    supersede prior discussions.</li>
+                <li><strong>Assignment.</strong> You may not assign these Restaurant Terms without our prior written
+                    consent, except to a successor to all or substantially all of your business that is not a competitor
+                    of MealOps. We may assign to an affiliate or in connection with a merger, acquisition, or sale of
+                    assets.</li>
+                <li><strong>Notices.</strong> We may give notice by email to the address on your account or through the
+                    console. You may give notice to <a class="text-primary"
+                        href="mailto:legal@mealops.ai">legal@mealops.ai</a>. Notices are effective on delivery.</li>
+                <li><strong>Force majeure.</strong> Neither party is liable for delay or failure caused by events beyond
+                    its reasonable control, excluding payment obligations.</li>
+                <li><strong>Severability and waiver.</strong> If a provision is unenforceable, it is modified to the
+                    minimum extent necessary or severed, and the rest remains in effect. A failure to enforce is not a
+                    waiver.</li>
+                <li><strong>No third-party beneficiaries.</strong> These Restaurant Terms do not create rights for any
+                    third party, except that the MealOps parties named in Section 20 may enforce that Section.</li>
+                <li><strong>Headings and summaries.</strong> Headings and plain-language summaries are for convenience
+                    and do not affect interpretation; the operative text controls.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-4 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900" id="contact">26. Contact</h2>
+            <p class="text-base text-gray-700 leading-relaxed">
+                Questions about these Restaurant Terms, your account, or a payout can be sent to our team:
+            </p>
+            <div class="rounded-lg border border-gray-200 bg-gray-50 p-6 mb-10">
+                <p class="font-semibold text-gray-900">MealOps, Inc.</p>
+                <p>Restaurant Support: <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a>
+                </p>
+                <p>Legal Notices: <a class="text-primary" href="mailto:legal@mealops.ai">legal@mealops.ai</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div data-shared-footer data-root=".."></div>
+    <script defer src="../js/shared-layout.js"></script>
+    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+
+</html>
