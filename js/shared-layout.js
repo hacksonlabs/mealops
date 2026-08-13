@@ -76,6 +76,7 @@
         const restaurantTermsHref = buildLink(root, "restaurant-terms/");
         const contactHref = buildLink(root, "contact/");
         const blogHref = buildLink(root, "blog/");
+        const docsHref = "https://docs.mealops.ai/";
 
         target.innerHTML = `
             <footer class="footer">
@@ -99,6 +100,7 @@
                             <div class="footer-list">
                                 <a href="${escapeAttr(phantomHref)}">Phantom</a>
                                 <a href="${escapeAttr(coachHref)}">CoachImHungry</a>
+                                <a href="${escapeAttr(docsHref)}">Developer Docs</a>
                             </div>
                         </div>
                         <div style="padding-left: 1.5rem;">
