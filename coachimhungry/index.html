@@ -784,41 +784,21 @@
         @keyframes gd-pop-1 { 0%, 10% { opacity: 0; } 14%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
         @keyframes gd-pop-2 { 0%, 28% { opacity: 0; } 32%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
         @keyframes gd-pop-3 { 0%, 44% { opacity: 0; } 48%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
-        .gd-steps {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.35rem 1rem;
-            margin: 0.8rem 0 0;
-            padding: 0;
-            list-style: none;
+        .gd-note {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.35rem;
+            margin: 0.4rem 0 0;
+            color: #c2410c;
             font-family: 'Caveat', cursive;
-            font-size: 1.25rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: #1f3b2c;
-            text-align: left;
+            transform: rotate(-2deg);
         }
-        .gd-steps b {
-            display: inline-grid;
-            place-items: center;
-            width: 1.35rem;
-            height: 1.35rem;
-            margin-right: 0.35rem;
-            border-radius: 999px;
-            background: #2BAE66;
-            color: white;
-            font-size: 0.95rem;
-        }
-        .gd-board-foot {
-            margin-top: 1rem;
-            padding-top: 0.9rem;
-            border-top: 2px dashed rgba(31, 59, 44, 0.18);
-            color: var(--brand-muted);
-            font-size: 0.92rem;
-            line-height: 1.55;
-            text-align: left;
-        }
-        .gd-board-foot strong {
-            color: var(--brand-ink);
+        .gd-note svg {
+            width: 1.9rem;
+            height: auto;
         }
         @keyframes gd-ticker {
             from { transform: translateX(0); }
@@ -893,7 +873,6 @@
             -webkit-text-stroke: 1.5px rgba(19, 117, 71, 0.22);
         }
         @media (max-width: 479px) {
-            .gd-steps { grid-template-columns: minmax(0, 1fr); }
             .gd-board { padding: 2.2rem 1rem 1.2rem; }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -922,7 +901,7 @@
                     <div class="hero-copy">
                         <h1 class="hero-title">One workflow for <span class="gd-mark">team meals.</span></h1>
                         <p class="lead">
-                            CoachImHungry helps athletic operations staff plan, coordinate, and order team meals. It's the first agent connected to the MealOps network.
+                            Plan, coordinate, and order team meals in one place.
                         </p>
                         <div class="actions">
                             <a href="../contact/" class="button-primary">Talk to MealOps</a>
@@ -969,13 +948,10 @@
                                 <circle class="gd-ink gd-orange" cx="334" cy="115" r="15"/>
                                 <circle cx="334" cy="115" r="5" fill="#c2410c"/>
                             </svg>
-                            <ol class="gd-steps">
-                                <li><b>1</b>MO plans the meal</li>
-                                <li><b>2</b>Team adds orders</li>
-                                <li><b>3</b>Sent to the restaurant</li>
-                                <li><b>4</b>Food lands at 6:30</li>
-                            </ol>
-                            <p class="gd-board-foot"><strong>Built for repeatability.</strong> Set up a team meal once and run it again all season.</p>
+                            <p class="gd-note">
+                                run it back all season
+                                <svg viewBox="0 0 40 32" aria-hidden="true"><path d="M30 9 A12 12 0 1 0 33 20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M24 7 L31 8.5 L29 1.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </p>
                         </div>
                     </div>
                 </div>

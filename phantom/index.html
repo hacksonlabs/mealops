@@ -1317,11 +1317,11 @@
                 if (i < lines.length) {
                     lines[i].classList.add('is-shown');
                     i += 1;
-                    setTimeout(step, i === lines.length ? 3400 : 650);
+                    setTimeout(step, i === lines.length ? 5000 : 1100);
                 } else {
                     lines.forEach(function (line) { line.classList.remove('is-shown'); });
                     i = 0;
-                    setTimeout(step, 700);
+                    setTimeout(step, 900);
                 }
             }
             setTimeout(step, 400);
