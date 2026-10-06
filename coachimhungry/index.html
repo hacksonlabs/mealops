@@ -46,7 +46,7 @@
             border-bottom: 1px solid rgba(19,117,71,0.08);
         }
         .shell { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
-        .nav-row, .hero-grid, .feature-grid, .playbook-grid, .future-grid, .cta-panel, .footer-grid {
+        .nav-row, .hero-grid, .feature-grid, .playbook-grid, .cta-panel, .footer-grid {
             display: grid; gap: 1.25rem;
         }
         .nav-row { grid-template-columns: auto 1fr; align-items: center; padding: 1rem 0; }
@@ -203,60 +203,14 @@
             background: rgba(255, 255, 255, 0.08);
             filter: blur(2px);
         }
-        .future-label {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.45rem 0.8rem;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.12);
-            color: white;
-            font-size: 0.78rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
         .future-title {
-            margin-top: 0.85rem;
-            font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+            max-width: 13ch;
+            text-wrap: balance;
+            font-size: clamp(2.1rem, 4vw, 3.3rem);
             line-height: 1.02;
             letter-spacing: -0.05em;
             font-weight: 800;
-            max-width: 15ch;
             color: #f7fff9;
-        }
-        .future-copy {
-            margin-top: 0.9rem;
-            max-width: 38rem;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.72;
-        }
-        .future-grid {
-            margin-top: 1.5rem;
-        }
-        .future-card {
-            border-top: 1px solid rgba(255, 255, 255, 0.16);
-            padding-top: 1rem;
-        }
-        .future-card h3 {
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #f7fff9;
-        }
-        .future-card p {
-            margin-top: 0.45rem;
-            color: rgba(255, 255, 255, 0.78);
-            line-height: 1.62;
-        }
-        .future-command {
-            margin-top: 1.5rem;
-            padding: 0.9rem 1rem;
-            border-radius: 1rem;
-            background: rgba(8, 31, 20, 0.34);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: rgba(255, 255, 255, 0.86);
-            font-size: 0.94rem;
-            line-height: 1.65;
         }
         .proof-head {
             text-align: center;
@@ -408,7 +362,6 @@
             .hero-grid { grid-template-columns: 1.15fr 0.85fr; align-items: center; }
             .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .playbook-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-            .future-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .cta-panel { grid-template-columns: 1fr auto; }
             .proof-quote { grid-template-columns: 17rem minmax(0, 1fr); }
             .proof-copy { padding: 2.75rem 3rem; }
@@ -424,9 +377,6 @@
             }
             .mobile-nav {
                 display: block;
-            }
-            .future-title br {
-                display: none;
             }
             .proof-tile {
                 width: 8rem;
@@ -1023,6 +973,179 @@
         @media (prefers-reduced-motion: reduce) {
             .tb-dot, .tb-pill-live::before, .tb-avatars span, .tb-avatars em, .tb-progress span { animation: none; }
         }
+
+        /* MO chat */
+        @keyframes mo-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: none; }
+        }
+        @keyframes mo-dot {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+            30% { transform: translateY(-4px); opacity: 1; }
+        }
+        .mo-layout {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+        }
+        .mo-labels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.6rem;
+        }
+        .mo-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.5rem 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        .mo-label svg {
+            width: 1rem;
+            height: 1rem;
+            flex: none;
+        }
+        a.mo-label:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .mo-chat {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background: white;
+            color: var(--brand-ink);
+            box-shadow: 0 30px 70px rgba(4, 30, 18, 0.35);
+        }
+        .mo-chat-head {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.95rem 1.15rem;
+            border-bottom: 1px solid rgba(19, 117, 71, 0.1);
+        }
+        .mo-avatar {
+            display: grid;
+            place-items: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 999px;
+            background: linear-gradient(150deg, #1b8652 0%, #4bc27a 100%);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+        .mo-chat-head b {
+            display: block;
+            font-weight: 800;
+        }
+        .mo-chat-head small {
+            color: var(--brand-muted);
+            font-size: 0.78rem;
+        }
+        .mo-online {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-left: auto;
+            color: var(--brand-green-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .mo-online::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: var(--brand-green);
+        }
+        .mo-thread {
+            display: grid;
+            align-content: start;
+            gap: 0.6rem;
+            min-height: 19.5rem;
+            margin: 0;
+            padding: 1.15rem;
+            list-style: none;
+            background: linear-gradient(180deg, #ffffff 0%, #f4fbf7 100%);
+        }
+        .mo-msg {
+            display: none;
+            max-width: 84%;
+            padding: 0.7rem 0.95rem;
+            border-radius: 1.15rem;
+            font-size: 0.93rem;
+            line-height: 1.5;
+        }
+        .mo-msg.is-shown {
+            display: block;
+            animation: mo-in 0.35s ease-out;
+        }
+        .mo-coach {
+            justify-self: end;
+            border-bottom-right-radius: 0.35rem;
+            background: var(--brand-green);
+            color: white;
+        }
+        .mo-bot {
+            justify-self: start;
+            border-bottom-left-radius: 0.35rem;
+            background: var(--brand-green-soft);
+        }
+        .mo-confirm {
+            border: 1px solid rgba(43, 174, 102, 0.35);
+            background: white;
+            box-shadow: 0 10px 24px rgba(19, 117, 71, 0.1);
+        }
+        .mo-confirm strong {
+            display: block;
+            color: var(--brand-green-dark);
+        }
+        .mo-tag {
+            display: table;
+            margin-top: 0.45rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .mo-typing {
+            display: none;
+            justify-self: start;
+            gap: 0.3rem;
+            padding: 0.8rem 0.95rem;
+            border-radius: 1.15rem;
+            border-bottom-left-radius: 0.35rem;
+            background: var(--brand-green-soft);
+        }
+        .mo-typing.is-shown {
+            display: inline-flex;
+        }
+        .mo-typing span {
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: var(--brand-green-dark);
+            animation: mo-dot 1s ease-in-out infinite;
+        }
+        .mo-typing span:nth-child(2) { animation-delay: 0.15s; }
+        .mo-typing span:nth-child(3) { animation-delay: 0.3s; }
+        @media (min-width: 960px) {
+            .future-shell { padding: 2.75rem; }
+            .mo-layout { grid-template-columns: 0.95fr 1.05fr; gap: 3rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .mo-msg.is-shown { animation: none; }
+            .mo-typing span { animation: none; }
+        }
     </style>
 </head>
 <body>
@@ -1227,29 +1350,30 @@
         <section class="section future-section" style="padding-top: 0;">
             <div class="shell">
                 <div class="future-shell">
-                    <!-- <span class="future-label">Coming 2026</span> -->
-                    <h2 class="future-title" style="max-width: none;">The first agent connected<br> to the MealOps network.</h2>
-                    <!-- <p class="future-copy">
-                        CoachImHungry will feel like one agent for staff, powered by agent-to-agent ordering underneath.
-                    </p> -->
+                    <div class="mo-layout">
+                        <div>
+                            <h2 class="future-title">The first agent connected to the MealOps network.</h2>
+                            <div class="mo-labels">
+                                <span class="mo-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Meet MO</span>
+                                <span class="mo-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 11 16.7 6M7.3 13l9.4 5"/></svg>Connected to the network</span>
+                                <a class="mo-label" href="../phantom/"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M8 68 V30 a24 24 0 0 1 48 0 V68 l-8-6 -8 6 -8-6 -8 6 -8-6 -8 6z" fill="currentColor"/><ellipse cx="24" cy="32" rx="4.5" ry="6" fill="#137547"/><ellipse cx="40" cy="32" rx="4.5" ry="6" fill="#137547"/></svg>Powered by Phantom</a>
+                            </div>
+                        </div>
 
-                    <div class="future-grid">
-                        <article class="future-card">
-                            <h3>Meet MO</h3>
-                            <p>Staff ask MO to plan, schedule, and repeat team orders in plain language.</p>
-                        </article>
-                        <article class="future-card">
-                            <h3>Connected to the network</h3>
-                            <p>MO orders from restaurants across POS systems, marketplaces, and direct ordering.</p>
-                        </article>
-                        <article class="future-card">
-                            <h3>Powered by Phantom</h3>
-                            <p>Phantom checks every order against the restaurant's menu, hours, and rules before it's placed.</p>
-                        </article>
-                    </div>
-
-                    <div class="future-command">
-                        “Hey MO, place Friday's team dinner using the usual post-practice delivery window.”
+                        <div class="mo-chat" aria-label="Example conversation between a coach and MO">
+                            <div class="mo-chat-head">
+                                <span class="mo-avatar" aria-hidden="true">MO</span>
+                                <div><b>MO</b><small>CoachImHungry assistant</small></div>
+                                <span class="mo-online">online</span>
+                            </div>
+                            <ol class="mo-thread" data-mo-thread>
+                                <li class="mo-msg mo-coach">Hey MO, set up Friday’s pre-game dinner.</li>
+                                <li class="mo-msg mo-bot">Sent the menu to the team. 14 of 18 have picked so far.</li>
+                                <li class="mo-msg mo-coach">Great, send it at 5:30.</li>
+                                <li class="mo-msg mo-bot mo-confirm"><strong><span class="tb-check" aria-hidden="true">✓</span>Placed with the restaurant</strong>Arriving 6:30 PM<span class="mo-tag">via MealOps network · checked by Phantom</span></li>
+                                <li class="mo-typing" aria-hidden="true"><span></span><span></span><span></span></li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1319,6 +1443,53 @@
 
     <div data-shared-footer data-root=".."></div>
     <script defer src="../js/shared-layout.js"></script>
+    <script>
+        // Plays the coach/MO chat once it scrolls into view, then loops.
+        (function () {
+            var thread = document.querySelector('[data-mo-thread]');
+            if (!thread) return;
+            var msgs = Array.prototype.slice.call(thread.querySelectorAll('.mo-msg'));
+            var typing = thread.querySelector('.mo-typing');
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+                msgs.forEach(function (m) { m.classList.add('is-shown'); });
+                return;
+            }
+            var i = 0;
+            function next() {
+                if (i >= msgs.length) {
+                    setTimeout(function () {
+                        msgs.forEach(function (m) { m.classList.remove('is-shown'); });
+                        i = 0;
+                        setTimeout(next, 900);
+                    }, 5500);
+                    return;
+                }
+                var m = msgs[i];
+                if (m.classList.contains('mo-bot')) {
+                    thread.insertBefore(typing, m);
+                    typing.classList.add('is-shown');
+                    setTimeout(function () {
+                        typing.classList.remove('is-shown');
+                        m.classList.add('is-shown');
+                        i += 1;
+                        setTimeout(next, 1500);
+                    }, 1300);
+                } else {
+                    m.classList.add('is-shown');
+                    i += 1;
+                    setTimeout(next, 1100);
+                }
+            }
+            var started = false;
+            new IntersectionObserver(function (entries, observer) {
+                if (!started && entries[0].isIntersecting) {
+                    started = true;
+                    observer.disconnect();
+                    setTimeout(next, 400);
+                }
+            }, { threshold: 0.35 }).observe(thread);
+        })();
+    </script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3e98a6af6cbf4e559df564662a7dc17f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
