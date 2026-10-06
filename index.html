@@ -643,15 +643,6 @@
             }
         }
 
-        @keyframes tracker-pulse {
-            0%, 100% {
-                box-shadow: 0 0 0 3px rgba(43, 174, 102, 0.22);
-            }
-            50% {
-                box-shadow: 0 0 0 7px rgba(43, 174, 102, 0.08);
-            }
-        }
-
         .bento {
             display: grid;
             gap: 1rem;
@@ -702,31 +693,18 @@
             margin-top: auto;
         }
 
-        .tile-dark,
-        .tile-green {
+        .tile-dark {
             border-color: transparent;
+            background: linear-gradient(150deg, #0b2a1c 0%, var(--brand-green-deep) 45%, var(--brand-green-dark) 100%);
             color: white;
         }
 
-        .tile-dark {
-            background: linear-gradient(150deg, #0b2a1c 0%, var(--brand-green-deep) 45%, var(--brand-green-dark) 100%);
-        }
-
-        .tile-green {
-            background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%);
-        }
-
-        .tile-dark h3,
-        .tile-green h3 {
+        .tile-dark h3 {
             color: white;
         }
 
         .tile-dark .tile-head p {
             color: rgba(255, 255, 255, 0.75);
-        }
-
-        .tile-green .tile-head p {
-            color: rgba(255, 255, 255, 0.88);
         }
 
         .compare {
@@ -766,248 +744,51 @@
             animation: compare-pulse 1.6s linear infinite;
         }
 
-        .mini {
-            padding: 0.35rem 0.85rem;
-            border: 1px solid rgba(19, 117, 71, 0.12);
-            border-radius: 1rem;
-            background: #f6fcf8;
-        }
-
-        .mini-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed rgba(19, 117, 71, 0.14);
-            font-size: 0.84rem;
-            font-weight: 600;
-        }
-
-        .mini-row:last-child {
-            border-bottom: 0;
-        }
-
-        .mini-row-sub span:first-child {
-            padding-left: 0.85rem;
-            color: var(--brand-muted);
-            font-weight: 500;
-        }
-
-        .mini-row-out span:first-child {
-            color: var(--brand-muted);
-            text-decoration: line-through;
-        }
-
-        .mini-row-total {
-            font-size: 0.9rem;
-            font-weight: 800;
-        }
-
-        .mini-tag {
-            padding: 0.12rem 0.5rem;
-            border-radius: 999px;
-            background: #fff1e6;
-            color: #b54708;
-            font-size: 0.7rem;
-            font-weight: 800;
-        }
-
-        .mini-status {
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            margin-top: 0.7rem;
-            color: var(--brand-green-dark);
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .mini-status::before {
-            content: "✓";
+        .features {
             display: grid;
-            place-items: center;
-            width: 1.1rem;
-            height: 1.1rem;
-            border-radius: 999px;
-            background: var(--brand-green);
-            color: white;
-            font-size: 0.65rem;
-        }
-
-        .time-bar {
-            display: flex;
-            gap: 4px;
-            height: 2.2rem;
-        }
-
-        .time-seg {
-            display: flex;
-            align-items: center;
-            padding: 0 0.65rem;
-            border-radius: 0.65rem;
-            color: white;
-            font-size: 0.74rem;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .time-prep {
-            flex: 5;
-            background: var(--brand-green);
-        }
-
-        .time-drive {
-            flex: 4;
-            background: var(--brand-green-dark);
-        }
-
-        .time-meta {
-            display: flex;
-            justify-content: space-between;
-            gap: 0.75rem;
-            margin-top: 0.65rem;
-            color: var(--brand-muted);
-            font-size: 0.78rem;
-            font-weight: 600;
-        }
-
-        .time-meta strong {
-            color: var(--brand-ink);
-        }
-
-        .tracker {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            margin: 0;
+            gap: 1px;
+            overflow: hidden;
+            margin: 1rem 0 0;
             padding: 0;
+            border: 1px solid var(--brand-line);
+            border-radius: 1.6rem;
+            background: var(--brand-line);
+            box-shadow: 0 18px 44px rgba(19, 117, 71, 0.06);
             list-style: none;
         }
 
-        .tracker li {
-            position: relative;
-            padding-top: 1.7rem;
-            color: var(--brand-muted);
-            font-size: 0.76rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .tracker li::before {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            top: 0.3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0.9rem;
-            height: 0.9rem;
-            border: 2px solid rgba(19, 117, 71, 0.25);
-            border-radius: 999px;
+        .feature {
+            padding: 1.4rem 1.5rem;
             background: white;
         }
 
-        .tracker li::after {
-            content: "";
-            position: absolute;
-            top: 0.72rem;
-            left: -50%;
-            width: 100%;
-            height: 2px;
-            background: rgba(19, 117, 71, 0.18);
-        }
-
-        .tracker li:first-child::after {
-            display: none;
-        }
-
-        .tracker li.done::before {
-            border-color: var(--brand-green);
-            background: var(--brand-green);
-        }
-
-        .tracker li.done::after,
-        .tracker li.active::after {
-            background: var(--brand-green);
-        }
-
-        .tracker li.active {
-            color: var(--brand-ink);
-        }
-
-        .tracker li.active::before {
-            border-color: var(--brand-green);
-            animation: tracker-pulse 1.8s ease-in-out infinite;
-        }
-
-        .track-eta {
-            margin-top: 1rem;
-            padding: 0.65rem 0.85rem;
-            border-radius: 0.9rem;
+        .feature-icon {
+            display: grid;
+            place-items: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.8rem;
             background: var(--brand-green-soft);
             color: var(--brand-green-dark);
-            font-size: 0.82rem;
-            font-weight: 700;
         }
 
-        .checks {
-            padding: 0.85rem;
-            border-radius: 1.1rem;
-            background: rgba(255, 255, 255, 0.12);
+        .feature-icon svg {
+            width: 1.2rem;
+            height: 1.2rem;
         }
 
-        .checks-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            font-size: 0.78rem;
-            font-weight: 700;
-        }
-
-        .checks-head code {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        }
-
-        .checks-head span {
-            padding: 0.2rem 0.55rem;
-            border-radius: 999px;
-            background: white;
-            color: var(--brand-green-dark);
-            font-size: 0.7rem;
+        .feature h3 {
+            margin-top: 0.9rem;
+            font-size: 1rem;
             font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
-        .checks-list {
-            display: grid;
-            gap: 0.45rem;
-            margin: 0.75rem 0 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .checks-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.55rem;
-            padding: 0.55rem 0.7rem;
-            border-radius: 0.75rem;
-            background: rgba(255, 255, 255, 0.14);
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
-
-        .checks-list li::before {
-            content: "✓";
-            display: grid;
-            place-items: center;
-            flex: none;
-            width: 1.15rem;
-            height: 1.15rem;
-            border-radius: 999px;
-            background: white;
-            color: var(--brand-green-dark);
-            font-size: 0.68rem;
+        .feature p {
+            margin-top: 0.35rem;
+            color: var(--brand-muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
         }
 
         /* 5–6. Phantom + CoachImHungry */
@@ -1370,6 +1151,23 @@
             }
         }
 
+        @media (max-width: 639px) {
+            .feature {
+                display: grid;
+                grid-template-columns: 2.4rem minmax(0, 1fr);
+                column-gap: 0.9rem;
+                padding: 1.1rem 1.25rem;
+            }
+
+            .feature-icon {
+                grid-row: span 2;
+            }
+
+            .feature h3 {
+                margin-top: 0.1rem;
+            }
+        }
+
         @media (min-width: 480px) {
             .compare {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1377,18 +1175,12 @@
         }
 
         @media (min-width: 640px) {
-            .bento {
+            .features {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
-            .bento-intro,
-            .tile-connect,
-            .tile-trust {
+            .feature:last-child {
                 grid-column: span 2;
-            }
-
-            .checks-list {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -1438,24 +1230,19 @@
 
         @media (min-width: 1000px) {
             .bento {
-                grid-template-columns: repeat(6, minmax(0, 1fr));
-            }
-
-            .bento-intro,
-            .tile-connect,
-            .tile-track,
-            .tile-trust {
-                grid-column: span 3;
-            }
-
-            .tile-menu,
-            .tile-time,
-            .tile-pay {
-                grid-column: span 2;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .bento-intro {
                 padding-right: 2rem;
+            }
+
+            .features {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+
+            .feature:last-child {
+                grid-column: auto;
             }
         }
 
@@ -1519,8 +1306,7 @@
             .hero-kicker-dot,
             .hero-net .hub-ring,
             .compare-pulse,
-            .hero-chip,
-            .tracker li.active::before {
+            .hero-chip {
                 animation: none;
             }
 
@@ -1761,82 +1547,35 @@
                         </div>
                     </article>
 
-                    <article class="tile tile-menu">
-                        <div class="tile-head">
-                            <h3>Live menus and availability</h3>
-                            <p>Menus, modifiers, prices, store hours, and sold-out items, kept current across every source.</p>
-                        </div>
-                        <div class="tile-visual mini" aria-hidden="true">
-                            <div class="mini-row"><span>Chicken burrito bowl</span><span>$12.50</span></div>
-                            <div class="mini-row mini-row-sub"><span>+ Guacamole</span><span>$2.25</span></div>
-                            <div class="mini-row mini-row-out"><span>Chips and salsa</span><span class="mini-tag">Sold out</span></div>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-time">
-                        <div class="tile-head">
-                            <h3>Timing and fulfillment</h3>
-                            <p>Prep and delivery lead times, scheduled orders, and each restaurant's local time zone, checked before an order is placed.</p>
-                        </div>
-                        <div class="tile-visual" aria-hidden="true">
-                            <div class="time-bar">
-                                <span class="time-seg time-prep">Prep 25 min</span>
-                                <span class="time-seg time-drive">Delivery 20 min</span>
-                            </div>
-                            <div class="time-meta">
-                                <span>Ordered 5:45&nbsp;PM</span>
-                                <span>Arrives <strong>6:30&nbsp;PM local</strong></span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-pay">
-                        <div class="tile-head">
-                            <h3>Quotes and payments</h3>
-                            <p>Totals quoted up front, with payment authorized and captured against the confirmed amount.</p>
-                        </div>
-                        <div class="tile-visual" aria-hidden="true">
-                            <div class="mini">
-                                <div class="mini-row"><span>Subtotal</span><span>$186.00</span></div>
-                                <div class="mini-row"><span>Tax and fees</span><span>$24.18</span></div>
-                                <div class="mini-row mini-row-total"><span>Total</span><span>$210.18</span></div>
-                            </div>
-                            <div class="mini-status">Authorized for $210.18</div>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-track">
-                        <div class="tile-head">
-                            <h3>Status and tracking</h3>
-                            <p>Confirmations, order status, and delivery tracking flow back to the agent automatically.</p>
-                        </div>
-                        <div class="tile-visual" aria-hidden="true">
-                            <ol class="tracker">
-                                <li class="done">Confirmed</li>
-                                <li class="done">Preparing</li>
-                                <li class="active">On the way</li>
-                                <li>Delivered</li>
-                            </ol>
-                            <div class="track-eta">Courier is about 8 minutes away</div>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-green tile-trust">
-                        <div class="tile-head">
-                            <h3>Trusted access</h3>
-                            <p>Only approved agents can place orders, and each restaurant's hours, lead times, and order limits are enforced server&#8209;side.</p>
-                        </div>
-                        <div class="tile-visual checks" aria-hidden="true">
-                            <div class="checks-head"><code>submit_order</code><span>All checks passed</span></div>
-                            <ul class="checks-list">
-                                <li>Approved agent</li>
-                                <li>Inside store hours</li>
-                                <li>Meets lead time</li>
-                                <li>Under order limit</li>
-                            </ul>
-                        </div>
-                    </article>
                 </div>
+
+                <ul class="features">
+                    <li class="feature">
+                        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
+                        <h3>Live menus</h3>
+                        <p>Prices, hours, and sold-out items, always current.</p>
+                    </li>
+                    <li class="feature">
+                        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                        <h3>Timing</h3>
+                        <p>Lead times, scheduling, and local time zones handled.</p>
+                    </li>
+                    <li class="feature">
+                        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h3"/></svg></span>
+                        <h3>Payments</h3>
+                        <p>Quoted up front, charged for the confirmed total.</p>
+                    </li>
+                    <li class="feature">
+                        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+                        <h3>Tracking</h3>
+                        <p>Status and delivery updates flow back to the agent.</p>
+                    </li>
+                    <li class="feature">
+                        <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8.5-8 9.5-4.5-1-8-4.5-8-9.5V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                        <h3>Trusted access</h3>
+                        <p>Approved agents only, with restaurant rules enforced.</p>
+                    </li>
+                </ul>
             </div>
         </section>
 
