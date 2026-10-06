@@ -1,0 +1,244 @@
+/* Shared layout for the legal pages: Terms & Conditions, Privacy Policy, Client, Restaurant, and Developer Terms. */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --legal-green: #2BAE66;
+    --legal-green-dark: #137547;
+    --legal-green-soft: #E9F9F0;
+    --legal-ink: #153426;
+    --legal-text: #2c4a3c;
+    --legal-muted: #627d70;
+    --legal-line: rgba(19, 117, 71, 0.14);
+}
+
+body.legal-page {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--legal-ink);
+    background:
+        radial-gradient(circle at top left, rgba(43, 174, 102, 0.12), transparent 28%),
+        linear-gradient(180deg, #f9fefa 0%, #f2faf5 54%, #eef8f2 100%);
+}
+
+.legal {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 6rem;
+}
+
+.legal a {
+    color: var(--legal-green-dark);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.legal-back {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-decoration: none !important;
+}
+
+.legal-back:hover {
+    text-decoration: underline !important;
+}
+
+/* Header */
+
+.legal-eyebrow {
+    display: inline-flex;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: var(--legal-green-soft);
+    color: var(--legal-green-dark);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.legal-header h1 {
+    margin: 1rem 0 0;
+    color: var(--legal-ink);
+    font-size: clamp(2.2rem, 4.6vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+}
+
+.legal-subtitle {
+    margin: 0.6rem 0 0;
+    color: var(--legal-muted);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.legal-date {
+    margin: 0.9rem 0 0;
+    color: var(--legal-muted);
+    font-size: 0.85rem;
+}
+
+/* Intro, callouts, related documents */
+
+.legal-intro p {
+    margin: 1.5rem 0 0;
+    color: var(--legal-text);
+    line-height: 1.75;
+}
+
+.legal-callout {
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.25rem;
+    border: 1px solid #f1d58f;
+    border-radius: 1rem;
+    background: #fff8e8;
+    color: #6b4a07;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.legal-related,
+.legal-toc,
+.legal-contact {
+    border: 1px solid var(--legal-line);
+    border-radius: 1.25rem;
+    background: white;
+    box-shadow: 0 18px 44px rgba(19, 117, 71, 0.06);
+}
+
+.legal-related {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.legal-related p {
+    margin: 0;
+    color: var(--legal-text);
+    line-height: 1.7;
+}
+
+.legal-related ul {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+    list-style: disc;
+    color: var(--legal-text);
+    line-height: 1.7;
+}
+
+.legal-related li + li {
+    margin-top: 0.35rem;
+}
+
+/* Contents */
+
+.legal-toc {
+    margin-top: 2rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.legal-toc-title {
+    margin: 0 0 0.5rem;
+    color: var(--legal-ink);
+    font-weight: 800;
+}
+
+.legal-toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.legal-toc li {
+    break-inside: avoid;
+    line-height: 1.9;
+}
+
+.legal-toc a {
+    font-size: 0.92rem;
+    text-decoration: none;
+}
+
+.legal-toc a:hover {
+    text-decoration: underline;
+}
+
+@media (min-width: 720px) {
+    .legal-toc ol {
+        columns: 2;
+        column-gap: 2.5rem;
+    }
+}
+
+/* Sections */
+
+.legal-section {
+    margin-top: 2.75rem;
+    scroll-margin-top: 1.5rem;
+}
+
+.legal-section h2 {
+    margin: 0;
+    color: var(--legal-ink);
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.legal-section h3 {
+    margin: 1.25rem 0 0;
+    color: var(--legal-ink);
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.legal-section p,
+.legal-section li {
+    color: var(--legal-text);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.legal-section p {
+    margin: 0.85rem 0 0;
+}
+
+.legal-section ul {
+    margin: 0.85rem 0 0;
+    padding-left: 1.4rem;
+    list-style: disc;
+}
+
+.legal-section li + li {
+    margin-top: 0.5rem;
+}
+
+.legal-section strong {
+    color: var(--legal-ink);
+}
+
+.legal-note {
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(19, 117, 71, 0.18);
+    border-radius: 1rem;
+    background: var(--legal-green-soft);
+    font-size: 0.95rem !important;
+}
+
+.legal-contact {
+    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.legal-contact p {
+    margin: 0;
+}
+
+.legal-contact-name {
+    color: var(--legal-ink) !important;
+    font-weight: 800;
+}

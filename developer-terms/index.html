@@ -4,120 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/shared-layout.css" />
     <title>Developer Terms – MealOps</title>
     <meta name="description" content="Terms for developers and AI agent builders using the MealOps APIs and the Phantom MCP server." />
-    <style>
-        :root {
-            --brand-green-dark: #137547;
-            --brand-green-soft: #E9F9F0;
-            --brand-line: rgba(19, 117, 71, 0.14);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: relative;
-        }
-
-        .mobile-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.9rem;
-            height: 2.9rem;
-            border-radius: 999px;
-            border: 1px solid var(--brand-line);
-            background: rgba(255, 255, 255, 0.94);
-            color: var(--brand-green-dark);
-            cursor: pointer;
-            list-style: none;
-        }
-
-        .mobile-toggle::-webkit-details-marker {
-            display: none;
-        }
-
-        .mobile-menu {
-            position: absolute;
-            right: 0;
-            top: calc(100% + 0.75rem);
-            min-width: 14rem;
-            padding: 0.75rem;
-            border: 1px solid var(--brand-line);
-            border-radius: 1.1rem;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.08);
-            display: grid;
-            gap: 0.35rem;
-        }
-
-        .mobile-menu a {
-            padding: 0.8rem 0.9rem;
-            border-radius: 0.9rem;
-            color: var(--brand-green-dark);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .mobile-menu a:hover {
-            background: var(--brand-green-soft);
-        }
-
-        .toc ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .toc li {
-            margin-bottom: 0.4rem;
-        }
-
-        .toc a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 767px) {
-            .desktop-nav {
-                display: none;
-            }
-
-            .mobile-nav {
-                display: block;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/shared-layout.css" />
+    <link rel="stylesheet" href="../css/legal.css" />
 </head>
 
-<body class="font-sans bg-primary-50-color text-gray-800 pt-0">
+<body class="legal-page">
     <div data-shared-nav data-root=".." data-active=""></div>
 
-    <main class="container mx-auto px-4 max-w-4xl py-12">
-        <header class="mb-10">
-            <p class="text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">Terms &amp; Conditions</p>
-            <h1 class="mt-2 text-4xl font-extrabold text-gray-900">MealOps Developer Terms</h1>
-            <p class="mt-2 text-xl font-semibold text-gray-700">AI Agent Builders and API Partners</p>
-            <p class="mt-4 text-sm text-gray-500">Effective date: October 6, 2026</p>
+    <main class="legal">
+        <a class="legal-back" href="../terms/">&larr; Terms &amp; Conditions</a>
+
+        <header class="legal-header">
+            <p class="legal-eyebrow">Legal</p>
+            <h1>MealOps Developer Terms</h1>
+            <p class="legal-subtitle">AI Agent Builders and API Partners</p>
+            <p class="legal-date">Effective date: October 6, 2026</p>
         </header>
 
-        <p class="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md text-yellow-800 text-sm leading-relaxed">
-            <strong class="font-bold">PLEASE READ THESE TERMS CAREFULLY. SECTION 15 CONTAINS AN ARBITRATION AGREEMENT
-                AND A CLASS ACTION WAIVER THAT, UNLESS YOU OPT OUT WITHIN 30 DAYS AS DESCRIBED IN SECTION 15(f),
-                REQUIRE DISPUTES BETWEEN US TO BE RESOLVED BY BINDING INDIVIDUAL ARBITRATION.</strong>
+        <p class="legal-callout">
+        <strong>PLEASE READ THESE TERMS CAREFULLY. SECTION 15 CONTAINS AN ARBITRATION AGREEMENT
+        AND A CLASS ACTION WAIVER THAT, UNLESS YOU OPT OUT WITHIN 30 DAYS AS DESCRIBED IN SECTION 15(f),
+        REQUIRE DISPUTES BETWEEN US TO BE RESOLVED BY BINDING INDIVIDUAL ARBITRATION.</strong>
         </p>
 
-        <nav class="toc mb-12 p-6 rounded-lg border border-gray-200 bg-gray-50">
-            <p class="font-semibold text-gray-900 mb-3">Contents</p>
-            <ul class="text-sm">
+        <nav class="legal-toc" aria-label="Contents">
+            <p class="legal-toc-title">Contents</p>
+            <ol>
                 <li><a href="#acceptance">1. Acceptance and Scope</a></li>
                 <li><a href="#access">2. Access and Credentials</a></li>
                 <li><a href="#end-users">3. Your Agent and Your End Users</a></li>
@@ -136,48 +51,48 @@
                 <li><a href="#changes">16. Changes to These Developer Terms</a></li>
                 <li><a href="#general">17. General Provisions</a></li>
                 <li><a href="#contact">18. Contact</a></li>
-            </ul>
+            </ol>
         </nav>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="acceptance">1. Acceptance and Scope</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                These Developer Terms are a legal agreement between the company or individual that builds, operates, or connects an AI agent, application, or other software to MealOps (“<strong>Developer</strong>,” “you,” or “your”) and MealOps, Inc., a Delaware corporation (“<strong>MealOps</strong>,” “we,” “us,” or “our”). They cover your use of our APIs, including the Phantom MCP server, our documentation, credentials, and related services (the “<strong>Developer Services</strong>”).
+        <section class="legal-section" id="acceptance">
+            <h2>1. Acceptance and Scope</h2>
+            <p>
+            These Developer Terms are a legal agreement between the company or individual that builds, operates, or connects an AI agent, application, or other software to MealOps (“<strong>Developer</strong>,” “you,” or “your”) and MealOps, Inc., a Delaware corporation (“<strong>MealOps</strong>,” “we,” “us,” or “our”). They cover your use of our APIs, including the Phantom MCP server, our documentation, credentials, and related services (the “<strong>Developer Services</strong>”).
             </p>
-            <p class="text-base text-gray-700 leading-relaxed">
-                You accept these Developer Terms when you request or receive API credentials, connect software to the Developer Services, or use them after an updated version takes effect. The person accepting must be at least 18 and authorized to bind you. If you and MealOps have signed a separate partner or integration agreement, that agreement controls where the two conflict.
+            <p>
+            You accept these Developer Terms when you request or receive API credentials, connect software to the Developer Services, or use them after an updated version takes effect. The person accepting must be at least 18 and authorized to bind you. If you and MealOps have signed a separate partner or integration agreement, that agreement controls where the two conflict.
             </p>
-            <p class="text-base text-gray-700 leading-relaxed">
-                If you also place orders for yourself or your own organization, our <a class="text-primary" href="../terms/">Terms &amp; Conditions</a> apply to those orders. Restaurants are covered by our <a class="text-primary" href="../restaurant-terms/">Restaurant Terms</a>.
+            <p>
+            If you also place orders for yourself or your own organization, our <a href="../terms/">Terms &amp; Conditions</a> apply to those orders. Restaurants are covered by our <a href="../restaurant-terms/">Restaurant Terms</a>.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="access">2. Access and Credentials</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+        <section class="legal-section" id="access">
+            <h2>2. Access and Credentials</h2>
+            <ul>
                 <li><strong>Approval.</strong> Access to the Developer Services is by approval. We may approve, limit, or decline access, and may set or change the scopes, environments, and limits that apply to your credentials.</li>
-                <li><strong>Keep keys secret.</strong> API keys and agent keys act on your behalf. Keep them on your servers, never in client-side code, apps, or public repositories, and do not share them. Tell us right away at <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a> if a key may be compromised. You are responsible for activity under your credentials until you tell us.</li>
+                <li><strong>Keep keys secret.</strong> API keys and agent keys act on your behalf. Keep them on your servers, never in client-side code, apps, or public repositories, and do not share them. Tell us right away at <a href="mailto:support@mealops.ai">support@mealops.ai</a> if a key may be compromised. You are responsible for activity under your credentials until you tell us.</li>
                 <li><strong>Accurate information.</strong> Keep your account and contact details current so we can reach you about your integration, security issues, and changes.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="end-users">3. Your Agent and Your End Users</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                An “<strong>End User</strong>” is any person or organization on whose behalf your software uses the Developer Services. As between you and MealOps, you are responsible for your software and for how it acts for your End Users.
+        <section class="legal-section" id="end-users">
+            <h2>3. Your Agent and Your End Users</h2>
+            <p>
+            An “<strong>End User</strong>” is any person or organization on whose behalf your software uses the Developer Services. As between you and MealOps, you are responsible for your software and for how it acts for your End Users.
             </p>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+            <ul>
                 <li><strong>Get authorization first.</strong> Your software may place, change, or cancel an order, or start a payment, only with the End User’s authorization for that action or within limits the End User clearly set.</li>
                 <li><strong>Show the real total.</strong> Before an order is paid for and submitted, show the End User the restaurant, the items, the pickup or delivery time, and the total from our quote, including taxes, fees, and tip. Our quote is the authoritative price.</li>
                 <li><strong>Be honest about who does what.</strong> Do not present yourself as MealOps or as a restaurant, and do not suggest that MealOps or a restaurant endorses your product unless we have agreed in writing.</li>
-                <li><strong>Support your users.</strong> Unless we agree otherwise, you provide first-line support to your End Users and pass order problems to us promptly at <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a>.</li>
+                <li><strong>Support your users.</strong> Unless we agree otherwise, you provide first-line support to your End Users and pass order problems to us promptly at <a href="mailto:support@mealops.ai">support@mealops.ai</a>.</li>
                 <li><strong>Allergies and dietary needs.</strong> Pass along any allergy or dietary note your End User gives you, and do not present menu or allergen information as guaranteed. Allergen accuracy is the restaurant’s responsibility.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="docs">4. Using the Developer Services</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+        <section class="legal-section" id="docs">
+            <h2>4. Using the Developer Services</h2>
+            <ul>
                 <li>Use the Developer Services as our documentation describes, including the order flow, capability signals, data freshness rules, and rate limits we publish.</li>
                 <li>Do not work around validation, quoting, payment, ordering-time, or rate-limit controls, or try to submit orders a restaurant cannot fulfill.</li>
                 <li>Do not place fraudulent, duplicate, or bulk orders you do not intend to complete, and do not use live orders to test your software beyond what we have approved.</li>
@@ -185,12 +100,12 @@
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="data">5. Restaurant and Menu Data</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Restaurant names, menus, prices, hours, availability, and related information you receive through the Developer Services (“<strong>Restaurant Data</strong>”) belong to MealOps, the restaurants, or their platforms. We give you a limited, non-exclusive, revocable right to display and use Restaurant Data only to help your End Users discover and order through MealOps while you are connected.
+        <section class="legal-section" id="data">
+            <h2>5. Restaurant and Menu Data</h2>
+            <p>
+            Restaurant names, menus, prices, hours, availability, and related information you receive through the Developer Services (“<strong>Restaurant Data</strong>”) belong to MealOps, the restaurants, or their platforms. We give you a limited, non-exclusive, revocable right to display and use Restaurant Data only to help your End Users discover and order through MealOps while you are connected.
             </p>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+            <ul>
                 <li>Do not store Restaurant Data longer than our freshness rules allow, or build a separate directory, database, or dataset from it.</li>
                 <li>Do not sell, license, or share Restaurant Data, or use it to build a competing ordering service.</li>
                 <li>Do not use Restaurant Data to train or fine-tune machine-learning models, apart from using it briefly to answer an End User’s request.</li>
@@ -198,142 +113,144 @@
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="payments">6. Orders, Payments, and Fees</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
-                <li><strong>Every order is prepaid.</strong> Payment is charged or authorized through the MealOps payment flow before an order is submitted. Charges, refunds, and cancellations for an End User’s order follow our <a class="text-primary" href="../terms/">Terms &amp; Conditions</a>.</li>
+        <section class="legal-section" id="payments">
+            <h2>6. Orders, Payments, and Fees</h2>
+            <ul>
+                <li><strong>Every order is prepaid.</strong> Payment is charged or authorized through the MealOps payment flow before an order is submitted. Charges, refunds, and cancellations for an End User’s order follow our <a href="../terms/">Terms &amp; Conditions</a>.</li>
                 <li><strong>Orders are the End User’s orders.</strong> An order your software places within the End User’s authorization is that End User’s order. If your software places an order without authorization, or outside the limits the End User set, you are responsible for it as between you and MealOps.</li>
                 <li><strong>Fees.</strong> Any fees, revenue share, or credits between you and MealOps are set out in your partner agreement or in writing from us. We may change the fees we charge End Users, which our quotes will reflect.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="privacy">7. Privacy and Data Protection</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+        <section class="legal-section" id="privacy">
+            <h2>7. Privacy and Data Protection</h2>
+            <ul>
                 <li><strong>Your notice to End Users.</strong> You are responsible for telling your End Users, in your own privacy policy, that you share their information with MealOps and its restaurant network to fulfill their orders, and for having a lawful basis to do so.</li>
                 <li><strong>Send only what’s needed.</strong> Send us only the personal information needed to fulfill an order, such as a name, phone number, delivery address, and dietary or allergy notes.</li>
-                <li><strong>How we use it.</strong> We handle personal information we receive through the Developer Services as described in our <a class="text-primary" href="../privacy-policy/">Privacy Policy</a>.</li>
+                <li><strong>How we use it.</strong> We handle personal information we receive through the Developer Services as described in our <a href="../privacy-policy/">Privacy Policy</a>.</li>
                 <li><strong>Protect what you receive.</strong> Use personal information you receive from us, such as order status or delivery details, only to serve that End User; protect it with reasonable safeguards; delete it when you no longer need it; and tell us within 72 hours of discovering any unauthorized access to it.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="branding">8. Names and Branding</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                You may use the name “MealOps” in plain text to accurately describe that orders are fulfilled through MealOps. Any other use of our names, logos, or marks needs our prior written permission. We may describe you as a MealOps developer or partner unless you ask us not to.
+        <section class="legal-section" id="branding">
+            <h2>8. Names and Branding</h2>
+            <p>
+            You may use the name “MealOps” in plain text to accurately describe that orders are fulfilled through MealOps. Any other use of our names, logos, or marks needs our prior written permission. We may describe you as a MealOps developer or partner unless you ask us not to.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="suspension">9. Suspension and Termination</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+        <section class="legal-section" id="suspension">
+            <h2>9. Suspension and Termination</h2>
+            <ul>
                 <li>Either party may end these Developer Terms for convenience with 30 days’ written notice, unless a separate agreement says otherwise.</li>
                 <li>We may suspend or limit your credentials immediately, with notice as soon as reasonably possible, if you break these terms, if there is a security, fraud, or legal risk, or if a restaurant or platform requires it.</li>
                 <li>When these terms end, stop using the Developer Services and delete Restaurant Data and personal information you received from us, except order records you are legally required to keep. Orders already placed will be completed or refunded under our Terms &amp; Conditions.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="changes-api">10. Changes to the Developer Services</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                We may change, add, or retire parts of the Developer Services. Where practical, we will give reasonable advance notice of changes that break existing integrations, through our documentation or by email.
+        <section class="legal-section" id="changes-api">
+            <h2>10. Changes to the Developer Services</h2>
+            <p>
+            We may change, add, or retire parts of the Developer Services. Where practical, we will give reasonable advance notice of changes that break existing integrations, through our documentation or by email.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="confidentiality">11. Confidentiality</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Non-public information either party shares with the other, including credentials, pricing, non-public documentation, and order data, is confidential. Each party will use the other’s confidential information only as these terms allow, protect it with at least reasonable care, and share it only with people bound by similar obligations. This does not cover information that becomes public through no fault of the receiving party, was already known without restriction, or is independently developed.
+        <section class="legal-section" id="confidentiality">
+            <h2>11. Confidentiality</h2>
+            <p>
+            Non-public information either party shares with the other, including credentials, pricing, non-public documentation, and order data, is confidential. Each party will use the other’s confidential information only as these terms allow, protect it with at least reasonable care, and share it only with people bound by similar obligations. This does not cover information that becomes public through no fault of the receiving party, was already known without restriction, or is independently developed.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="disclaimers">12. Disclaimers</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                THE DEVELOPER SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.” MEALOPS DOES NOT PROMISE THAT THEY WILL BE UNINTERRUPTED OR ERROR-FREE, THAT ANY RESTAURANT WILL BE AVAILABLE OR ACCEPT AN ORDER, OR THAT ANY QUOTED TIME WILL BE MET. TO THE FULLEST EXTENT THE LAW ALLOWS, WE DISCLAIM ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+        <section class="legal-section" id="disclaimers">
+            <h2>12. Disclaimers</h2>
+            <p>
+            THE DEVELOPER SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.” MEALOPS DOES NOT PROMISE THAT THEY WILL BE UNINTERRUPTED OR ERROR-FREE, THAT ANY RESTAURANT WILL BE AVAILABLE OR ACCEPT AN ORDER, OR THAT ANY QUOTED TIME WILL BE MET. TO THE FULLEST EXTENT THE LAW ALLOWS, WE DISCLAIM ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="liability">13. Limitation of Liability</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                TO THE EXTENT THE LAW ALLOWS, NEITHER PARTY WILL BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR EXEMPLARY DAMAGES, OR FOR LOST PROFITS, REVENUE, GOODWILL, OR DATA.
+        <section class="legal-section" id="liability">
+            <h2>13. Limitation of Liability</h2>
+            <p>
+            TO THE EXTENT THE LAW ALLOWS, NEITHER PARTY WILL BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR EXEMPLARY DAMAGES, OR FOR LOST PROFITS, REVENUE, GOODWILL, OR DATA.
             </p>
-            <p class="text-base text-gray-700 leading-relaxed">
-                EXCEPT FOR THE EXCLUDED CLAIMS BELOW, EACH PARTY’S TOTAL LIABILITY UNDER THESE DEVELOPER TERMS WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS PAID BETWEEN THE PARTIES UNDER THESE TERMS IN THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE THOUSAND US DOLLARS ($1,000). “Excluded Claims” means amounts owed for orders and fees, indemnification obligations under Section 14, breach of Section 7 or 11, and gross negligence, willful misconduct, or fraud.
-            </p>
-        </section>
-
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="indemnification">14. Indemnification</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                You will defend, indemnify, and hold harmless MealOps and its officers, directors, employees, and agents from third-party claims and related costs (including reasonable attorneys’ fees) arising from your software, orders it places without authorization, your handling of End User information, or your breach of these terms or the law. MealOps will do the same for you against third-party claims that the Developer Services, as we provide them and used as these terms allow, infringe that third party’s intellectual property. The party seeking protection must give prompt notice, let the other party control the defense, and cooperate at the other party’s expense.
+            <p>
+            EXCEPT FOR THE EXCLUDED CLAIMS BELOW, EACH PARTY’S TOTAL LIABILITY UNDER THESE DEVELOPER TERMS WILL NOT EXCEED THE GREATER OF (A) THE AMOUNTS PAID BETWEEN THE PARTIES UNDER THESE TERMS IN THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM, OR (B) ONE THOUSAND US DOLLARS ($1,000). “Excluded Claims” means amounts owed for orders and fees, indemnification obligations under Section 14, breach of Section 7 or 11, and gross negligence, willful misconduct, or fraud.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="arbitration">15. Dispute Resolution and Arbitration</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                <strong>PLEASE READ THIS SECTION CAREFULLY. IT REQUIRES BINDING INDIVIDUAL ARBITRATION AND LIMITS HOW YOU CAN SEEK RELIEF, UNLESS YOU OPT OUT UNDER SECTION 15(f).</strong> This Section is the “Arbitration Agreement.”
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(a) Governing Law</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                These terms are governed by the laws of the State of Delaware, without regard to its conflict of law rules, except that the Federal Arbitration Act governs the interpretation and enforcement of this Arbitration Agreement.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(b) Informal Resolution First</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Before either party may demand arbitration, the party raising the claim must send written notice describing the claim and the relief sought, and the parties will meet and confer by telephone or videoconference in good faith within 60 days after that notice. To notify MealOps, email <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a> with your name, your company name and the email address on your developer account, and a description of your claim. Completing this conference is a precondition to arbitration. Limitations periods and filing deadlines are paused while the parties follow this step.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(c) Scope</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Any dispute, claim, or controversy arising out of or relating to these terms, the Services, or your relationship or transactions with MealOps will be resolved by binding individual arbitration rather than in court, except that (1) either party may bring an individual claim in small claims court if it qualifies and stays there, and (2) either party may seek injunctive or other equitable relief in court for infringement or misuse of intellectual property or confidential information.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(d) Rules and Forum</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                The arbitration will be administered by ADR Services, Inc. under its rules then in effect, available at adrservices.com, before a single arbitrator. If ADR Services, Inc. is unavailable, the parties will agree on another administrator. The arbitration may proceed on written submissions, by telephone or videoconference, or in person in the county where your principal place of business is located or another place both parties agree on. The arbitrator may award the same individual relief a court could, and judgment on the award may be entered in any court with jurisdiction. Fees follow the administrator’s fee schedule; where the law requires it, MealOps will pay the part of the initial filing fee that exceeds what it would cost you to file in court.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(e) Class Action Waiver</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING. The arbitrator may not combine more than one party’s claims or preside over any class or representative proceeding. If this waiver is found unenforceable for a particular claim, that claim will proceed in court and the rest of this Arbitration Agreement stays in effect.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(f) Your Right to Opt Out</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                You may opt out of this Arbitration Agreement by emailing <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a> with the subject line “Arbitration Opt Out” within 30 days after you first accept these terms. Include your name, your company name and the email address on your developer account, and a statement that you are opting out. Opting out affects only this Arbitration Agreement; the rest of these terms still apply, and opting out will not affect your account or your relationship with us in any other way.
-            </p>
-            <h3 class="text-xl font-semibold text-gray-800 mt-4">(g) Changes</h3>
-            <p class="text-base text-gray-700 leading-relaxed">
-                If we change this Arbitration Agreement, the change will not apply to a dispute we had notice of before the change took effect.
+        <section class="legal-section" id="indemnification">
+            <h2>14. Indemnification</h2>
+            <p>
+            You will defend, indemnify, and hold harmless MealOps and its officers, directors, employees, and agents from third-party claims and related costs (including reasonable attorneys’ fees) arising from your software, orders it places without authorization, your handling of End User information, or your breach of these terms or the law. MealOps will do the same for you against third-party claims that the Developer Services, as we provide them and used as these terms allow, infringe that third party’s intellectual property. The party seeking protection must give prompt notice, let the other party control the defense, and cooperate at the other party’s expense.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="changes">16. Changes to These Developer Terms</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                We may update these Developer Terms. If a change is material, we will give you at least 30 days’ notice by email or through our documentation before it takes effect and update the date above. If you do not accept the change, stop using the Developer Services before it takes effect; continuing after that means you accept it.
+        <section class="legal-section" id="arbitration">
+            <h2>15. Dispute Resolution and Arbitration</h2>
+            <p>
+            <strong>PLEASE READ THIS SECTION CAREFULLY. IT REQUIRES BINDING INDIVIDUAL ARBITRATION AND LIMITS HOW YOU CAN SEEK RELIEF, UNLESS YOU OPT OUT UNDER SECTION 15(f).</strong> This Section is the “Arbitration Agreement.”
+            </p>
+            <h3>(a) Governing Law</h3>
+            <p>
+            These terms are governed by the laws of the State of Delaware, without regard to its conflict of law rules, except that the Federal Arbitration Act governs the interpretation and enforcement of this Arbitration Agreement.
+            </p>
+            <h3>(b) Informal Resolution First</h3>
+            <p>
+            Before either party may demand arbitration, the party raising the claim must send written notice describing the claim and the relief sought, and the parties will meet and confer by telephone or videoconference in good faith within 60 days after that notice. To notify MealOps, email <a href="mailto:support@mealops.ai">support@mealops.ai</a> with your name, your company name and the email address on your developer account, and a description of your claim. Completing this conference is a precondition to arbitration. Limitations periods and filing deadlines are paused while the parties follow this step.
+            </p>
+            <h3>(c) Scope</h3>
+            <p>
+            Any dispute, claim, or controversy arising out of or relating to these terms, the Services, or your relationship or transactions with MealOps will be resolved by binding individual arbitration rather than in court, except that (1) either party may bring an individual claim in small claims court if it qualifies and stays there, and (2) either party may seek injunctive or other equitable relief in court for infringement or misuse of intellectual property or confidential information.
+            </p>
+            <h3>(d) Rules and Forum</h3>
+            <p>
+            The arbitration will be administered by ADR Services, Inc. under its rules then in effect, available at adrservices.com, before a single arbitrator. If ADR Services, Inc. is unavailable, the parties will agree on another administrator. The arbitration may proceed on written submissions, by telephone or videoconference, or in person in the county where your principal place of business is located or another place both parties agree on. The arbitrator may award the same individual relief a court could, and judgment on the award may be entered in any court with jurisdiction. Fees follow the administrator’s fee schedule; where the law requires it, MealOps will pay the part of the initial filing fee that exceeds what it would cost you to file in court.
+            </p>
+            <h3>(e) Class Action Waiver</h3>
+            <p>
+            EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING. The arbitrator may not combine more than one party’s claims or preside over any class or representative proceeding. If this waiver is found unenforceable for a particular claim, that claim will proceed in court and the rest of this Arbitration Agreement stays in effect.
+            </p>
+            <h3>(f) Your Right to Opt Out</h3>
+            <p>
+            You may opt out of this Arbitration Agreement by emailing <a href="mailto:support@mealops.ai">support@mealops.ai</a> with the subject line “Arbitration Opt Out” within 30 days after you first accept these terms. Include your name, your company name and the email address on your developer account, and a statement that you are opting out. Opting out affects only this Arbitration Agreement; the rest of these terms still apply, and opting out will not affect your account or your relationship with us in any other way.
+            </p>
+            <h3>(g) Changes</h3>
+            <p>
+            If we change this Arbitration Agreement, the change will not apply to a dispute we had notice of before the change took effect.
             </p>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="general">17. General Provisions</h2>
-            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+        <section class="legal-section" id="changes">
+            <h2>16. Changes to These Developer Terms</h2>
+            <p>
+            We may update these Developer Terms. If a change is material, we will give you at least 30 days’ notice by email or through our documentation before it takes effect and update the date above. If you do not accept the change, stop using the Developer Services before it takes effect; continuing after that means you accept it.
+            </p>
+        </section>
+
+        <section class="legal-section" id="general">
+            <h2>17. General Provisions</h2>
+            <ul>
                 <li><strong>Independent parties.</strong> These terms do not create a partnership, joint venture, agency, or employment relationship.</li>
                 <li><strong>Entire agreement.</strong> These Developer Terms, our documentation, and any partner agreement are the entire agreement on this subject.</li>
                 <li><strong>Assignment.</strong> You may not assign these terms without our written consent. We may assign them to an affiliate or in a merger, acquisition, or sale of assets.</li>
-                <li><strong>Notices.</strong> We may give notice by email to your account address. You may give notice to <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a>.</li>
+                <li><strong>Notices.</strong> We may give notice by email to your account address. You may give notice to <a href="mailto:support@mealops.ai">support@mealops.ai</a>.</li>
                 <li><strong>Force majeure.</strong> Neither party is liable for delays caused by events beyond its reasonable control, other than payment obligations.</li>
                 <li><strong>Severability and waiver.</strong> If a provision is unenforceable, it is limited to the minimum extent necessary and the rest stays in effect. Not enforcing a provision is not a waiver.</li>
             </ul>
         </section>
 
-        <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900" id="contact">18. Contact</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Questions about these Developer Terms or your integration: <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a>. Technical documentation is at <a class="text-primary" href="https://docs.mealops.ai/" target="_blank" rel="noopener noreferrer">docs.mealops.ai</a>.
-            </p>
+        <section class="legal-section" id="contact">
+            <h2>18. Contact</h2>
+            <p>Questions about these Developer Terms or your integration can be sent to:</p>
+            <div class="legal-contact">
+                <p class="legal-contact-name">MealOps, Inc.</p>
+                <p><a href="mailto:support@mealops.ai">support@mealops.ai</a></p>
+            </div>
+            <p>Technical documentation is at <a href="https://docs.mealops.ai/" target="_blank" rel="noopener noreferrer">docs.mealops.ai</a>.</p>
         </section>
     </main>
 
-    <!-- Footer -->
     <div data-shared-footer data-root=".."></div>
     <script defer src="../js/shared-layout.js"></script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
