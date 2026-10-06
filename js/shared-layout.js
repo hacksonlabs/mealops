@@ -85,7 +85,7 @@
                         <div>
                             <img src="${escapeAttr(logoSrc)}" alt="Mealops logo" class="h-12 w-auto object-contain" />
                             <p style="margin-top: 1rem; color: rgba(255,255,255,0.72); line-height: 1.7;">
-                                MealOps is redefining meal ordering logistics—from CoachImHungry&apos;s team workflows to Phantom&apos;s agentic ordering infrastructure.
+                                MealOps is the restaurant network for AI agents, connecting them to restaurants across POS systems, marketplaces, and direct ordering.
                             </p>
                             <div style="margin-top: 1rem;">
                                 <a href="https://www.linkedin.com/company/mealops" target="_blank" rel="noopener noreferrer" aria-label="Mealops LinkedIn">
