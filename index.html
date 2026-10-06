@@ -1152,6 +1152,11 @@
         }
 
         @media (max-width: 639px) {
+            /* The next section already pads its top; avoid a double gap on phones. */
+            .net-section {
+                padding-bottom: 0;
+            }
+
             .feature {
                 display: grid;
                 grid-template-columns: 2.4rem minmax(0, 1fr);

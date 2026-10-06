@@ -589,12 +589,12 @@
             height: 3px;
             border-radius: 999px;
         }
-        .ld-arrow.fwd { background: #2563eb; }
-        .ld-arrow.fwd.orange { background: #e2611b; }
-        .ld-arrow.fwd.purple { background: #3b2fa0; }
+        .ld-arrow.fwd { background: #2563eb; color: #2563eb; }
+        .ld-arrow.fwd.orange { background: #e2611b; color: #e2611b; }
+        .ld-arrow.fwd.purple { background: #3b2fa0; color: #3b2fa0; }
         .ld-arrow.fwd.purple::after { border-left-color: #3b2fa0; }
-        .ld-arrow.back { background: #3b2fa0; }
-        .ld-arrow.back.orange { background: #e2611b; }
+        .ld-arrow.back { background: #3b2fa0; color: #3b2fa0; }
+        .ld-arrow.back.orange { background: #e2611b; color: #e2611b; }
         .ld-arrow.back.orange::before { border-right-color: #e2611b; }
         .ld-arrow.fwd::after, .ld-arrow.back::before {
             content: "";
@@ -609,15 +609,38 @@
         .ld-arrow.back::before { left: -2px; border-right: 9px solid #3b2fa0; }
         @media (max-width: 919px) {
             .ld { grid-template-columns: 1fr; gap: 0.9rem; }
-            .ld-link { align-self: auto; flex-direction: row; justify-content: center; gap: 1.6rem; padding: 0.2rem 0; }
-            .ld-arrow { transform: rotate(90deg); width: 2.2rem; flex: none; }
+            /* Stacked: the two arrows meet in the middle, each caption sits on its outer side. */
+            .ld-link { align-self: auto; flex-direction: row; justify-content: center; gap: 0.9rem; padding: 0.1rem 0; }
+            .ld-link-group { flex: 1; flex-direction: row; gap: 0.5rem; text-align: left; }
+            .ld-link-group:first-child { flex-direction: row-reverse; text-align: right; }
             .ld-link .ld-caption { max-width: 9rem; }
-            .ld-pos { align-self: stretch; }
+            .ld-link-group svg.ld-lock { width: 1.25rem; height: 1.25rem; }
+            .ld-arrow { width: 3px; max-width: none; height: 2.6rem; flex: none; }
+            .ld .ld-link .ld-arrow::before,
+            .ld .ld-link .ld-arrow::after {
+                top: auto;
+                right: auto;
+                bottom: auto;
+                left: 50%;
+                border: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                transform: translateX(-50%);
+            }
+            .ld .ld-link .ld-arrow.fwd::after { bottom: -2px; border-top: 9px solid currentColor; }
+            .ld .ld-link .ld-arrow.back::before { top: -2px; border-bottom: 9px solid currentColor; }
+            .ld-pos { align-self: stretch; min-height: 0; }
+            .ld-pos .ld-row { padding: 1.05rem 0.3rem; }
         }
         @media (max-width: 639px) {
             .ld-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .ld-box { font-size: 0.8rem; overflow-wrap: break-word; }
             .ld-box:last-child { grid-column: 1 / -1; }
+            .diagram-frame { padding: 1rem; }
+            .ld-panel { padding: 1rem; }
+        }
+        @media (max-width: 379px) {
+            .ld-box { padding-left: 0.3rem; padding-right: 0.3rem; font-size: 0.74rem; }
         }
         .feature-intro {
             max-width: 40rem;
@@ -966,6 +989,13 @@
             .ph-log li { grid-template-columns: 1rem minmax(0, 1fr); }
             .ph-result { grid-column: 2; }
             .ph-log { min-height: 0; }
+        }
+        @media (max-width: 639px) {
+            .phantom-left, .phantom-right { padding: 1.75rem 1.25rem; }
+            .phantom-node { padding: 1.25rem; }
+            .phantom-core-shell { padding: 1.4rem 1.1rem; }
+            .phantom-core-title { font-size: 2.4rem; }
+            .cta-button { margin-top: 1.4rem; }
         }
         @media (prefers-reduced-motion: reduce) {
             .ph-fog span, .ph-peek, .ph-cta-ghost, .ph-live::before, .ph-cursor { animation: none; }

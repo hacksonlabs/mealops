@@ -94,7 +94,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div style="padding-left: 1.5rem;">
+                        <div class="footer-col">
                             <div class="footer-title">Products</div>
                             <div class="footer-list">
                                 <a href="${escapeAttr(phantomHref)}">Phantom</a>
@@ -102,7 +102,7 @@
                                 <a href="${escapeAttr(docsHref)}" target="_blank" rel="noopener noreferrer">Developer Docs</a>
                             </div>
                         </div>
-                        <div style="padding-left: 1.5rem;">
+                        <div class="footer-col">
                             <div class="footer-title">Company</div>
                             <div class="footer-list">
                                 <a href="${escapeAttr(privacyHref)}">Privacy Policy</a>
