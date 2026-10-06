@@ -100,7 +100,7 @@
                             <div class="footer-list">
                                 <a href="${escapeAttr(phantomHref)}">Phantom</a>
                                 <a href="${escapeAttr(coachHref)}">CoachImHungry</a>
-                                <a href="${escapeAttr(docsHref)}">Developer Docs</a>
+                                <a href="${escapeAttr(docsHref)}" target="_blank" rel="noopener noreferrer">Developer Docs</a>
                             </div>
                         </div>
                         <div style="padding-left: 1.5rem;">
