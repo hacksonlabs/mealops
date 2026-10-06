@@ -6,7 +6,7 @@
     <title>CoachImHungry | MealOps</title>
     <meta
         name="description"
-        content="CoachImHungry helps teams manage meal ordering with less friction and more reliability."
+        content="CoachImHungry helps athletic operations staff plan, coordinate, and order team meals. It's the first agent connected to the MealOps network."
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/shared-layout.css" />
@@ -120,6 +120,8 @@
         .panel, .feature-card, .quote-card, .cta-panel { padding: 1.5rem; }
         .panel-dark { background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%); color: white; }
         .panel-dark .muted { color: rgba(255,255,255,0.78); }
+        /* main.css colors every h1–h6, so the heading on the green panel opts back out */
+        .panel-dark h2 { color: white; }
         .hero-copy {
             padding: 0;
         }
@@ -393,6 +395,7 @@
             position: relative;
         }
         .future-shell {
+            position: relative;
             border: 1px solid rgba(19, 117, 71, 0.12);
             border-radius: 2rem;
             background: linear-gradient(145deg, #103a27 0%, #137547 65%, #1f8d54 100%);
@@ -605,6 +608,9 @@
                 gap: 2.5rem;
                 padding-right: 2.5rem;
             }
+            .future-title br {
+                display: none;
+            }
             .logo-item {
                 width: 8rem;
             }
@@ -639,7 +645,7 @@
                         <!-- <span class="eyebrow">CoachImHungry</span> -->
                         <h1 class="hero-title">One workflow for team meals.</h1>
                         <p class="lead">
-                            CoachImHungry gives ops staff one place to manage team meals, powered by Phantom’s agent ordering infrastructure.
+                            CoachImHungry helps athletic operations staff plan, coordinate, and order team meals. It's the first agent connected to the MealOps network.
                         </p>
                         <div class="actions">
                             <a href="../contact/" class="button-primary">Talk to MealOps</a>
@@ -648,7 +654,7 @@
                     <div class="panel panel-dark">
                         <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">Why it works</span>
                         <h2 style="margin-top: 1rem; font-size: 2rem; letter-spacing: -0.04em; line-height: 1.05;">Built for repeatability.</h2>
-                        <p class="muted" style="margin-top: 1rem;">Keep the same workflow for every team meal.</p>
+                        <p class="muted" style="margin-top: 1rem;">Set up a team meal once and run it again all season.</p>
                     </div>
                 </div>
             </div>
@@ -668,12 +674,12 @@
                             <div>
                                 <div class="coach-explainer-label">Team meals</div>
                                 <h3 class="coach-explainer-heading">Built for athletic operations staff.</h3>
-                                <p class="coach-explainer-lead">Plan meals, keep the team aligned, and place orders from one workflow.</p>
+                                <p class="coach-explainer-lead">Plan the week's meals, collect everyone's orders, and get food delivered on schedule.</p>
 
                                 <div class="coach-pill-row">
                                     <div class="coach-pill">Meal Planning</div>
-                                    <div class="coach-pill coach-pill-muted">Coordination</div>
-                                    <div class="coach-pill coach-pill-muted">Ordering</div>
+                                    <div class="coach-pill coach-pill-muted">Group Orders</div>
+                                    <div class="coach-pill coach-pill-muted">Scheduled Delivery</div>
                                 </div>
                             </div>
 
@@ -748,7 +754,7 @@
                             </svg>
                         </div>
                         <h3>Execution</h3>
-                        <p>CoachImHungry sends the order through Phantom so execution stays connected.</p>
+                        <p>Orders go straight to the restaurant through the MealOps network.</p>
                     </article>
                     <article class="playbook-card">
                         <div class="playbook-icon" style="background: #d7f8e3; color: var(--brand-green);">
@@ -767,23 +773,23 @@
             <div class="shell">
                 <div class="future-shell">
                     <!-- <span class="future-label">Coming 2026</span> -->
-                    <h2 class="future-title" style="max-width: none;">One agent experience,<br> powered by agent-to-agent ordering.</h2>
+                    <h2 class="future-title" style="max-width: none;">The first agent connected<br> to the MealOps network.</h2>
                     <!-- <p class="future-copy">
                         CoachImHungry will feel like one agent for staff, powered by agent-to-agent ordering underneath.
                     </p> -->
 
                     <div class="future-grid">
                         <article class="future-card">
-                            <h3>Coach's agent (MO)</h3>
-                            <p>Staff work with one agent for planning, timing, and repeat orders.</p>
+                            <h3>Meet MO</h3>
+                            <p>Staff ask MO to plan, schedule, and repeat team orders in plain language.</p>
                         </article>
                         <article class="future-card">
-                            <h3>Agent-to-agent ordering</h3>
-                            <p>That agent can place orders through Phantom into restaurant systems without staff changing tools.</p>
+                            <h3>Connected to the network</h3>
+                            <p>MO orders from restaurants across POS systems, marketplaces, and direct ordering.</p>
                         </article>
                         <article class="future-card">
-                            <h3>Phantom infrastructure</h3>
-                            <p>Phantom is the POS-connected infrastructure layer that makes the workflow possible.</p>
+                            <h3>Powered by Phantom</h3>
+                            <p>Phantom checks every order against the restaurant's menu, hours, and rules before it's placed.</p>
                         </article>
                     </div>
 
@@ -863,7 +869,7 @@
                         <span class="eyebrow">Next step</span>
                         <h2 class="section-title cta-title" style="margin-top: 1rem;">Want CoachImHungry for your team?</h2>
                     </div>
-                    <a href="../contact/" class="button-primary">Contact MealOps</a>
+                    <a href="../contact/" class="button-primary">Talk to MealOps</a>
                 </div>
             </div>
         </section>
