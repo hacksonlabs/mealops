@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/shared-layout.css" />
-    <title>Consumer Terms and Conditions – MealOps</title>
+    <title>Terms &amp; Conditions – MealOps</title>
     <style>
         :root {
             --brand-green-dark: #137547;
@@ -111,10 +111,19 @@
                 represent. If you do not agree, do not use the Services.
             </p>
             <p class="mt-4 text-base text-gray-700 leading-relaxed">
-                If you are a restaurant or other merchant receiving orders through MealOps, your relationship with us is
-                governed by the <a class="text-primary" href="../restaurant-terms/">MealOps Restaurant Terms</a>
-                instead of these Terms.
+                These Terms cover anyone who orders through MealOps, including CoachImHungry users and people whose AI
+                agents order for them. Other documents apply in specific cases:
             </p>
+            <ul class="mt-2 list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li>Organizations that add a team, roster, or staff to MealOps also agree to the
+                    <a class="text-primary" href="../client-terms/">Client Terms</a>, which add to these Terms.</li>
+                <li>Restaurants with their own MealOps account are covered by the
+                    <a class="text-primary" href="../restaurant-terms/">Restaurant Terms</a> instead of these Terms.</li>
+                <li>Companies that build agents or software on our APIs are covered by the
+                    <a class="text-primary" href="../developer-terms/">Developer Terms</a>.</li>
+                <li>How we handle personal information is described in our
+                    <a class="text-primary" href="../privacy-policy/">Privacy Policy</a>.</li>
+            </ul>
         </header>
 
         <section class="space-y-6 mt-12">
@@ -198,7 +207,34 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">5. SMS Communications</h2>
+            <h2 class="text-2xl font-bold text-gray-900">5. Orders, Payments, and Taxes</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>MealOps is a facilitator, not a seller of food.</strong> MealOps does not prepare, sell, or deliver food. When you place an order through the Services, MealOps transmits it to the restaurant or marketplace that fulfills it, collects payment from you, and pays the seller. Which of the two models below applies depends on how the restaurant is connected to MealOps and is shown to you at checkout.</li>
+                <li><strong>Restaurant orders.</strong> When a restaurant is connected to MealOps directly, the restaurant, not MealOps, is the seller and retailer of record for the food and beverages you buy. MealOps facilitates the order and, as the restaurant’s limited payment collection agent, collects payment from you on the restaurant’s behalf. Your payment to MealOps satisfies your payment obligation to the restaurant.</li>
+                <li><strong>Marketplace orders.</strong> Some restaurants and stores are offered through third-party delivery and ordering marketplaces. For a marketplace order, the marketplace, or the merchant selling through it, is the seller and retailer of record, and the marketplace’s own terms govern that purchase. MealOps acts as your purchasing agent: we place the order with the marketplace on your behalf, pay the marketplace from a MealOps account, and collect from you the amount the marketplace charged (item prices, taxes, delivery fees, tips, and other marketplace charges) together with the MealOps service fee. MealOps does not resell marketplace items. Marketplace prices, fees, item availability, and delivery estimates are set by the marketplace and may differ from what the marketplace shows its own customers.</li>
+                <li><strong>Service and delivery fees.</strong> The MealOps service fee is our charge for facilitating your order and is included in the total shown before you check out. On marketplace orders, the MealOps service fee is combined with the marketplace’s own service fee and shown as a single “Service Fee” line at checkout and on your receipt. Delivery orders may also include delivery fees set by the restaurant, a courier partner, or the marketplace.</li>
+                <li><strong>How you are charged.</strong> Every order is paid for at checkout with a payment card, processed by our payment processor, Stripe. MealOps does not store full card numbers. For restaurant orders, we place an authorization hold on your card for the order total and complete the charge when the restaurant accepts the order (or sooner for orders scheduled several days ahead, because card holds expire). Marketplace orders are charged when the order is placed with the marketplace. We will not charge more than the total you approved at checkout, and if an order does not go through, the hold is released.</li>
+                <li><strong>Large orders.</strong> To stay within our per-order limit (currently $250 per order, or a lower limit a restaurant sets), a large order may be split into several orders, each charged separately. Checkout shows you how an order will be split before you pay.</li>
+                <li><strong>Test orders.</strong> An order marked as a test order at checkout is not sent for fulfillment and you are not charged for it.</li>
+                <li><strong>Taxes.</strong> For restaurant orders, totals include applicable sales taxes based on rates provided by the restaurant or its point-of-sale system. MealOps collects these taxes for the restaurant, which is responsible for reporting and paying them, except where the law requires MealOps to collect and remit taxes as a marketplace facilitator, in which case we will. For marketplace orders, the marketplace calculates and collects taxes as the seller of record. Where the law requires it, MealOps will collect and remit sales tax on its own service fee.</li>
+                <li><strong>Separate agreements.</strong> If your organization has signed an order form, subscription agreement, or statement of work with MealOps, any fees it describes are payable as that document states.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-6 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900">6. Cancellations, Refunds, and Disputes</h2>
+            <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
+                <li><strong>Restaurant orders</strong> can be cancelled in the Services until the restaurant accepts them. After that, cancellations and changes are subject to the restaurant’s policies; contact <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a> and we will work with the restaurant.</li>
+                <li><strong>Marketplace orders</strong> cannot be cancelled through MealOps once they are placed, and are subject to the marketplace’s cancellation and refund policies. Because MealOps pays the marketplace when you order, we can refund a marketplace order only to the extent the marketplace refunds or credits us.</li>
+                <li><strong>Who can cancel.</strong> The person who placed an order and the team’s admins and coaches can cancel it while it is still cancellable. Completed orders cannot be cancelled.</li>
+                <li><strong>Refunds.</strong> If an order is cancelled before your card is charged, the authorization hold is released. If you were already charged, approved refunds go back to the original payment method. Card issuers may take several business days to show a released hold or refund.</li>
+                <li><strong>Problems with an order.</strong> If an order is missing items, wrong, or late, contact <a class="text-primary" href="mailto:support@mealops.ai">support@mealops.ai</a> promptly. Refunds and credits for restaurant-caused problems are handled with the restaurant.</li>
+                <li><strong>Card disputes.</strong> Please contact us before disputing a charge with your card issuer so we can resolve the issue with the restaurant or marketplace. If a charge is disputed, we may share order records, receipts, and delivery details with our payment processor and card networks to respond.</li>
+            </ul>
+        </section>
+
+        <section class="space-y-6 mt-12">
+            <h2 class="text-2xl font-bold text-gray-900">7. SMS Communications</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 MealOps may offer SMS messaging to deliver meal ordering links, reminders, and service alerts for your organization. Participation requires explicit consent captured through the MealOps shared cart web form or another mechanism we make available. When a team member logs in without a recorded preference, the shared cart displays their phone number alongside an SMS consent checkbox so they can opt in or decline.
             </p>
@@ -213,17 +249,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">6. Fees and Payments</h2>
-            <p class="text-base text-gray-700 leading-relaxed">
-                Fees, if applicable, are defined in an ordering document, subscription agreement, or statement of work
-                between MealOps and your organization. Unless otherwise stated, fees are non-refundable and payable within
-                the time frame specified on the invoice. Late payments may incur service suspension or finance charges as
-                allowed by law.
-            </p>
-        </section>
-
-        <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">7. Content and Intellectual Property</h2>
+            <h2 class="text-2xl font-bold text-gray-900">8. Content and Intellectual Property</h2>
             <ul class="list-disc pl-6 space-y-2 text-base text-gray-700">
                 <li>MealOps owns all rights, title, and interest in the Services, including software, documentation, and
                     branding. No ownership rights transfer to you through these Terms.</li>
@@ -234,7 +260,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">8. Confidentiality and Data Protection</h2>
+            <h2 class="text-2xl font-bold text-gray-900">9. Confidentiality and Data Protection</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 Each party may share confidential information while working together. Confidential information includes
                 business processes, pricing, technical materials, and Customer Data. Each party agrees to use the other
@@ -244,7 +270,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">9. Warranties and Disclaimers</h2>
+            <h2 class="text-2xl font-bold text-gray-900">10. Warranties and Disclaimers</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 MealOps provides the Services “as is” and “as available.” We do not guarantee that the Services will be
                 uninterrupted, error-free, or meet every requirement. To the fullest extent permitted by law, we disclaim
@@ -254,7 +280,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">10. Limitation of Liability</h2>
+            <h2 class="text-2xl font-bold text-gray-900">11. Limitation of Liability</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 To the extent allowed by law, MealOps will not be liable for indirect, incidental, consequential, special,
                 or exemplary damages, nor for loss of profits, goodwill, or data, even if advised of the possibility of
@@ -264,7 +290,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">11. Indemnification</h2>
+            <h2 class="text-2xl font-bold text-gray-900">12. Indemnification</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 You agree to defend, indemnify, and hold harmless MealOps and its officers, directors, employees, and
                 agents from any claims, damages, liabilities, and expenses (including reasonable attorneys’ fees) arising
@@ -273,7 +299,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">12. Suspension or Termination</h2>
+            <h2 class="text-2xl font-bold text-gray-900">13. Suspension or Termination</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 Either party may terminate for convenience with written notice if no separate agreement states otherwise.
                 We may suspend or terminate access immediately if: (a) you breach these Terms, (b) continued use poses a
@@ -283,7 +309,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">13. Governing Law and Dispute Resolution</h2>
+            <h2 class="text-2xl font-bold text-gray-900">14. Governing Law and Dispute Resolution</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 These Terms are governed by the laws of the State of Delaware, without regard to conflict of law rules.
                 Any dispute arising out of or relating to the Services will be handled through good-faith negotiations. If
@@ -295,7 +321,7 @@
         </section>
 
         <section class="space-y-6 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">14. Changes to These Terms</h2>
+            <h2 class="text-2xl font-bold text-gray-900">15. Changes to These Terms</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 We may update these Terms to reflect operational, legal, or regulatory changes. When we do, we will revise
                 the effective date and, if the changes are material, provide notice through the Services or email. Your
@@ -304,7 +330,7 @@
         </section>
 
         <section class="space-y-4 mt-12">
-            <h2 class="text-2xl font-bold text-gray-900">15. Contact</h2>
+            <h2 class="text-2xl font-bold text-gray-900">16. Contact</h2>
             <p class="text-base text-gray-700 leading-relaxed">
                 Questions about these Terms can be sent to our support team:
             </p>
