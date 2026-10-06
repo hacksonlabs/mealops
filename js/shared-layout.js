@@ -114,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="footer-note">&copy; 2026 Mealops. All rights reserved.</div>
+                    <div class="footer-note">&copy; 2026 MealOps. All rights reserved.</div>
                 </div>
             </footer>
         `;
