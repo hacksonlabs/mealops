@@ -772,18 +772,20 @@
             fill: #1f3b2c;
         }
         .gd-num { font-family: 'Caveat', cursive; font-size: 16px; font-weight: 700; fill: white; }
-        .gd-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: gd-draw-1 9s ease-in-out infinite; }
-        .gd-step-2 .gd-draw { animation-name: gd-draw-2; }
+        .gd-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: gd-draw-2 10s ease-in-out infinite; }
         .gd-step-3 .gd-draw { animation-name: gd-draw-3; }
-        .gd-pop { opacity: 0; animation: gd-pop-1 9s ease-in-out infinite; }
+        .gd-step-4 .gd-draw { animation-name: gd-draw-4; }
+        .gd-pop { opacity: 0; animation: gd-pop-1 10s ease-in-out infinite; }
         .gd-step-2 .gd-pop { animation-name: gd-pop-2; }
         .gd-step-3 .gd-pop { animation-name: gd-pop-3; }
-        @keyframes gd-draw-1 { 0% { stroke-dashoffset: 1; opacity: 1; } 12%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
-        @keyframes gd-draw-2 { 0%, 16% { stroke-dashoffset: 1; opacity: 1; } 30%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
-        @keyframes gd-draw-3 { 0%, 34% { stroke-dashoffset: 1; opacity: 1; } 46%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
-        @keyframes gd-pop-1 { 0%, 10% { opacity: 0; } 14%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
-        @keyframes gd-pop-2 { 0%, 28% { opacity: 0; } 32%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
-        @keyframes gd-pop-3 { 0%, 44% { opacity: 0; } 48%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        .gd-step-4 .gd-pop { animation-name: gd-pop-4; }
+        @keyframes gd-draw-2 { 0%, 12% { stroke-dashoffset: 1; opacity: 1; } 26%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-draw-3 { 0%, 32% { stroke-dashoffset: 1; opacity: 1; } 44%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-draw-4 { 0%, 50% { stroke-dashoffset: 1; opacity: 1; } 60%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-pop-1 { 0%, 3% { opacity: 0; } 8%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        @keyframes gd-pop-2 { 0%, 24% { opacity: 0; } 28%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        @keyframes gd-pop-3 { 0%, 42% { opacity: 0; } 46%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        @keyframes gd-pop-4 { 0%, 58% { opacity: 0; } 62%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
         .gd-note {
             display: flex;
             align-items: center;
@@ -916,31 +918,40 @@
                                 <span class="gd-play-name">Friday team dinner</span>
                             </div>
                             <svg class="gd-diagram" viewBox="0 0 360 230" aria-hidden="true">
-                                <g class="gd-step-1">
+                                <g class="gd-step-1 gd-pop">
+                                    <rect x="86" y="4" width="136" height="32" rx="14" fill="white" stroke="#1f3b2c" stroke-width="2.5"/>
+                                    <path d="M142 35 L 150 94 L 159 35" fill="white" stroke="#1f3b2c" stroke-width="2.5" stroke-linejoin="round"/>
+                                    <rect x="143" y="32" width="15" height="5" fill="white"/>
+                                    <text class="gd-hand" x="154" y="26" text-anchor="middle">what do you want?</text>
+                                    <circle cx="72" cy="20" r="10" fill="#2BAE66"/><text class="gd-num" x="72" y="25" text-anchor="middle">1</text>
+                                </g>
+                                <g class="gd-step-2">
                                     <path class="gd-ink gd-green gd-draw" pathLength="1" d="M58 50 Q 100 58 133 104"/>
                                     <path class="gd-ink gd-green gd-draw" pathLength="1" d="M58 115 L 130 115"/>
                                     <path class="gd-ink gd-green gd-draw" pathLength="1" d="M58 180 Q 100 172 133 126"/>
                                     <path class="gd-ink gd-green gd-pop" d="M124.3 100.4 L 133 104 L 132.4 94.6 M122 108 L 130 115 L 122 122 M132.4 135.4 L 133 126 L 124.3 129.6"/>
-                                    <g class="gd-pop"><circle cx="95" cy="90" r="10" fill="#2BAE66"/><text class="gd-num" x="95" y="95" text-anchor="middle">1</text></g>
-                                </g>
-                                <g class="gd-step-2">
-                                    <path class="gd-ink gd-draw" pathLength="1" d="M168 115 L 228 115"/>
-                                    <path class="gd-ink gd-pop" d="M220 108 L 228 115 L 220 122"/>
-                                    <g class="gd-pop"><circle cx="198" cy="94" r="10" fill="#2BAE66"/><text class="gd-num" x="198" y="99" text-anchor="middle">2</text></g>
+                                    <g class="gd-pop"><circle cx="95" cy="92" r="10" fill="#2BAE66"/><text class="gd-num" x="95" y="97" text-anchor="middle">2</text></g>
                                 </g>
                                 <g class="gd-step-3">
+                                    <path class="gd-ink gd-draw" pathLength="1" d="M170 115 L 228 115"/>
+                                    <path class="gd-ink gd-pop" d="M220 108 L 228 115 L 220 122"/>
+                                    <g class="gd-pop"><circle cx="199" cy="134" r="10" fill="#2BAE66"/><text class="gd-num" x="199" y="139" text-anchor="middle">3</text></g>
+                                </g>
+                                <g class="gd-step-4">
                                     <path class="gd-ink gd-orange gd-draw" pathLength="1" d="M276 115 L 314 115" style="stroke-width: 4"/>
                                     <path class="gd-ink gd-orange gd-pop" d="M306 107 L 315 115 L 306 123" style="stroke-width: 4"/>
-                                    <g class="gd-pop"><circle cx="295" cy="94" r="10" fill="#2BAE66"/><text class="gd-num" x="295" y="99" text-anchor="middle">3</text></g>
+                                    <g class="gd-pop"><circle cx="295" cy="94" r="10" fill="#2BAE66"/><text class="gd-num" x="295" y="99" text-anchor="middle">4</text></g>
                                     <g class="gd-pop"><text class="gd-hand" x="334" y="152" text-anchor="middle">6:30</text></g>
                                 </g>
                                 <path class="gd-ink" d="M32 38 L 48 54 M48 38 L 32 54"/>
                                 <path class="gd-ink" d="M32 107 L 48 123 M48 107 L 32 123"/>
                                 <path class="gd-ink" d="M32 176 L 48 192 M48 176 L 32 192"/>
                                 <text class="gd-hand" x="40" y="218" text-anchor="middle">team</text>
-                                <circle cx="150" cy="115" r="17" fill="#2BAE66"/>
-                                <text x="150" y="120" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800">MO</text>
-                                <text class="gd-hand" x="150" y="152" text-anchor="middle">coach</text>
+                                <circle cx="150" cy="115" r="18" fill="#1d4a34"/>
+                                <text x="150" y="121" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800">C</text>
+                                <circle cx="167" cy="99" r="12" fill="#2BAE66" stroke="white" stroke-width="2"/>
+                                <text x="167" y="102.5" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="9" font-weight="800">MO</text>
+                                <text class="gd-hand" x="150" y="154" text-anchor="middle">coach</text>
                                 <rect class="gd-ink" x="230" y="94" width="42" height="42" rx="8"/>
                                 <path class="gd-ink" d="M239 113 H 263 Q 263 126 251 128 Q 239 126 239 113 Z M246 108 q 3 -4 0 -8 M254 108 q 3 -4 0 -8" style="stroke-width: 2.5"/>
                                 <text class="gd-hand" x="251" y="160" text-anchor="middle">restaurant</text>
