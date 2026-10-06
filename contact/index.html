@@ -6,7 +6,7 @@
     <title>Contact MealOps</title>
     <meta
         name="description"
-        content="Contact MealOps about CoachImHungry, Phantom, restaurant integrations, or partnerships."
+        content="Contact MealOps about connecting your agent to the restaurant network, opening your restaurants to AI agents, or CoachImHungry for your team."
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/shared-layout.css" />
@@ -104,6 +104,53 @@
         }
         .lead, .muted { color: var(--brand-muted); line-height: 1.8; }
         .lead { margin-top: 1.25rem; font-size: 1.06rem; max-width: 34rem; }
+        .audience-list {
+            display: grid;
+            margin: 1.75rem 0 0;
+            padding: 0;
+            border-top: 1px solid var(--brand-line);
+            list-style: none;
+        }
+        .audience-list li {
+            display: grid;
+            grid-template-columns: 2.4rem minmax(0, 1fr);
+            column-gap: 0.9rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--brand-line);
+        }
+        .audience-icon {
+            grid-row: span 2;
+            display: grid;
+            place-items: center;
+            width: 2.4rem;
+            height: 2.4rem;
+            border-radius: 0.8rem;
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+        }
+        .audience-icon svg {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .audience-list strong {
+            margin-top: 0.1rem;
+            color: var(--brand-ink);
+            font-weight: 800;
+        }
+        .audience-copy {
+            color: var(--brand-muted);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+        .docs-note {
+            margin-top: 1.25rem;
+            color: var(--brand-muted);
+            font-size: 0.92rem;
+        }
+        .docs-note a {
+            color: var(--brand-green-dark);
+            font-weight: 800;
+        }
         .panel {
             border: 1px solid var(--brand-line); border-radius: 1.75rem; background: var(--brand-surface); box-shadow: var(--brand-shadow);
             padding: 1.5rem;
@@ -180,8 +227,26 @@
                     <span class="eyebrow">Contact</span>
                     <h1 class="section-title">Let’s build from here.</h1>
                     <p class="lead">
-                        CoachImHungry, Phantom, integrations, partnerships.<br>Specify the product and your use case.
+                        Tell us a bit about what you're working on, and we'll get back to you shortly.
                     </p>
+                    <ul class="audience-list">
+                        <li>
+                            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4"/><circle cx="9.5" cy="14" r="1"/><circle cx="14.5" cy="14" r="1"/></svg></span>
+                            <strong>Building an agent?</strong>
+                            <span class="audience-copy">Get access to restaurants on the MealOps network.</span>
+                        </li>
+                        <li>
+                            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v2a3 3 0 0 1-5.3 2 3 3 0 0 1-5.4 0A3 3 0 0 1 4 11z"/><path d="M5 13v7h14v-7"/></svg></span>
+                            <strong>Run a restaurant platform?</strong>
+                            <span class="audience-copy">Open your restaurants to AI agents.</span>
+                        </li>
+                        <li>
+                            <span class="audience-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg></span>
+                            <strong>Feeding a team?</strong>
+                            <span class="audience-copy">Get CoachImHungry for your program.</span>
+                        </li>
+                    </ul>
+                    <p class="docs-note">Looking for technical details? <a href="https://docs.mealops.ai/" target="_blank" rel="noopener noreferrer">Read the developer docs ↗</a></p>
                 </section>
 
                 <section class="panel">
@@ -212,7 +277,7 @@
 
                         <div>
                             <label for="message" class="block text-sm font-semibold text-primary mb-2">Message</label>
-                            <textarea id="message" name="message" rows="6" required class="field" placeholder="Tell us what you're interested in."></textarea>
+                            <textarea id="message" name="message" rows="6" required class="field" placeholder="Tell us what you're building or what your team needs."></textarea>
                         </div>
 
                         <button type="submit" class="button-primary" id="contact-submit">Send message</button>
