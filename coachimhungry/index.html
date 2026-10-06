@@ -670,30 +670,270 @@
         }
 
         /* Team board */
-        @keyframes sb-pulse {
+        @keyframes tb-pulse {
             from { box-shadow: 0 0 0 0 rgba(43, 174, 102, 0.5); }
             to { box-shadow: 0 0 0 8px rgba(43, 174, 102, 0); }
         }
-        @keyframes sb-fill {
+        @keyframes tb-fill {
             from { width: 0; }
             to { width: 78%; }
         }
-        .sb-section {
-            display: grid;
-            gap: 2.5rem;
-            align-items: center;
+        @keyframes tb-pop {
+            from { opacity: 0; transform: translateY(6px) scale(0.8); }
+            to { opacity: 1; transform: none; }
         }
-        .sb-copy .section-title {
+        .tb-head {
+            max-width: 40rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .tb-head .section-title {
             margin-top: 1rem;
-            font-size: clamp(2rem, 3.6vw, 3rem);
+            font-size: clamp(2rem, 3.8vw, 3.2rem);
+            text-wrap: balance;
         }
-        .sb-tags {
+        .tb-head .lead {
+            margin: 0.9rem auto 0;
+        }
+        .tb-stage {
+            position: relative;
+            margin-top: 2.5rem;
+        }
+        .tb-board {
+            position: relative;
+            z-index: 1;
+            padding: 1.1rem;
+            border: 1px solid var(--brand-line);
+            border-radius: 2rem;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 30px 70px rgba(19, 117, 71, 0.12);
+        }
+        .tb-bar {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.35rem 0.5rem 1.1rem;
+        }
+        .tb-team {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+            color: var(--brand-ink);
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .tb-dot {
+            width: 0.55rem;
+            height: 0.55rem;
+            border-radius: 999px;
+            background: var(--brand-green);
+            animation: tb-pulse 1.8s ease-out infinite;
+        }
+        .tb-week {
+            color: var(--brand-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+        .tb-stats {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .tb-stats span {
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .tb-stats b {
+            font-weight: 800;
+        }
+        .tb-days {
+            display: grid;
+            gap: 0.75rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tb-day {
+            display: grid;
+            grid-template-columns: 2.9rem minmax(0, 1fr);
+            grid-template-areas:
+                "emoji dow"
+                "emoji meal"
+                "emoji pill";
+            align-items: center;
+            gap: 0.25rem 0.85rem;
+            padding: 0.85rem 0.95rem;
+            border: 1px solid rgba(19, 117, 71, 0.1);
+            border-radius: 1.25rem;
+            background: white;
+        }
+        .tb-dow {
+            grid-area: dow;
+            color: var(--brand-muted);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .tb-emoji {
+            grid-area: emoji;
+            display: grid;
+            place-items: center;
+            width: 2.9rem;
+            height: 2.9rem;
+            border-radius: 0.95rem;
+            background: var(--brand-green-soft);
+            font-size: 1.45rem;
+        }
+        .tb-meal {
+            grid-area: meal;
+            color: var(--brand-ink);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .tb-time {
+            display: block;
+            margin-top: 0.15rem;
+            color: var(--brand-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+        }
+        .tb-pill {
+            grid-area: pill;
+            justify-self: start;
+            margin-top: 0.2rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .tb-pill-done {
+            background: var(--brand-green-soft);
+            color: var(--brand-green-dark);
+        }
+        .tb-check {
+            margin-right: 0.3rem;
+        }
+        .tb-pill-scheduled {
+            border: 1px solid var(--brand-line);
+            color: var(--brand-muted);
+        }
+        .tb-feature {
+            grid-template-columns: 2.9rem minmax(0, 1fr) auto;
+            grid-template-areas:
+                "emoji dow pill"
+                "emoji meal meal"
+                "avatars avatars avatars"
+                "progress progress progress"
+                "count count count";
+            border: 0;
+            color: white;
+            background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%);
+            box-shadow: 0 20px 40px rgba(43, 174, 102, 0.28);
+        }
+        .tb-feature .tb-dow,
+        .tb-feature .tb-time {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .tb-feature .tb-meal {
+            color: white;
+        }
+        .tb-feature .tb-emoji {
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .tb-feature .tb-pill {
+            justify-self: end;
+            margin-top: 0;
+        }
+        .tb-pill-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: white;
+            color: var(--brand-green-dark);
+        }
+        .tb-pill-live::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: var(--brand-green);
+            animation: tb-pulse 1.8s ease-out infinite;
+        }
+        .tb-avatars {
+            grid-area: avatars;
+            display: flex;
+            align-items: center;
+            margin-top: 0.6rem;
+        }
+        .tb-avatars span,
+        .tb-avatars em {
+            display: grid;
+            place-items: center;
+            width: 2rem;
+            height: 2rem;
+            margin-right: -0.45rem;
+            border: 2px solid #2aa462;
+            border-radius: 999px;
+            color: white;
+            font-size: 0.68rem;
+            font-style: normal;
+            font-weight: 800;
+            animation: tb-pop 0.45s ease-out both;
+        }
+        .tb-avatars span:nth-child(2) { animation-delay: 0.12s; }
+        .tb-avatars span:nth-child(3) { animation-delay: 0.24s; }
+        .tb-avatars span:nth-child(4) { animation-delay: 0.36s; }
+        .tb-avatars em {
+            width: auto;
+            padding: 0 0.55rem;
+            background: white;
+            color: var(--brand-green-dark);
+            animation-delay: 0.48s;
+        }
+        .tb-progress {
+            grid-area: progress;
+            display: block;
+            height: 0.45rem;
+            margin-top: 0.75rem;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.25);
+        }
+        .tb-progress span {
+            display: block;
+            width: 78%;
+            height: 100%;
+            border-radius: inherit;
+            background: white;
+            animation: tb-fill 1.6s ease-out;
+        }
+        .tb-count {
+            grid-area: count;
+            margin-top: 0.4rem;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+        .tb-note {
+            display: none;
+        }
+        .tb-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 0.5rem;
             margin-top: 1.5rem;
         }
-        .sb-tags span {
+        .tb-tags span {
             padding: 0.45rem 0.85rem;
             border-radius: 999px;
             background: var(--brand-green-soft);
@@ -701,176 +941,86 @@
             font-size: 0.85rem;
             font-weight: 700;
         }
-        .sb-board {
-            overflow: hidden;
-            border: 1px solid var(--brand-line);
-            border-radius: 1.75rem;
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: var(--brand-shadow);
-        }
-        .sb-head {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1.25rem 1.5rem;
-            color: white;
-            background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%);
-        }
-        .sb-kicker {
-            display: block;
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        .sb-team {
-            display: block;
-            margin-top: 0.2rem;
-            color: white;
-            font-size: 1.35rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-        .sb-stats {
-            display: flex;
-            gap: 0.6rem;
-        }
-        .sb-stat {
-            min-width: 4.6rem;
-            padding: 0.55rem 0.8rem 0.5rem;
-            border-radius: 1rem;
-            background: rgba(255, 255, 255, 0.16);
-            text-align: center;
-        }
-        .sb-digits {
-            display: block;
-            color: white;
-            font-size: 1.7rem;
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 1;
-        }
-        .sb-label {
-            display: block;
-            margin-top: 0.3rem;
-            color: rgba(255, 255, 255, 0.82);
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-        .sb-week {
-            margin: 0;
-            padding: 0.4rem 1rem 0.9rem;
-            list-style: none;
-        }
-        .sb-week li {
-            display: grid;
-            grid-template-columns: 3.2rem minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 0.4rem 0.9rem;
-            padding: 0.8rem 0.6rem;
-            border-bottom: 1px solid rgba(19, 117, 71, 0.08);
-        }
-        .sb-week li:last-child {
-            border-bottom: 0;
-        }
-        .sb-day {
-            padding: 0.45rem 0;
-            border-radius: 0.75rem;
-            background: var(--brand-green-soft);
-            color: var(--brand-green-dark);
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.06em;
-            text-align: center;
-        }
-        .sb-meal {
-            color: var(--brand-ink);
-            font-weight: 800;
-        }
-        .sb-time {
-            display: block;
-            margin-top: 0.15rem;
-            color: var(--brand-muted);
-            font-size: 0.82rem;
-            font-weight: 500;
-        }
-        .sb-status {
-            padding: 0.32rem 0.75rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-        .sb-done {
-            background: var(--brand-green-soft);
-            color: var(--brand-green-dark);
-        }
-        .sb-done::before {
-            content: "✓";
-            margin-right: 0.3rem;
-        }
-        .sb-scheduled {
-            border: 1px solid var(--brand-line);
-            background: white;
-            color: var(--brand-muted);
-        }
-        .sb-collecting {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--brand-green);
-            color: white;
-        }
-        .sb-collecting::before {
-            content: "";
-            width: 0.45rem;
-            height: 0.45rem;
-            border-radius: 999px;
-            background: white;
-            animation: sb-pulse 1.8s ease-out infinite;
-        }
-        .sb-live {
-            margin: 0.3rem -0.4rem 0;
-            padding: 0.9rem 1rem !important;
-            border: 1px solid rgba(43, 174, 102, 0.3) !important;
-            border-radius: 1.1rem;
-            background: var(--brand-green-soft);
-        }
-        .sb-live .sb-day {
-            background: var(--brand-green);
-            color: white;
-        }
-        .sb-progress {
-            display: block;
-            height: 0.4rem;
-            margin-top: 0.55rem;
-            overflow: hidden;
-            border-radius: 999px;
-            background: rgba(43, 174, 102, 0.18);
-        }
-        .sb-progress span {
-            display: block;
-            width: 78%;
-            height: 100%;
-            border-radius: inherit;
-            background: linear-gradient(90deg, #4bc27a, var(--brand-green-dark));
-            animation: sb-fill 1.6s ease-out;
-        }
-        @media (min-width: 900px) {
-            .sb-section { grid-template-columns: 0.85fr 1.15fr; gap: 3.5rem; }
-        }
-        @media (max-width: 479px) {
-            .sb-week li { grid-template-columns: 3rem minmax(0, 1fr); }
-            .sb-status { grid-column: 2; justify-self: start; }
-            .sb-head { padding: 1.1rem 1.1rem; }
+        @media (min-width: 1000px) {
+            .tb-stage {
+                margin-top: 1.5rem;
+                padding: 4rem 0 3.6rem;
+            }
+            .tb-days {
+                grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(0, 1.45fr);
+            }
+            .tb-day {
+                grid-template-columns: minmax(0, 1fr);
+                grid-template-areas:
+                    "dow"
+                    "emoji"
+                    "meal"
+                    "pill";
+                align-content: start;
+                gap: 0.7rem;
+                padding: 1.1rem 1rem 1.2rem;
+            }
+            .tb-pill {
+                align-self: end;
+            }
+            .tb-feature {
+                grid-template-columns: 2.9rem minmax(0, 1fr) auto;
+                grid-template-areas:
+                    "dow dow pill"
+                    "emoji meal meal"
+                    "avatars avatars avatars"
+                    "progress progress progress"
+                    "count count count";
+                align-items: center;
+            }
+            .tb-feature .tb-pill {
+                justify-self: end;
+                align-self: center;
+            }
+            .tb-feature .tb-count {
+                margin-top: 0;
+            }
+            .tb-note {
+                position: absolute;
+                z-index: 2;
+                display: flex;
+                align-items: flex-end;
+                gap: 0.2rem;
+                margin: 0;
+                color: var(--brand-green-dark);
+                font-family: 'Caveat', cursive;
+                font-size: 1.6rem;
+                font-weight: 700;
+                line-height: 1;
+                white-space: nowrap;
+            }
+            .tb-note svg {
+                width: 3.6rem;
+                height: auto;
+                flex: none;
+            }
+            .tb-note-plan {
+                top: 0.4rem;
+                left: 8%;
+                transform: rotate(-3deg);
+            }
+            .tb-note-group {
+                top: 0.4rem;
+                left: 57%;
+                transform: rotate(2deg);
+            }
+            .tb-note-time {
+                bottom: 0.2rem;
+                left: 11%;
+                align-items: flex-start;
+                transform: rotate(-2deg);
+            }
+            .tb-tags {
+                display: none;
+            }
         }
         @media (prefers-reduced-motion: reduce) {
-            .sb-collecting::before, .sb-progress span { animation: none; }
+            .tb-dot, .tb-pill-live::before, .tb-avatars span, .tb-avatars em, .tb-progress span { animation: none; }
         }
     </style>
 </head>
@@ -968,61 +1118,66 @@
             </div>
         </section>
 
-        <section class="section" style="padding-top: 1rem;">
+        <section class="section tb-section" style="padding-top: 1.5rem;">
             <div class="shell">
-                <div class="sb-section">
-                    <div class="sb-copy">
-                        <span class="eyebrow">Team meals</span>
-                        <h2 class="section-title">Built for athletic operations staff.</h2>
-                        <p class="lead">Your whole week of team meals, on one board.</p>
-                        <div class="sb-tags">
-                            <span>Meal Planning</span>
-                            <span>Group Orders</span>
-                            <span>Scheduled Delivery</span>
-                        </div>
-                    </div>
+                <div class="tb-head">
+                    <span class="eyebrow">Team meals</span>
+                    <h2 class="section-title">Built for athletic operations staff.</h2>
+                    <p class="lead">Your whole week of team meals, on one board.</p>
+                </div>
 
-                    <div class="sb-board" aria-label="Example CoachImHungry team board">
-                        <div class="sb-head">
-                            <div>
-                                <span class="sb-kicker">This week</span>
-                                <span class="sb-team">Women&apos;s Basketball</span>
-                            </div>
-                            <div class="sb-stats">
-                                <div class="sb-stat"><span class="sb-digits">18</span><span class="sb-label">Players</span></div>
-                                <div class="sb-stat"><span class="sb-digits">42</span><span class="sb-label">Meals</span></div>
-                            </div>
+                <div class="tb-stage">
+                    <p class="tb-note tb-note-plan" aria-hidden="true">plan the whole week <svg viewBox="0 0 70 50" aria-hidden="true"><path d="M6 8 C 30 6, 50 18, 58 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M49 34 L 58 42 L 62 31" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+                    <p class="tb-note tb-note-group" aria-hidden="true">everyone picks their own <svg viewBox="0 0 70 50" aria-hidden="true"><path d="M6 8 C 30 6, 50 18, 58 40" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M49 34 L 58 42 L 62 31" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+                    <p class="tb-note tb-note-time" aria-hidden="true"><svg viewBox="0 0 70 50" aria-hidden="true"><path d="M60 42 C 40 44, 20 34, 14 10" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/><path d="M8 18 L 14 8 L 22 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg> delivered on schedule</p>
+
+                    <div class="tb-board" aria-label="Example CoachImHungry team board">
+                        <div class="tb-bar">
+                            <div class="tb-team"><span class="tb-dot" aria-hidden="true"></span>Women&apos;s Basketball <span class="tb-week">This week</span></div>
+                            <div class="tb-stats"><span><b>18</b> players</span><span><b>42</b> meals</span></div>
                         </div>
-                        <ol class="sb-week">
-                            <li>
-                                <span class="sb-day">MON</span>
-                                <span class="sb-meal">Team breakfast<span class="sb-time">7:00 AM</span></span>
-                                <span class="sb-status sb-done">Delivered</span>
+                        <ol class="tb-days">
+                            <li class="tb-day tb-done">
+                                <span class="tb-dow">Mon</span>
+                                <span class="tb-emoji" aria-hidden="true">🥞</span>
+                                <span class="tb-meal">Team breakfast<span class="tb-time">7:00 AM</span></span>
+                                <span class="tb-pill tb-pill-done"><span class="tb-check" aria-hidden="true">✓</span>Delivered</span>
                             </li>
-                            <li>
-                                <span class="sb-day">TUE</span>
-                                <span class="sb-meal">Post-practice snacks<span class="sb-time">5:15 PM</span></span>
-                                <span class="sb-status sb-done">Delivered</span>
+                            <li class="tb-day tb-done">
+                                <span class="tb-dow">Tue</span>
+                                <span class="tb-emoji" aria-hidden="true">🥪</span>
+                                <span class="tb-meal">Post-practice snacks<span class="tb-time">5:15 PM</span></span>
+                                <span class="tb-pill tb-pill-done"><span class="tb-check" aria-hidden="true">✓</span>Delivered</span>
                             </li>
-                            <li>
-                                <span class="sb-day">WED</span>
-                                <span class="sb-meal">Travel lunch<span class="sb-time">1:00 PM</span></span>
-                                <span class="sb-status sb-scheduled">Scheduled</span>
+                            <li class="tb-day tb-scheduled">
+                                <span class="tb-dow">Wed</span>
+                                <span class="tb-emoji" aria-hidden="true">🥗</span>
+                                <span class="tb-meal">Travel lunch<span class="tb-time">1:00 PM</span></span>
+                                <span class="tb-pill tb-pill-scheduled">Scheduled</span>
                             </li>
-                            <li>
-                                <span class="sb-day">THU</span>
-                                <span class="sb-meal">Recovery smoothies<span class="sb-time">8:30 AM</span></span>
-                                <span class="sb-status sb-scheduled">Scheduled</span>
+                            <li class="tb-day tb-scheduled">
+                                <span class="tb-dow">Thu</span>
+                                <span class="tb-emoji" aria-hidden="true">🥤</span>
+                                <span class="tb-meal">Recovery smoothies<span class="tb-time">8:30 AM</span></span>
+                                <span class="tb-pill tb-pill-scheduled">Scheduled</span>
                             </li>
-                            <li class="sb-live">
-                                <span class="sb-day">FRI</span>
-                                <span class="sb-meal">Pre-game dinner<span class="sb-time">6:30 PM · 14 of 18 ordered</span>
-                                    <span class="sb-progress" aria-hidden="true"><span></span></span>
-                                </span>
-                                <span class="sb-status sb-collecting">Collecting</span>
+                            <li class="tb-day tb-feature">
+                                <span class="tb-dow">Fri</span>
+                                <span class="tb-emoji" aria-hidden="true">🍝</span>
+                                <span class="tb-meal">Pre-game dinner<span class="tb-time">6:30 PM</span></span>
+                                <span class="tb-avatars" aria-hidden="true"><span style="background: #2BAE66;">MJ</span><span style="background: #137547;">AR</span><span style="background: #4bc27a;">KT</span><span style="background: #1b8652;">DS</span><em>+10</em></span>
+                                <span class="tb-progress" aria-hidden="true"><span></span></span>
+                                <span class="tb-count">14 of 18 ordered</span>
+                                <span class="tb-pill tb-pill-live">Collecting</span>
                             </li>
                         </ol>
                     </div>
+                </div>
+
+                <div class="tb-tags">
+                    <span>Meal Planning</span>
+                    <span>Group Orders</span>
+                    <span>Scheduled Delivery</span>
                 </div>
             </div>
         </section>
