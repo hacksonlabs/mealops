@@ -6,7 +6,7 @@
     <title>Phantom | MealOps</title>
     <meta
         name="description"
-        content="Phantom is the infrastructure layer for AI food ordering and restaurant execution."
+        content="Phantom is the infrastructure powering the MealOps network: one MCP connection for AI agents to discover, price, order, and track food across POS systems, marketplaces, and direct ordering."
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/shared-layout.css" />
@@ -119,6 +119,8 @@
         .panel, .feature-card, .split-card, .cta-panel { padding: 1.5rem; }
         .panel-dark { background: linear-gradient(150deg, #1b8652 0%, #2aa462 62%, #4bc27a 100%); color: white; }
         .panel-dark .muted { color: rgba(255,255,255,0.78); }
+        /* main.css colors every h1–h6, so the heading on the green panel opts back out */
+        .panel-dark h2 { color: white; }
         @keyframes phantom-scan {
             0% {
                 transform: translateY(-120%);
@@ -744,18 +746,19 @@
                 <div class="hero-grid">
                     <div>
                         <!-- <span class="eyebrow">Phantom</span> -->
-                        <h1 class="hero-title">POS-connected infrastructure for agent ordering</h1>
+                        <h1 class="hero-title">The infrastructure powering the network.</h1>
                         <p class="lead">
-                            One integration for agents to discover restaurants and order through any POS.
+                            Phantom is the ordering layer behind MealOps. One MCP connection lets agents discover restaurants, read live menus, get quotes, pay, place orders, and track them across POS systems, marketplaces, and direct ordering.
                         </p>
                         <div class="actions">
                             <a href="../contact/" class="button-primary">Talk about integration</a>
+                            <a href="https://docs.mealops.ai/" class="button-secondary">Developer docs ↗</a>
                         </div>
                     </div>
                     <div class="panel panel-dark">
                         <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">Why it matters</span>
-                        <h2 style="margin-top: 1rem; font-size: clamp(1.8rem, 2.6vw, 2rem); letter-spacing: -0.04em; line-height: 1.05;">Make agent ordering feasible.</h2>
-                        <p class="muted" style="margin-top: 1rem;">Phantom validates and routes agent requests through restaurant POS systems.</p>
+                        <h2 style="margin-top: 1rem; font-size: clamp(1.8rem, 2.6vw, 2rem); letter-spacing: -0.04em; line-height: 1.05;">One contract for every channel.</h2>
+                        <p class="muted" style="margin-top: 1rem;">POS systems, marketplaces, and direct ordering all work differently. Phantom gives agents one consistent way to order from all of them.</p>
                     </div>
                 </div>
             </div>
@@ -769,7 +772,7 @@
                             <div class="phantom-left-inner">
 
                                 <h2 class="phantom-left-title">Phantom</h2>
-                                <p class="phantom-left-copy">Infrastructure for trusted agentic commerce.</p>
+                                <p class="phantom-left-copy">Trusted ordering infrastructure for the MealOps network.</p>
 
                                 <div class="phantom-stage-grid">
                                     <div class="phantom-stage-card">
@@ -782,7 +785,7 @@
                                     </div>
                                     <div class="phantom-stage-card">
                                         <div class="phantom-stage-number">03</div>
-                                        <div class="phantom-stage-label">POS routing</div>
+                                        <div class="phantom-stage-label">Channel routing</div>
                                     </div>
                                     <div class="phantom-stage-card">
                                         <div class="phantom-stage-number">04</div>
@@ -814,7 +817,7 @@
                                         <div class="phantom-scan-line" aria-hidden="true"></div>
                                         <div class="phantom-core-icon">👻</div>
                                         <div class="phantom-core-title">Phantom</div>
-                                        <p class="phantom-core-copy">Validates the request and routes it into restaurant systems.</p>
+                                        <p class="phantom-core-copy">Validates the request and routes it to the right restaurant channel.</p>
                                         <div class="phantom-core-tags">
                                             <span>Rules</span>
                                             <span>Menus</span>
@@ -826,13 +829,13 @@
                                 <div class="phantom-connector"></div>
 
                                 <div class="phantom-node centered">
-                                    <div class="phantom-node-kicker">Restaurant Systems</div>
-                                    <div class="phantom-node-title">Structured POS Orders</div>
-                                    <p class="phantom-node-copy">Approved orders are routed directly into connected restaurant systems.</p>
+                                    <div class="phantom-node-kicker">Restaurant Ecosystem</div>
+                                    <div class="phantom-node-title">The Right Channel</div>
+                                    <p class="phantom-node-copy">Approved orders reach the restaurant through its POS, a marketplace, or direct ordering.</p>
                                     <div class="phantom-node-chip">Restaurant receives order</div>
                                 </div>
 
-                                <div class="phantom-flow-label">AI agents <span class="phantom-flow-arrow">↔</span> Restaurant systems</div>
+                                <div class="phantom-flow-label">AI agents <span class="phantom-flow-arrow">↔</span> Restaurant ecosystem</div>
                             </div>
                         </div>
                     </div>
@@ -851,19 +854,19 @@
                     <article class="feature-card">
                         <div class="feature-step">01</div>
                         <h3>Discovery</h3>
-                        <p class="muted">Identify restaurants and capabilities that fit the request.</p>
+                        <p class="muted">Search restaurants across the network by location, cuisine, dish, and availability.</p>
                         <div class="feature-note">Find the right restaurant for the agent.</div>
                     </article>
                     <article class="feature-card">
                         <div class="feature-step">02</div>
                         <h3>Coordination</h3>
-                        <p class="muted">Align menus, timing, and constraints before the order is placed.</p>
+                        <p class="muted">Align menus, timing, pricing, and each restaurant's rules before the order is placed.</p>
                         <div class="feature-note">Resolve the order before it hits operations.</div>
                     </article>
                     <article class="feature-card">
                         <div class="feature-step">03</div>
                         <h3>Execution</h3>
-                        <p class="muted">Send the order directly into existing restaurant POS systems.</p>
+                        <p class="muted">Place the order through the restaurant's POS, a marketplace, or its direct ordering.</p>
                         <div class="feature-note">Turn agent demand into a fulfillable order.</div>
                     </article>
                 </div>
@@ -973,7 +976,7 @@
                             <div class="ld-link">
                                 <div class="ld-link-group">
                                     <div class="ld-arrow fwd purple"></div>
-                                    <span class="ld-caption c-purple">Orders sent to POS</span>
+                                    <span class="ld-caption c-purple">Orders routed to each channel</span>
                                 </div>
                                 <div class="ld-link-group">
                                     <div class="ld-arrow back orange"></div>
@@ -982,19 +985,19 @@
                             </div>
 
                             <div class="ld-panel ld-pos">
-                                <div class="ld-heading">POS SYSTEMS</div>
+                                <div class="ld-heading">RESTAURANT ECOSYSTEM</div>
                                 <div class="ld-pos-rows">
                                     <div class="ld-row">
-                                        <svg viewBox="0 0 24 24"><path d="M5 2 h14 v20 l-2.3 -2 l-2.35 2 l-2.35 -2 l-2.35 2 l-2.35 -2 l-2.3 2 z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
-                                        Order Processing
+                                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+                                        POS Systems
                                     </div>
                                     <div class="ld-row">
-                                        <svg viewBox="0 0 24 24"><path d="M6.5 13 a4.5 4.5 0 0 1 1.3 -8.7 a5 5 0 0 1 8.4 0 a4.5 4.5 0 0 1 1.3 8.7 V17 H6.5 Z"/><line x1="6.5" y1="20.5" x2="17.5" y2="20.5"/></svg>
-                                        Kitchen Execution
+                                        <svg viewBox="0 0 24 24"><path d="M4 9l1.5-5h13L20 9"/><path d="M4 9h16v2a3 3 0 0 1-5.3 2 3 3 0 0 1-5.4 0A3 3 0 0 1 4 11z"/><path d="M5 13v7h14v-7"/></svg>
+                                        Marketplaces
                                     </div>
                                     <div class="ld-row">
-                                        <svg viewBox="0 0 24 24"><path d="M4 10 a8.5 8.5 0 0 1 14.5 -5"/><path d="M20 14 a8.5 8.5 0 0 1 -14.5 5"/><path d="M15 2 l3.5 3 l-3.5 3"/><path d="M9 22 l-3.5 -3 l3.5 -3"/></svg>
-                                        Status Updates
+                                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                                        Direct Ordering
                                     </div>
                                 </div>
                             </div>
@@ -1008,14 +1011,14 @@
             <div class="shell">
                 <div class="split-grid">
                     <div class="split-card">
-                        <span class="eyebrow">POS Platforms</span>
-                        <h3 style="margin-top: 1rem;">Agent demand for your merchants, on your rails.</h3>
-                        <p class="muted" style="margin-top: 0.9rem;">Partner once with Phantom and your restaurants become discoverable and orderable by every agent surface.</p>
+                        <span class="eyebrow">Restaurant Platforms</span>
+                        <h3 style="margin-top: 1rem;">Agent demand for your restaurants, on your rails.</h3>
+                        <p class="muted" style="margin-top: 0.9rem;">POS systems, marketplaces, and ordering providers partner once with MealOps, and their restaurants become discoverable and orderable by every agent on the network.</p>
                     </div>
                     <div class="split-card">
                         <span class="eyebrow">Agent Platforms</span>
-                        <h3 style="margin-top: 1rem;">One MCP connection. Reach every restaurant.</h3>
-                        <p class="muted" style="margin-top: 0.9rem;">Restaurant discovery, menus, and order submission across every major POS.</p>
+                        <h3 style="margin-top: 1rem;">One MCP connection to the whole network.</h3>
+                        <p class="muted" style="margin-top: 0.9rem;">Discovery, live menus, quotes, payments, ordering, and tracking across POS systems, marketplaces, and direct ordering.</p>
                     </div>
                 </div>
             </div>
@@ -1026,7 +1029,7 @@
                 <div class="cta-panel phantom-cta">
                     <div>
                         <span class="eyebrow">Next step</span>
-                        <h2 class="section-title cta-title" style="margin-top: 1rem;">Building an agent that orders food? A POS ready for agent demand?</h2>
+                        <h2 class="section-title cta-title" style="margin-top: 1rem;">Building an agent that orders food?<br> Bringing restaurants to agents?</h2>
                     </div>
                     <a href="../contact/" class="button-primary cta-button">Contact MealOps</a>
                 </div>
