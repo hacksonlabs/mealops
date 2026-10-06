@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/shared-layout.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
 
         :root {
             --brand-green: #2BAE66;
@@ -665,18 +666,261 @@
         @media (prefers-reduced-motion: reduce) {
             .proof-track { animation: none; }
         }
+
+        /* Game day theme */
+        .gd-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        .gd-court {
+            position: absolute;
+            top: 50%;
+            right: -6rem;
+            width: 56rem;
+            max-width: none;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .gd-hero .shell {
+            position: relative;
+            z-index: 1;
+        }
+        .gd-mark {
+            position: relative;
+            white-space: nowrap;
+        }
+        .gd-mark::after {
+            content: "";
+            position: absolute;
+            left: -2%;
+            right: -2%;
+            bottom: -0.06em;
+            height: 0.24em;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M3 13 C 40 4, 70 18, 105 9 S 170 5, 197 11' fill='none' stroke='%232BAE66' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat;
+            background-size: 100% 100%;
+        }
+        .gd-board-wrap {
+            position: relative;
+            padding-top: 1.4rem;
+        }
+        .gd-clip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: 2;
+            width: 7rem;
+            height: 2.4rem;
+            transform: translateX(-50%);
+            border-radius: 0.8rem 0.8rem 0.5rem 0.5rem;
+            background: linear-gradient(180deg, #d9e3dd 0%, #9fb3a7 100%);
+            box-shadow: 0 6px 14px rgba(21, 52, 38, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        }
+        .gd-clip::after {
+            content: "";
+            position: absolute;
+            top: 0.55rem;
+            left: 50%;
+            width: 2.2rem;
+            height: 0.55rem;
+            transform: translateX(-50%);
+            border-radius: 999px;
+            background: rgba(21, 52, 38, 0.35);
+        }
+        .gd-board {
+            position: relative;
+            padding: 2.4rem 1.5rem 1.4rem;
+            border: 10px solid #1d4a34;
+            border-radius: 1.5rem;
+            background:
+                linear-gradient(rgba(19, 117, 71, 0.05) 1px, transparent 1px) 0 0 / 22px 22px,
+                linear-gradient(90deg, rgba(19, 117, 71, 0.05) 1px, transparent 1px) 0 0 / 22px 22px,
+                #fbfdfb;
+            box-shadow: 0 28px 60px rgba(19, 117, 71, 0.18);
+        }
+        .gd-board-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            font-family: 'Caveat', cursive;
+            color: #1f3b2c;
+        }
+        .gd-play {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #c2410c;
+        }
+        .gd-play-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        .gd-diagram {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 0.4rem;
+            overflow: visible;
+        }
+        .gd-ink { fill: none; stroke: #1f3b2c; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+        .gd-green { stroke: #2BAE66; }
+        .gd-orange { stroke: #c2410c; }
+        .gd-hand {
+            font-family: 'Caveat', cursive;
+            font-size: 17px;
+            font-weight: 700;
+            fill: #1f3b2c;
+        }
+        .gd-num { font-family: 'Caveat', cursive; font-size: 16px; font-weight: 700; fill: white; }
+        .gd-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: gd-draw-1 9s ease-in-out infinite; }
+        .gd-step-2 .gd-draw { animation-name: gd-draw-2; }
+        .gd-step-3 .gd-draw { animation-name: gd-draw-3; }
+        .gd-pop { opacity: 0; animation: gd-pop-1 9s ease-in-out infinite; }
+        .gd-step-2 .gd-pop { animation-name: gd-pop-2; }
+        .gd-step-3 .gd-pop { animation-name: gd-pop-3; }
+        @keyframes gd-draw-1 { 0% { stroke-dashoffset: 1; opacity: 1; } 12%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-draw-2 { 0%, 16% { stroke-dashoffset: 1; opacity: 1; } 30%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-draw-3 { 0%, 34% { stroke-dashoffset: 1; opacity: 1; } 46%, 88% { stroke-dashoffset: 0; opacity: 1; } 96%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+        @keyframes gd-pop-1 { 0%, 10% { opacity: 0; } 14%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        @keyframes gd-pop-2 { 0%, 28% { opacity: 0; } 32%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        @keyframes gd-pop-3 { 0%, 44% { opacity: 0; } 48%, 88% { opacity: 1; } 96%, 100% { opacity: 0; } }
+        .gd-steps {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.35rem 1rem;
+            margin: 0.8rem 0 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1f3b2c;
+            text-align: left;
+        }
+        .gd-steps b {
+            display: inline-grid;
+            place-items: center;
+            width: 1.35rem;
+            height: 1.35rem;
+            margin-right: 0.35rem;
+            border-radius: 999px;
+            background: #2BAE66;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .gd-board-foot {
+            margin-top: 1rem;
+            padding-top: 0.9rem;
+            border-top: 2px dashed rgba(31, 59, 44, 0.18);
+            color: var(--brand-muted);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            text-align: left;
+        }
+        .gd-board-foot strong {
+            color: var(--brand-ink);
+        }
+        @keyframes gd-ticker {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .gd-ticker {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 3.5rem;
+            border: 1px solid rgba(255, 207, 90, 0.18);
+            border-radius: 1rem;
+            background:
+                radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.2px) 0 0 / 6px 6px,
+                #0b1510;
+            box-shadow: 0 18px 40px rgba(11, 21, 16, 0.25), inset 0 0 0 4px rgba(255, 255, 255, 0.03);
+        }
+        .gd-ticker-label {
+            flex: none;
+            align-self: stretch;
+            display: grid;
+            place-items: center;
+            padding: 0 1.1rem;
+            background: #2BAE66;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .gd-ticker-window {
+            flex: 1;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+        }
+        .gd-ticker-track {
+            display: flex;
+            width: max-content;
+            animation: gd-ticker 38s linear infinite;
+        }
+        .gd-ticker-run {
+            display: flex;
+            gap: 2.75rem;
+            padding: 0.95rem 1.4rem;
+            padding-right: 2.75rem;
+            white-space: nowrap;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #ffcf5a;
+            text-shadow: 0 0 8px rgba(255, 207, 90, 0.55);
+        }
+        .gd-ticker-run em {
+            font-style: normal;
+            color: #7ed9a3;
+            text-shadow: 0 0 8px rgba(126, 217, 163, 0.55);
+        }
+        .playbook-card {
+            position: relative;
+        }
+        .gd-jersey {
+            position: absolute;
+            top: 0.8rem;
+            right: 1.1rem;
+            color: transparent;
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            -webkit-text-stroke: 1.5px rgba(19, 117, 71, 0.22);
+        }
+        @media (max-width: 479px) {
+            .gd-steps { grid-template-columns: minmax(0, 1fr); }
+            .gd-board { padding: 2.2rem 1rem 1.2rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .gd-draw { animation: none; stroke-dashoffset: 0; }
+            .gd-pop { animation: none; opacity: 1; }
+            .gd-ticker-track { animation: none; }
+        }
     </style>
 </head>
 <body>
     <div data-shared-nav data-root=".." data-active="coach"></div>
 
     <main>
-        <section class="section">
+        <section class="section gd-hero">
+            <svg class="gd-court" viewBox="0 0 600 420" aria-hidden="true"><g fill="none" stroke="rgba(19,117,71,0.1)" stroke-width="3">
+                <rect x="20" y="20" width="560" height="380" rx="6"/>
+                <rect x="420" y="130" width="160" height="160"/>
+                <circle cx="420" cy="210" r="60"/>
+                <path d="M580 50 H530 A160 160 0 0 0 530 370 H580"/>
+                <circle cx="545" cy="210" r="12"/>
+                <line x1="560" y1="185" x2="560" y2="235"/>
+                <circle cx="20" cy="210" r="70"/>
+            </g></svg>
             <div class="shell">
                 <div class="hero-grid">
                     <div class="hero-copy">
-                        <!-- <span class="eyebrow">CoachImHungry</span> -->
-                        <h1 class="hero-title">One workflow for team meals.</h1>
+                        <h1 class="hero-title">One workflow for <span class="gd-mark">team meals.</span></h1>
                         <p class="lead">
                             CoachImHungry helps athletic operations staff plan, coordinate, and order team meals. It's the first agent connected to the MealOps network.
                         </p>
@@ -685,10 +929,64 @@
                             <a href="https://coachimhungry.com/" target="_blank" rel="noopener noreferrer" class="button-secondary">Sign in to CoachImHungry ↗</a>
                         </div>
                     </div>
-                    <div class="panel panel-dark">
-                        <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">Why it works</span>
-                        <h2 style="margin-top: 1rem; font-size: 2rem; letter-spacing: -0.04em; line-height: 1.05;">Built for repeatability.</h2>
-                        <p class="muted" style="margin-top: 1rem;">Set up a team meal once and run it again all season.</p>
+                    <div class="gd-board-wrap">
+                        <div class="gd-clip" aria-hidden="true"></div>
+                        <div class="gd-board">
+                            <div class="gd-board-head">
+                                <span class="gd-play">PLAY 12</span>
+                                <span class="gd-play-name">Friday team dinner</span>
+                            </div>
+                            <svg class="gd-diagram" viewBox="0 0 360 230" aria-hidden="true">
+                                <g class="gd-step-1">
+                                    <path class="gd-ink gd-green gd-draw" pathLength="1" d="M57 106 Q 88 58 118 46"/>
+                                    <path class="gd-ink gd-green gd-draw" pathLength="1" d="M60 115 L 124 115"/>
+                                    <path class="gd-ink gd-green gd-draw" pathLength="1" d="M57 124 Q 88 172 118 184"/>
+                                    <g class="gd-pop"><circle cx="86" cy="80" r="10" fill="#2BAE66"/><text class="gd-num" x="86" y="85" text-anchor="middle">1</text></g>
+                                </g>
+                                <g class="gd-step-2">
+                                    <path class="gd-ink gd-draw" pathLength="1" d="M146 46 Q 205 50 232 98"/>
+                                    <path class="gd-ink gd-draw" pathLength="1" d="M156 115 L 228 115"/>
+                                    <path class="gd-ink gd-draw" pathLength="1" d="M146 184 Q 205 180 232 132"/>
+                                    <path class="gd-ink gd-pop" d="M222 108 L 230 115 L 222 122"/>
+                                    <g class="gd-pop"><circle cx="196" cy="66" r="10" fill="#2BAE66"/><text class="gd-num" x="196" y="71" text-anchor="middle">2</text></g>
+                                </g>
+                                <g class="gd-step-3">
+                                    <path class="gd-ink gd-orange gd-draw" pathLength="1" d="M278 115 L 314 115" style="stroke-width: 4"/>
+                                    <path class="gd-ink gd-orange gd-pop" d="M306 107 L 315 115 L 306 123" style="stroke-width: 4"/>
+                                    <g class="gd-pop"><circle cx="296" cy="94" r="10" fill="#2BAE66"/><text class="gd-num" x="296" y="99" text-anchor="middle">3</text></g>
+                                    <g class="gd-pop"><text class="gd-hand" x="334" y="152" text-anchor="middle">6:30</text></g>
+                                </g>
+                                <circle cx="42" cy="115" r="17" fill="#2BAE66"/>
+                                <text x="42" y="120" text-anchor="middle" fill="white" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800">MO</text>
+                                <text class="gd-hand" x="42" y="152" text-anchor="middle">coach</text>
+                                <path class="gd-ink" d="M126 36 L 142 54 M142 36 L 126 54"/>
+                                <path class="gd-ink" d="M132 106 L 148 124 M148 106 L 132 124"/>
+                                <path class="gd-ink" d="M126 176 L 142 194 M142 176 L 126 194"/>
+                                <text class="gd-hand" x="150" y="222" text-anchor="middle">team</text>
+                                <rect class="gd-ink" x="234" y="94" width="42" height="42" rx="8"/>
+                                <path class="gd-ink" d="M243 113 H 267 Q 267 126 255 128 Q 243 126 243 113 Z M250 108 q 3 -4 0 -8 M258 108 q 3 -4 0 -8" style="stroke-width: 2.5"/>
+                                <text class="gd-hand" x="255" y="160" text-anchor="middle">restaurant</text>
+                                <circle class="gd-ink gd-orange" cx="334" cy="115" r="15"/>
+                                <circle cx="334" cy="115" r="5" fill="#c2410c"/>
+                            </svg>
+                            <ol class="gd-steps">
+                                <li><b>1</b>MO plans the meal</li>
+                                <li><b>2</b>Team adds orders</li>
+                                <li><b>3</b>Sent to the restaurant</li>
+                                <li><b>4</b>Food lands at 6:30</li>
+                            </ol>
+                            <p class="gd-board-foot"><strong>Built for repeatability.</strong> Set up a team meal once and run it again all season.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gd-ticker" aria-label="Example game-day meal schedule">
+                    <span class="gd-ticker-label">Game day</span>
+                    <div class="gd-ticker-window">
+                        <div class="gd-ticker-track">
+                            <div class="gd-ticker-run"><span>PRE-GAME DINNER · 6:00 PM <em>✓</em></span><span>TRAVEL LUNCH · 1:00 PM <em>✓</em></span><span>TEAM BREAKFAST · 7:00 AM <em>✓</em></span><span>RECOVERY SMOOTHIES · 8:30 AM <em>✓</em></span><span>POST-PRACTICE SNACKS · 5:15 PM <em>✓</em></span><span>AWAY GAME BOXED LUNCHES · 11:30 AM <em>✓</em></span></div>
+                            <div class="gd-ticker-run" aria-hidden="true"><span>PRE-GAME DINNER · 6:00 PM <em>✓</em></span><span>TRAVEL LUNCH · 1:00 PM <em>✓</em></span><span>TEAM BREAKFAST · 7:00 AM <em>✓</em></span><span>RECOVERY SMOOTHIES · 8:30 AM <em>✓</em></span><span>POST-PRACTICE SNACKS · 5:15 PM <em>✓</em></span><span>AWAY GAME BOXED LUNCHES · 11:30 AM <em>✓</em></span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -773,6 +1071,7 @@
                 </div>
                 <div class="playbook-grid">
                     <article class="playbook-card">
+                        <span class="gd-jersey" aria-hidden="true">01</span>
                         <div class="playbook-icon" style="background: #dbeafe; color: var(--brand-green);">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
@@ -782,6 +1081,7 @@
                         <p>Set once, repeat easily — no more messy spreadsheets or group chat chaos.</p>
                     </article>
                     <article class="playbook-card">
+                        <span class="gd-jersey" aria-hidden="true">02</span>
                         <div class="playbook-icon" style="background: #ffe7d6; color: #ff6b35;">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
@@ -791,6 +1091,7 @@
                         <p>Orders go straight to the restaurant through the MealOps network.</p>
                     </article>
                     <article class="playbook-card">
+                        <span class="gd-jersey" aria-hidden="true">03</span>
                         <div class="playbook-icon" style="background: #d7f8e3; color: var(--brand-green);">
                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>

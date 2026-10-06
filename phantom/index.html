@@ -735,18 +735,254 @@
                 min-width: 0;
             }
         }
+
+        /* Hero: the ghost in the machine */
+        @keyframes ph-drift {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(7rem); }
+        }
+        @keyframes ph-bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+        }
+        @keyframes ph-blink {
+            50% { opacity: 0; }
+        }
+        @keyframes ph-ping {
+            from { box-shadow: 0 0 0 0 rgba(142, 240, 183, 0.6); }
+            to { box-shadow: 0 0 0 9px rgba(142, 240, 183, 0); }
+        }
+        .ph-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0 6rem;
+            color: white;
+            background:
+                radial-gradient(circle at 78% 28%, rgba(142, 240, 183, 0.16), transparent 40%),
+                radial-gradient(circle at 12% 85%, rgba(43, 174, 102, 0.14), transparent 40%),
+                linear-gradient(170deg, #0a0f1f 0%, #11172a 55%, #0f2a20 100%);
+        }
+        .ph-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 26px 26px;
+            pointer-events: none;
+        }
+        .ph-fog {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .ph-fog span {
+            position: absolute;
+            width: 42rem;
+            height: 16rem;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(190, 255, 220, 0.09), transparent 70%);
+            filter: blur(18px);
+            animation: ph-drift 30s ease-in-out infinite;
+        }
+        .ph-fog span:nth-child(1) { top: 8%; left: -12%; }
+        .ph-fog span:nth-child(2) { top: 58%; left: 30%; animation-duration: 36s; animation-delay: -9s; }
+        .ph-fog span:nth-child(3) { top: 26%; left: 62%; animation-duration: 42s; animation-delay: -18s; }
+        .ph-hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 3.5rem;
+            align-items: center;
+        }
+        .ph-hero .hero-title {
+            color: white;
+            max-width: 10ch;
+        }
+        .ph-glow {
+            background: linear-gradient(90deg, #8ef0b7 0%, #4bc27a 55%, #c9f7dc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .ph-hero .lead {
+            color: rgba(255, 255, 255, 0.76);
+        }
+        .ph-hero .button-secondary {
+            background: transparent;
+            color: white;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .ph-console-wrap {
+            position: relative;
+            padding-top: 2.6rem;
+        }
+        .ph-peek {
+            position: absolute;
+            top: 0;
+            right: 2rem;
+            z-index: 0;
+            width: 4.6rem;
+            filter: drop-shadow(0 0 18px rgba(142, 240, 183, 0.45));
+            animation: ph-bob 4.5s ease-in-out infinite;
+        }
+        .ph-peek svg, .ph-cta-ghost svg, .phantom-core-icon svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .ph-console {
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 1px solid rgba(142, 240, 183, 0.18);
+            border-radius: 1.4rem;
+            background: rgba(9, 14, 28, 0.92);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+        .ph-console-head {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.78rem;
+        }
+        .ph-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.18);
+        }
+        .ph-console-title {
+            margin-left: 0.4rem;
+        }
+        .ph-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-left: auto;
+            color: #8ef0b7;
+            font-weight: 700;
+        }
+        .ph-live::before {
+            content: "";
+            width: 0.45rem;
+            height: 0.45rem;
+            border-radius: 999px;
+            background: #8ef0b7;
+            animation: ph-ping 1.8s ease-out infinite;
+        }
+        .ph-log {
+            min-height: 16.5rem;
+            margin: 0;
+            padding: 0.9rem 1rem 0.4rem;
+            list-style: none;
+        }
+        .ph-log li {
+            display: grid;
+            grid-template-columns: 1rem 9.6rem minmax(0, 1fr);
+            gap: 0.55rem;
+            padding: 0.3rem 0;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(4px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+        .ph-log li.is-shown {
+            opacity: 1;
+            transform: none;
+        }
+        .ph-mark { color: rgba(142, 240, 183, 0.5); }
+        .ph-call { color: white; }
+        .ph-result { color: rgba(255, 255, 255, 0.58); }
+        .ph-log li.is-done .ph-mark,
+        .ph-log li.is-done .ph-call { color: #8ef0b7; }
+        .ph-prompt {
+            padding: 0.4rem 1rem 1rem;
+            color: rgba(142, 240, 183, 0.7);
+            font-size: 0.8rem;
+        }
+        .ph-cursor {
+            display: inline-block;
+            width: 0.55rem;
+            height: 1rem;
+            margin-left: 0.3rem;
+            vertical-align: -0.15rem;
+            background: #8ef0b7;
+            animation: ph-blink 1s step-end infinite;
+        }
+        .ph-statement {
+            text-align: center;
+        }
+        .ph-statement-big {
+            max-width: 22ch;
+            margin: 1rem auto 0;
+            color: var(--brand-ink);
+            font-size: clamp(2rem, 4.2vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 1.02;
+        }
+        .ph-statement-copy {
+            max-width: 38rem;
+            margin: 1.1rem auto 0;
+            color: var(--brand-muted);
+            font-size: 1.06rem;
+            line-height: 1.75;
+        }
+        .phantom-core-icon svg {
+            width: 2.4rem;
+            margin: 0 auto;
+            filter: drop-shadow(0 0 10px rgba(142, 240, 183, 0.5));
+        }
+        .ph-cta-wrap {
+            position: relative;
+            padding-top: 2.4rem;
+        }
+        .ph-cta-ghost {
+            position: absolute;
+            top: -0.3rem;
+            left: 3rem;
+            z-index: 0;
+            width: 4.6rem;
+            filter: drop-shadow(0 10px 18px rgba(19, 117, 71, 0.25));
+            animation: ph-bob 5s ease-in-out infinite;
+        }
+        /* on the light page background the ghost needs an outline to read */
+        .ph-cta-ghost svg path {
+            fill: white;
+            stroke: rgba(19, 117, 71, 0.35);
+            stroke-width: 2;
+        }
+        .ph-cta-wrap .phantom-cta {
+            z-index: 1;
+        }
+        @media (min-width: 960px) {
+            .ph-hero-grid { grid-template-columns: 1.05fr 0.95fr; }
+        }
+        @media (max-width: 479px) {
+            .ph-log li { grid-template-columns: 1rem minmax(0, 1fr); }
+            .ph-result { grid-column: 2; }
+            .ph-log { min-height: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ph-fog span, .ph-peek, .ph-cta-ghost, .ph-live::before, .ph-cursor { animation: none; }
+            .ph-log li { opacity: 1; transform: none; transition: none; }
+        }
     </style>
 </head>
 <body>
     <div data-shared-nav data-root=".." data-active="phantom"></div>
 
     <main>
-        <section class="section">
+        <section class="ph-hero">
+            <div class="ph-fog" aria-hidden="true"><span></span><span></span><span></span></div>
             <div class="shell">
-                <div class="hero-grid">
+                <div class="ph-hero-grid">
                     <div>
-                        <!-- <span class="eyebrow">Phantom</span> -->
-                        <h1 class="hero-title">The infrastructure powering the network.</h1>
+                        <h1 class="hero-title">The infrastructure powering the <span class="ph-glow">network.</span></h1>
                         <p class="lead">
                             Phantom connects AI agents to restaurants across POS systems, marketplaces, and direct ordering channels.
                         </p>
@@ -755,12 +991,36 @@
                             <a href="https://docs.mealops.ai/" target="_blank" rel="noopener noreferrer" class="button-secondary">Developer docs ↗</a>
                         </div>
                     </div>
-                    <div class="panel panel-dark">
-                        <span class="eyebrow" style="background: rgba(255,255,255,0.12); color: white;">Why it matters</span>
-                        <h2 style="margin-top: 1rem; font-size: clamp(1.8rem, 2.6vw, 2rem); letter-spacing: -0.04em; line-height: 1.05;">Every restaurant takes orders differently.</h2>
-                        <p class="muted" style="margin-top: 1rem;">One uses a POS, another a marketplace, another its own website. Phantom handles those differences so agents don't have to.</p>
+                    <div class="ph-console-wrap" aria-hidden="true">
+                        <div class="ph-peek"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M8 68 V30 a24 24 0 0 1 48 0 V68 l-8-6 -8 6 -8-6 -8 6 -8-6 -8 6z" fill="#f4fff8"/><ellipse cx="24" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="40" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="32" cy="45" rx="3.6" ry="2.8" fill="#11172a" opacity="0.85"/></svg></div>
+                        <div class="ph-console">
+                            <div class="ph-console-head">
+                                <span class="ph-dot"></span><span class="ph-dot"></span><span class="ph-dot"></span>
+                                <span class="ph-console-title">phantom · team dinner</span>
+                                <span class="ph-live">live</span>
+                            </div>
+                            <ul class="ph-log" data-ph-log>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">agent.connect</span><span class="ph-result">key verified · approved agent</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">search_restaurants</span><span class="ph-result">18 open near the team</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">get_menu</span><span class="ph-result">Thai Basil · live menu</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">validate_order</span><span class="ph-result">hours, lead time, limits ✓</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">quote_order</span><span class="ph-result">$210.18 total</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">start_payment</span><span class="ph-result">card held for $210.18</span></li>
+                                <li><span class="ph-mark">▸</span><span class="ph-call">submit_order</span><span class="ph-result">sent to the restaurant</span></li>
+                                <li class="is-done"><span class="ph-mark">✓</span><span class="ph-call">accepted</span><span class="ph-result">ready at 6:30 PM</span></li>
+                            </ul>
+                            <div class="ph-prompt">phantom ▸<span class="ph-cursor"></span></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section ph-statement">
+            <div class="shell">
+                <span class="eyebrow">Why it matters</span>
+                <p class="ph-statement-big">Every restaurant takes orders differently.</p>
+                <p class="ph-statement-copy">One uses a POS, another a marketplace, another its own website. Phantom handles those differences so agents don't have to.</p>
             </div>
         </section>
 
@@ -815,7 +1075,7 @@
                                 <div class="phantom-core">
                                     <div class="phantom-core-shell">
                                         <div class="phantom-scan-line" aria-hidden="true"></div>
-                                        <div class="phantom-core-icon">👻</div>
+                                        <div class="phantom-core-icon"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M8 68 V30 a24 24 0 0 1 48 0 V68 l-8-6 -8 6 -8-6 -8 6 -8-6 -8 6z" fill="#f4fff8"/><ellipse cx="24" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="40" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="32" cy="45" rx="3.6" ry="2.8" fill="#11172a" opacity="0.85"/></svg></div>
                                         <div class="phantom-core-title">Phantom</div>
                                         <p class="phantom-core-copy">Checks the order against the restaurant's menu, hours, and rules, then sends it on.</p>
                                         <div class="phantom-core-tags">
@@ -1026,6 +1286,8 @@
 
         <section class="section" style="padding-top: 0;">
             <div class="shell">
+                <div class="ph-cta-wrap">
+                <div class="ph-cta-ghost" aria-hidden="true"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M8 68 V30 a24 24 0 0 1 48 0 V68 l-8-6 -8 6 -8-6 -8 6 -8-6 -8 6z" fill="#f4fff8"/><ellipse cx="24" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="40" cy="32" rx="4" ry="5.5" fill="#11172a"/><ellipse cx="32" cy="45" rx="3.6" ry="2.8" fill="#11172a" opacity="0.85"/></svg></div>
                 <div class="cta-panel phantom-cta">
                     <div>
                         <span class="eyebrow">Next step</span>
@@ -1033,12 +1295,38 @@
                     </div>
                     <a href="../contact/" class="button-primary cta-button">Talk to MealOps</a>
                 </div>
+                </div>
             </div>
         </section>
     </main>
 
     <div data-shared-footer data-root=".."></div>
     <script defer src="../js/shared-layout.js"></script>
+    <script>
+        // Plays the hero console one line at a time, then loops.
+        (function () {
+            var log = document.querySelector('[data-ph-log]');
+            if (!log) return;
+            var lines = Array.prototype.slice.call(log.querySelectorAll('li'));
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                lines.forEach(function (line) { line.classList.add('is-shown'); });
+                return;
+            }
+            var i = 0;
+            function step() {
+                if (i < lines.length) {
+                    lines[i].classList.add('is-shown');
+                    i += 1;
+                    setTimeout(step, i === lines.length ? 3400 : 650);
+                } else {
+                    lines.forEach(function (line) { line.classList.remove('is-shown'); });
+                    i = 0;
+                    setTimeout(step, 700);
+                }
+            }
+            setTimeout(step, 400);
+        })();
+    </script>
     <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3e98a6af6cbf4e559df564662a7dc17f"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
