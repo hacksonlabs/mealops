@@ -120,6 +120,30 @@
         `;
     }
 
+    // Folder links like "contact/" only resolve to contact/index.html on a web
+    // server. When a page is opened straight from disk (file://), point them at
+    // the file so local previews navigate instead of showing a directory listing.
+    function linkToIndexFiles() {
+        document.querySelectorAll("a[href]").forEach(function (anchor) {
+            const href = anchor.getAttribute("href");
+            if (/^([a-z]+:|\/\/|#)/i.test(href)) {
+                return;
+            }
+            const split = href.search(/[?#]/);
+            const path = split === -1 ? href : href.slice(0, split);
+            const suffix = split === -1 ? "" : href.slice(split);
+            if (path === "." || path === "..") {
+                anchor.setAttribute("href", path + "/index.html" + suffix);
+            } else if (path.endsWith("/")) {
+                anchor.setAttribute("href", path + "index.html" + suffix);
+            }
+        });
+    }
+
     document.querySelectorAll("[data-shared-nav]").forEach(renderNav);
     document.querySelectorAll("[data-shared-footer]").forEach(renderFooter);
+
+    if (window.location.protocol === "file:") {
+        linkToIndexFiles();
+    }
 })();
