@@ -6,7 +6,7 @@
     <title>Blog | MealOps</title>
     <meta
         name="description"
-        content="Articles from MealOps on agent-to-agent ordering, restaurant POS connectivity, and the future of food ordering infrastructure."
+        content="Notes from the team building MealOps, the restaurant network for AI agents: how agents find, order from, and connect to restaurants across POS systems, marketplaces, and direct ordering."
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/shared-layout.css" />
@@ -220,6 +220,66 @@
             font-weight: 800;
         }
 
+        .blog-cta {
+            display: grid;
+            gap: 1.5rem;
+            align-items: center;
+            margin-top: 4.5rem;
+            padding: 2rem 1.75rem;
+            border-radius: 2rem;
+            text-align: left;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(126, 217, 163, 0.25), transparent 45%),
+                linear-gradient(145deg, #103a27 0%, #137547 60%, #22985b 100%);
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.18);
+        }
+        .blog-cta-kicker {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        /* main.css colors every h1–h6, so this heading opts back out */
+        .blog-cta h2 {
+            margin-top: 0.6rem;
+            color: white;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            text-wrap: balance;
+        }
+        .blog-cta p {
+            margin-top: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.65;
+        }
+        .blog-cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .button-light,
+        .button-ghost-light {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.95rem 1.35rem;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+        .button-light {
+            background: white;
+            color: var(--brand-green-dark);
+        }
+        .button-ghost-light {
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            color: white;
+        }
+
         .footer {
             background: linear-gradient(150deg, #137547 0%, #22985b 62%, #39b66f 100%);
             color: rgba(255,255,255,0.84);
@@ -247,6 +307,7 @@
             .article-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .footer-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
             .lead { white-space: nowrap; }
+            .blog-cta { grid-template-columns: 1fr auto; padding: 2.5rem 2.75rem; }
         }
 
         @media (max-width: 819px) {
@@ -264,7 +325,7 @@
             <div class="shell">
                 <h1 class="hero-title">MealOps Blog</h1>
                 <p class="lead">
-                    Insights on agent ordering, restaurant connectivity, and agentic commerce.
+                    Notes from the team building the restaurant network for AI agents.
                 </p>
 
                 <div class="article-grid">
@@ -294,13 +355,13 @@
                             <span class="article-link">Read More →</span>
                         </div>
                         <h3>The Invisible Infrastructure</h3>
-                        <p>The Future of commerce isn&apos;t a better interface, but the invisible systems that turn human intent into automated execution.</p>
+                        <p>The future of commerce isn&apos;t a better interface, but the invisible systems that turn human intent into automated execution.</p>
                         <div class="article-bottom"></div>
                     </a>
 
                     <a href="./the-marketplace-for-machines/" class="article-card article-card-link">
                         <div class="article-top">
-                            <span class="article-tag">Infrastructure</span>
+                            <span class="article-tag">The Network</span>
                             <span class="article-link">Read More →</span>
                         </div>
                         <h3>The Marketplace for Machines</h3>
@@ -310,7 +371,7 @@
 
                     <a href="./the-translation-gap-why-pos-apis-arent-ready-for-the-agentic-era/" class="article-card article-card-link">
                         <div class="article-top">
-                            <span class="article-tag">Infrastructure</span>
+                            <span class="article-tag">POS Systems</span>
                             <span class="article-link">Read More →</span>
                         </div>
                         <h3>The Translation Gap: Why POS APIs Aren’t Ready for the Agentic Era</h3>
@@ -320,7 +381,7 @@
 
                     <a href="./what-is-mcp-understanding-the-protocols-behind-ai-agents/" class="article-card article-card-link">
                         <div class="article-top">
-                            <span class="article-tag">Infrastructure</span>
+                            <span class="article-tag">Agent Protocols</span>
                             <span class="article-link">Read More →</span>
                         </div>
                         <h3>What Is MCP? Understanding the Protocols Behind AI Agents</h3>
@@ -328,6 +389,18 @@
                         <div class="article-bottom"></div>
                     </a>
 
+                </div>
+
+                <div class="blog-cta">
+                    <div>
+                        <div class="blog-cta-kicker">MealOps</div>
+                        <h2>The restaurant network for AI agents.</h2>
+                        <p>Connect agents to restaurants across POS, marketplaces, and direct ordering.</p>
+                    </div>
+                    <div class="blog-cta-actions">
+                        <a href="../" class="button-light">Explore MealOps</a>
+                        <a href="../contact/" class="button-ghost-light">Talk to MealOps</a>
+                    </div>
                 </div>
             </div>
         </section>
