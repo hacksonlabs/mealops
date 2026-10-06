@@ -469,102 +469,140 @@
             font-size: 0.94rem;
             line-height: 1.65;
         }
-        .social-proof {
+        .proof-head {
             text-align: center;
         }
-        .logo-marquee {
-            position: relative;
-            overflow: hidden;
+        .proof-logos {
+            display: grid;
+            gap: 0.25rem;
             margin-top: 2rem;
-            padding: 1rem 0;
-            border-radius: 1.25rem;
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 18px 40px rgba(19, 117, 71, 0.06);
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
         }
-        .logo-marquee::before,
-        .logo-marquee::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 4rem;
-            z-index: 1;
-            pointer-events: none;
+        .proof-row {
+            overflow: hidden;
+            padding: 0.75rem 0 1.25rem;
         }
-        .logo-marquee::before {
-            left: 0;
-            background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 100%);
-        }
-        .logo-marquee::after {
-            right: 0;
-            background: linear-gradient(270deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0) 100%);
-        }
-        .logo-track {
+        .proof-track {
             display: flex;
             width: max-content;
-            animation: logo-scroll 26s linear infinite;
+            animation: proof-scroll 40s linear infinite;
         }
-        .logo-group {
+        .proof-row-reverse .proof-track {
+            animation-direction: reverse;
+            animation-duration: 46s;
+        }
+        .proof-logos:hover .proof-track {
+            animation-play-state: paused;
+        }
+        .proof-group {
             display: flex;
-            align-items: center;
-            gap: 4rem;
-            padding-right: 4rem;
+            gap: 1rem;
+            padding-right: 1rem;
         }
-        .logo-item {
-            width: 11rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 auto;
+        .proof-tile {
+            flex: none;
+            display: grid;
+            place-items: center;
+            width: 10rem;
+            height: 6rem;
+            padding: 0.9rem 1.4rem;
+            border: 1px solid rgba(19, 117, 71, 0.1);
+            border-radius: 1.25rem;
+            background: white;
+            box-shadow: 0 12px 28px rgba(19, 117, 71, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .logo-item img {
-            max-width: 100%;
-            max-height: 5.5rem;
+        .proof-tile img {
             width: auto;
             height: auto;
+            max-width: 100%;
+            max-height: 4.2rem;
             object-fit: contain;
         }
-        .testimonial-card {
-            max-width: 56rem;
-            margin: 2.75rem auto 0;
-            padding: 2rem 2rem 1.6rem;
-            border: 1px solid rgba(19, 117, 71, 0.08);
-            border-radius: 1rem;
-            background: rgba(255, 255, 255, 0.96);
-            box-shadow: 0 20px 50px rgba(19, 117, 71, 0.08);
+        .proof-tile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 36px rgba(19, 117, 71, 0.14);
         }
-        .testimonial-quote {
-            font-size: 4rem;
-            line-height: 0.8;
-            color: var(--brand-green);
-            font-weight: 800;
+        .proof-quote {
+            display: grid;
+            overflow: hidden;
+            max-width: 62rem;
+            margin: 2.25rem auto 0;
+            border: 1px solid var(--brand-line);
+            border-radius: 2rem;
+            background: white;
+            box-shadow: 0 24px 60px rgba(19, 117, 71, 0.1);
         }
-        .testimonial-copy {
-            margin-top: 0.75rem;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #243f33;
-        }
-        .testimonial-person {
-            display: inline-flex;
+        .proof-person {
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            margin-top: 1.75rem;
+            justify-content: center;
+            gap: 0.2rem;
+            padding: 2.25rem 1.5rem;
+            text-align: center;
+            color: white;
+            background:
+                radial-gradient(circle at 30% 18%, rgba(126, 217, 163, 0.28), transparent 50%),
+                linear-gradient(150deg, #103a27 0%, #137547 60%, #22985b 100%);
+        }
+        .proof-photo {
+            width: 8rem;
+            height: 8rem;
+            margin-bottom: 1.1rem;
+            border: 4px solid rgba(255, 255, 255, 0.92);
+            border-radius: 999px;
+            object-fit: cover;
+            object-position: center 28%;
+            box-shadow: 0 0 0 7px rgba(126, 217, 163, 0.3), 0 18px 40px rgba(0, 0, 0, 0.28);
+        }
+        .proof-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .proof-role {
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 0.9rem;
+        }
+        .proof-team {
+            margin-top: 0.9rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.14);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .proof-copy {
+            margin: 0;
+            padding: 2rem 1.5rem 2rem;
             text-align: left;
         }
-        .testimonial-person img {
-            width: 2rem;
-            height: 2.8rem;
-            object-fit: cover;
-            border-radius: 0.35rem;
-        }
-        .testimonial-name {
+        .proof-mark {
+            display: block;
+            height: 2.6rem;
+            font-size: 6rem;
             font-weight: 800;
-            color: var(--brand-green);
+            line-height: 0.75;
+            background: linear-gradient(135deg, var(--brand-green) 0%, #7ed9a3 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        .testimonial-role {
-            color: var(--brand-muted);
-            line-height: 1.5;
+        .proof-copy p {
+            color: #243f33;
+            font-size: 1.12rem;
+            line-height: 1.75;
+        }
+        .proof-copy mark {
+            padding: 0 0.1em;
+            background: linear-gradient(transparent 58%, rgba(43, 174, 102, 0.28) 58%);
+            color: inherit;
+            font-weight: 700;
+            white-space: nowrap;
         }
         .cta-panel {
             align-items: center;
@@ -591,6 +629,8 @@
             .coach-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .future-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
             .cta-panel { grid-template-columns: 1fr auto; }
+            .proof-quote { grid-template-columns: 17rem minmax(0, 1fr); }
+            .proof-copy { padding: 2.75rem 3rem; }
             .footer-grid { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
         }
 
@@ -604,33 +644,32 @@
             .mobile-nav {
                 display: block;
             }
-            .logo-group {
-                gap: 2.5rem;
-                padding-right: 2.5rem;
-            }
             .future-title br {
                 display: none;
             }
-            .logo-item {
+            .proof-tile {
                 width: 8rem;
+                height: 5rem;
+                padding: 0.75rem 1rem;
             }
-            .testimonial-card {
-                padding: 1.5rem 1.25rem;
+            .proof-tile img {
+                max-height: 3.5rem;
             }
-            .testimonial-copy {
+            .proof-copy p {
                 font-size: 1.02rem;
-            }
-            .testimonial-person {
-                align-items: flex-start;
             }
             .cta-title {
                 white-space: normal;
             }
         }
 
-        @keyframes logo-scroll {
+        @keyframes proof-scroll {
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .proof-track { animation: none; }
         }
     </style>
 </head>
@@ -802,63 +841,74 @@
 
         <section class="section">
             <div class="shell">
-                <div class="social-proof">
+                <div class="proof-head">
                     <h2 class="section-title" style="font-size: clamp(1.9rem, 3vw, 2.8rem);">Trusted by Leading Athletic Programs</h2>
-                    <div class="logo-marquee" aria-label="School logos">
-                        <div class="logo-track">
-                            <div class="logo-group">
-                                <div class="logo-item"><img src="../images/school_logos/ucsb2.png" alt="UCSB logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsd2.png" alt="UC San Diego logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/stanford.png" alt="Stanford logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/USD2.png" alt="USD logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusm.png" alt="csusm logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusb.png" alt="csusb logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/pinewood.png" alt="pinewood logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/fever.png" alt="fever logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsb2.png" alt="UCSB logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsd2.png" alt="UC San Diego logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/stanford.png" alt="Stanford logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/USD2.png" alt="USD logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusm.png" alt="csusm logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusb.png" alt="csusb logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/pinewood.png" alt="pinewood logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/fever.png" alt="fever logo" /></div>
-                            </div>
-                            <div class="logo-group" aria-hidden="true">
-                                <div class="logo-item"><img src="../images/school_logos/ucsb2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsd2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/stanford.png" alt="Stanford logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/USD2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusb.png" alt="csusb logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/pinewood.png" alt="pinewood logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/fever.png" alt="fever logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsb2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/ucsd2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/stanford.png" alt="Stanford logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/USD2.png" alt="" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusm.png" alt="csusm logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/csusb.png" alt="csusb logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/pinewood.png" alt="pinewood logo" /></div>
-                                <div class="logo-item"><img src="../images/school_logos/fever.png" alt="fever logo" /></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-quote" aria-hidden="true">“</div>
-                        <blockquote class="testimonial-copy">
-                            "Before MealOps, coordinating meals for our 20+ person team was chaotic and incredibly stressful. The idea of having a platform built specifically for team meal logistics is a game-changer. I haven't seen a tool built specifically for meal coordination in sports until now. I'm excited there's finally a platform designed to meet our real needs. It has the potential to save hours of my time and significantly cut costs."
-                        </blockquote>
-                        <div class="testimonial-person">
-                            <a href="https://ucsdtritons.com/sports/womens-basketball/roster/coaches/miranda-seto-15/1923" target="_blank" rel="noopener noreferrer">
-                                <img src="../images/mir.png" alt="Miranda Seto" />
-                            </a>
-                            <div>
-                                <div class="testimonial-name">Miranda Seto</div>
-                                <div class="testimonial-role">Director of Operations, UC San Diego WBB</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <div class="proof-logos" aria-label="Athletic programs">
+                        <div class="proof-row">
+                            <div class="proof-track">
+                                <div class="proof-group">
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsb2.png" alt="UCSB logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsd2.png" alt="UC San Diego logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/stanford.png" alt="Stanford logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/USD2.png" alt="USD logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusm.png" alt="CSUSM logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusb.png" alt="CSUSB logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/pinewood.png" alt="Pinewood logo" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/fever.png" alt="Fever logo" /></div>
+                                </div>
+                                <div class="proof-group" aria-hidden="true">
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsb2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsd2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/stanford.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/USD2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusm.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusb.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/pinewood.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/fever.png" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proof-row proof-row-reverse" aria-hidden="true">
+                            <div class="proof-track">
+                                <div class="proof-group" aria-hidden="true">
+                                    <div class="proof-tile"><img src="../images/school_logos/stanford.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusb.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/fever.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsd2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/pinewood.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsb2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusm.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/USD2.png" alt="" /></div>
+                                </div>
+                                <div class="proof-group" aria-hidden="true">
+                                    <div class="proof-tile"><img src="../images/school_logos/stanford.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusb.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/fever.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsd2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/pinewood.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/ucsb2.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/csusm.png" alt="" /></div>
+                                    <div class="proof-tile"><img src="../images/school_logos/USD2.png" alt="" /></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <figure class="proof-quote">
+                    <figcaption class="proof-person">
+                        <a href="https://ucsdtritons.com/sports/womens-basketball/roster/coaches/miranda-seto-15/1923" target="_blank" rel="noopener noreferrer">
+                            <img class="proof-photo" src="../images/mir.png" alt="Miranda Seto" />
+                        </a>
+                        <div class="proof-name">Miranda Seto</div>
+                        <div class="proof-role">Director of Operations</div>
+                        <div class="proof-team">UC San Diego WBB</div>
+                    </figcaption>
+                    <blockquote class="proof-copy">
+                        <span class="proof-mark" aria-hidden="true">“</span>
+                        <p>Before MealOps, coordinating meals for our 20+ person team was chaotic and incredibly stressful. The idea of having a platform built specifically for team meal logistics is <mark>a game-changer</mark>. I haven't seen a tool built specifically for meal coordination in sports until now. I'm excited there's finally a platform designed to meet our real needs. It has the potential to <mark>save hours of my time</mark> and significantly cut costs.</p>
+                    </blockquote>
+                </figure>
             </div>
         </section>
 
