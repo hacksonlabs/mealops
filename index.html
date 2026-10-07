@@ -1255,6 +1255,10 @@
         }
 
         @media (min-width: 1000px) {
+            .bento-intro .lead {
+                max-width: 40rem;
+            }
+
             .tile-connect {
                 display: grid;
                 grid-template-columns: minmax(11rem, 0.6fr) minmax(0, 2fr);
@@ -1263,26 +1267,6 @@
 
             .tile-connect .tile-visual {
                 margin-top: 0;
-            }
-
-            .bento-intro {
-                display: grid;
-                grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-                column-gap: 3rem;
-                align-items: end;
-                padding-bottom: 1.5rem;
-            }
-
-            .bento-intro > .eyebrow,
-            .bento-intro .section-title {
-                grid-column: 1;
-                justify-self: start;
-            }
-
-            .bento-intro .lead {
-                grid-column: 2;
-                grid-row: 2;
-                margin: 0;
             }
 
             .tile-connect {
