@@ -1,96 +1,54 @@
-# HTML
+# MealOps website
 
-A modern HTML project utilizing Tailwind CSS for building responsive web applications with minimal setup.
+The marketing site for [www.mealops.ai](https://www.mealops.ai). It's plain HTML and CSS: each page is a
+folder with its own `index.html`, there's no framework, and only one stylesheet (`css/main.css`) is built.
 
-## 🚀 Features
+## Preview locally
 
-- **HTML5** - Modern HTML structure with best practices
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
-- **Custom Components** - Pre-built component classes for buttons and containers
-- **NPM Scripts** - Easy-to-use commands for development and building
-- **Responsive Design** - Mobile-first approach for all screen sizes
-
-## 📋 Prerequisites
-
-- Node.js (v12.x or higher)
-- npm or yarn
-
-## 🛠️ Installation
-
-1. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
-
-2. Start Tailwind in watch mode:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-3. Preview the website with clean URLs:
 ```bash
 npm run preview
 ```
 
-Then open `http://localhost:4173/`.
+Then open `http://localhost:4173/`. You can also open any `index.html` straight from Finder; when a page is
+opened from disk, `js/shared-layout.js` points folder links like `contact/` at `contact/index.html` so
+navigation still works.
 
-Important: folder-based URLs like `/phantom/` and `/coachimhungry/` require a local web server. If you open the repo directly from the filesystem, your browser may show a directory index instead of loading `index.html` automatically.
+## What's where
 
-## 📁 Project Structure
+| Path | What it is |
+| --- | --- |
+| `index.html` | The Company (home) page |
+| `phantom/`, `coachimhungry/`, `contact/` | The product and contact pages |
+| `blog/` | The blog index, with one folder per post |
+| `privacy-policy/`, `terms/`, `client-terms/`, `developer-terms/`, `restaurant-terms/` | Legal pages, styled by `css/legal.css` |
+| `consent/`, `sms-opt-in/`, `sms-proof/` | SMS program pages; standalone (no shared nav) and set to `noindex` |
+| `js/shared-layout.js` | Draws the nav and footer into `<div data-shared-nav>` and `<div data-shared-footer>` on every page |
+| `css/shared-layout.css` | Nav, footer, and other styles shared across pages |
+| `css/tailwind.css` → `css/main.css` | Tailwind source and its built output |
+| `images/` | Logos, photos, and the school logos in CoachImHungry's "Trusted by" strip |
+| `favicon.ico`, `favicon.png`, `apple-touch-icon.png` | Browser tab and iPhone home-screen icons |
+| `CNAME` | The custom domain |
 
-```
-html_app/
-├── css/
-│   ├── tailwind.css   # Tailwind source file with custom utilities
-│   └── main.css       # Compiled CSS (generated)
-├── coachimhungry/     # CoachImHungry route
-├── phantom/           # Phantom route
-├── contact/           # Contact route
-├── privacy-policy/    # Privacy Policy route
-├── terms/             # Terms route
-├── client-terms/      # Client Terms route
-├── index.html         # Homepage route
-├── package.json       # Project dependencies and scripts
-└── tailwind.config.js # Tailwind CSS configuration
-```
+Most page-specific styling lives in a `<style>` block at the top of each page.
 
-## 🎨 Styling
+The logo originals are kept next to the web versions made from them: `MealOps.png` (nav logo),
+`MealOps_logo_final.jpg` (tab icons), `images/MealOps_green.png` (footer logo), and
+`images/white_green_logo.png` (the white figure in the homepage diagrams).
 
-This project uses Tailwind CSS for styling. Custom utility classes include:
+## Conventions
 
+- **Relative paths.** Link files with `./`, `../`, or `../../` like the existing pages do, so a page works
+  both on the server and when opened from disk.
+- **Shared nav and footer.** Each page sets `data-root` to the relative path back to the site root and
+  `data-active` to the nav item to highlight (`company`, `phantom`, `coach`, `blog`, or `contact`).
 
-## 🧩 Customization
+## Rebuilding the CSS
 
-To customize the Tailwind configuration, edit the `tailwind.config.js` file:
-
-
-## 📦 Build for Production
-
-Build the CSS for production:
+Only needed after adding Tailwind utility classes to a page:
 
 ```bash
+npm install
 npm run build:css
-# or
-yarn build:css
 ```
 
-## 📱 Responsive Design
-
-The app is built with responsive design using Tailwind CSS breakpoints:
-
-- `sm`: 640px and up
-- `md`: 768px and up
-- `lg`: 1024px and up
-- `xl`: 1280px and up
-- `2xl`: 1536px and up
-
-## 🙏 Acknowledgments
-
-- Built with [Rocket.new](https://rocket.new)
-- Powered by HTML and Tailwind CSS
-
-Built with ❤️ on Rocket.new
+`npm run dev` rebuilds on every save instead.
