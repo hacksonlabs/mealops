@@ -30,7 +30,7 @@
         const root = target.dataset.root || "./";
         const active = target.dataset.active || "";
         const logoHref = buildLink(root, "");
-        const logoSrc = buildLink(root, "images/meal.png");
+        const logoSrc = buildLink(root, "images/mealops_logo.png");
 
         target.innerHTML = `
             <nav class="site-nav">
