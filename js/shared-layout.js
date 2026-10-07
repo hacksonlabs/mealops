@@ -68,7 +68,7 @@
 
     function renderFooter(target) {
         const root = target.dataset.root || "./";
-        const logoSrc = buildLink(root, "images/logo_green.png");
+        const logoSrc = buildLink(root, "images/mealops_logo_white.png");
         const phantomHref = buildLink(root, "phantom/");
         const coachHref = buildLink(root, "coachimhungry/");
         const privacyHref = buildLink(root, "privacy-policy/");
