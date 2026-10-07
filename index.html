@@ -1246,26 +1246,61 @@
             }
         }
 
-        @media (min-width: 640px) and (max-width: 1159px) {
+        /* The comparison card spans the full width so its diagrams can grow with it;
+           the cap keeps them from outgrowing the card's text while stacked. */
+        .tile-connect .compare {
+            width: 100%;
+            max-width: 50rem;
+            margin-inline: auto;
+        }
+
+        @media (min-width: 1000px) {
             .tile-connect {
                 display: grid;
-                grid-template-columns: minmax(12rem, 1fr) minmax(0, 30rem);
+                grid-template-columns: minmax(11rem, 0.6fr) minmax(0, 2fr);
                 align-items: center;
-                gap: 1.5rem;
             }
 
             .tile-connect .tile-visual {
                 margin-top: 0;
             }
+
+            .bento-intro {
+                display: grid;
+                grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+                column-gap: 3rem;
+                align-items: end;
+                padding-bottom: 1.5rem;
+            }
+
+            .bento-intro > .eyebrow,
+            .bento-intro .section-title {
+                grid-column: 1;
+                justify-self: start;
+            }
+
+            .bento-intro .lead {
+                grid-column: 2;
+                grid-row: 2;
+                margin: 0;
+            }
+
+            .tile-connect {
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .tile-connect h3 {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+
+            .tile-connect .tile-head p {
+                font-size: 1rem;
+            }
         }
 
         @media (min-width: 1160px) {
-            .bento {
-                grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-                align-items: center;
-                gap: 2.5rem;
-            }
-
             .net-shell {
                 padding: 2rem;
             }
