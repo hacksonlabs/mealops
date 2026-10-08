@@ -1497,12 +1497,15 @@
                 clearTimeout(resizeTimer);
                 resizeTimer = setTimeout(reserveHeight, 150);
             });
-            var i = 0;
+            // Open with the coach's request already in the thread so the panel never starts empty.
+            var lead = msgs.indexOf(thread.querySelector('.mo-coach')) + 1;
+            msgs.slice(0, lead).forEach(function (m) { m.classList.add('is-shown'); });
+            var i = lead;
             function next() {
                 if (i >= msgs.length) {
                     setTimeout(function () {
-                        msgs.forEach(function (m) { m.classList.remove('is-shown'); });
-                        i = 0;
+                        msgs.slice(lead).forEach(function (m) { m.classList.remove('is-shown'); });
+                        i = lead;
                         setTimeout(next, 900);
                     }, 5500);
                     return;
