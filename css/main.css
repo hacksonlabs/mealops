@@ -699,11 +699,6 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.text-primary{
-  --tw-text-opacity: 1;
-  color: rgb(27 54 93 / var(--tw-text-opacity, 1));
-}
-
 .underline{
   text-decoration-line: underline;
 }

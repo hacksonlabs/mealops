@@ -183,6 +183,7 @@
         body.form-submitted .contact-form {
             display: none;
         }
+        .contact-form label { color: var(--brand-ink); }
         .field {
             width: 100%; padding: 0.95rem 1rem; border-radius: 1rem; border: 1px solid var(--brand-line);
             background: white; font: inherit; color: var(--brand-ink);
@@ -264,22 +265,22 @@
 
                         <div class="name-grid">
                             <div>
-                                <label for="first-name" class="block text-sm font-semibold text-primary mb-2">First name</label>
+                                <label for="first-name" class="block text-sm font-semibold mb-2">First name</label>
                                 <input id="first-name" name="first-name" type="text" autocomplete="given-name" required class="field" />
                             </div>
                             <div>
-                                <label for="last-name" class="block text-sm font-semibold text-primary mb-2">Last name</label>
+                                <label for="last-name" class="block text-sm font-semibold mb-2">Last name</label>
                                 <input id="last-name" name="last-name" type="text" autocomplete="family-name" required class="field" />
                             </div>
                         </div>
 
                         <div>
-                            <label for="email" class="block text-sm font-semibold text-primary mb-2">Email</label>
+                            <label for="email" class="block text-sm font-semibold mb-2">Email</label>
                             <input id="email" name="email" type="email" autocomplete="email" required class="field" />
                         </div>
 
                         <div>
-                            <label for="message" class="block text-sm font-semibold text-primary mb-2">Message</label>
+                            <label for="message" class="block text-sm font-semibold mb-2">Message</label>
                             <textarea id="message" name="message" rows="6" required class="field" placeholder="Tell us what you're building or what your team needs."></textarea>
                         </div>
 
